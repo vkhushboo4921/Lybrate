@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="lybrate_doctors.css">
+    </head>
+    <body>
+        <script src="https://kit.fontawesome.com/afe9d36b7f.js" crossorigin="anonymous"></script>
+        <div id="status">
+            <p>Get the App</p>
+            <p onclick="goToDoctorPage()">For Doctors</p>
+            <p onclick="goToHealthFeed()">Health Feed</p>
+        </div>
+        <div id="lyb">
+            <img onclick="goToHome()" src="https://doctor.lybrate.com/img/lybrate-logo.png" />
+            <div onclick="goToAskQuestions()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png" />
+                <p>Ask a Question</p>
+            </div>
+            <div onclick="bookAppointment()">
+                <img
+                    src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Appointment.png" />
+                <p>Book Appointment</p>
+            </div>
+            <div onclick="consultOnline()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Consult-Online.png" />
+                <p>Consult Online</p>
+            </div>
+            <div>
+                <img onclick="goToBookLabTest()" src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Lab-test.png" />
+                <p onclick="goToBookLabTest()">Book Lab Test</p>
+            </div>
+        </div>
+        
+        <div id="docDiv">
+
+        </div>
+
+        <div id="bottom_part">
+            <div id="aboutLybrate">
+                <h3>About Lybrate</h3>
+                <p>Are you looking for a simple way to get the best medical care available? Lybrate.com innovative online doctor
+                    database
+                    gives you access to over 150,000 highly trained medical experts. So you can ask a doctor anything you want,
+                    simple with
+                    a touch of a finger. You can save as much as 70% of your time and money at your next visit to the doctor and
+                    with the
+                    assurance that the medical professional you are seeing is highly trained and experienced. We use a stringent
+                    verification process to ensure you are 100% satisfied every time. Subscribe to the Lybrate Online Doctor
+                    network
+                    today
+                    to get the very best access to free questions, consultations and easy appointments. Join today!<br />
+        
+                    <br />Looking to ask a doctor questions about your health online? Lybrate offers a fast, easy and friendly
+                    way
+                    to gain access
+                    to general practitioners, dieticians, nutritionists, gynaecologists, psychologist, dermatologist,
+                    sexologist,
+                    ayurveda,
+                    homeopathy and more. You can get in touch with online doctors 24 hours a day, 7 days a week with this simple
+                    application. No matter what your condition, Lybrate can get you in touch with a doctor online straight away.
+                    To
+                    find out
+                    more, subscribe to our ask a doctor service online or download the app and get access to doctors on the
+                    go!<br />
+        
+                    <br />Not only does Lybrate give you access to online medical professionals, we also have regular blogs from
+                    respected experts
+                    that give you tips and advice on health and well being. Our doctors discuss a range of topics from everyday
+                    living,
+                    parenting, pregnancy and how to manage your conditions, all online and accessible from your computer, phone
+                    or
+                    tablet.
+                    Simply download the app and get access to free questions, consultations and easy appointments. Get your
+                    health
+                    feed now
+                    with Lybrate and ask a doctor what you've always wanted to know!
+                </p>
+            </div>
+            <div id="extras">
+                <div id="citiesExtra">
+                    <div>
+                        <h4>DELHI</h4>
+                        <a>Dentist in Delhi</a>
+                        <a>General Physicians in Delhi</a>
+                        <a>Cardiologist in Delhi</a>
+                        <a>Gynaecologist in Delhi</a>
+                        <a>Psychiatrist in Delhi</a>
+                        <a>Dermatologist in Delhi</a>
+                        <a>Cardiologist in Delhi</a>
+                        <a>Neurologist in Delhi</a>
+                        <a>Urologist in Delhi</a>
+                        <a>Ophthalmologist in Delhi</a>
+                        <a>Sexologist in Delhi</a>
+                    </div>
+                    <div>
+                        <h4>MUMBAI</h4>
+                        <a>Dentist in Mumbai</a>
+                        <a>General Physicians in Mumbai</a>
+                        <a>Cardiologist in Mumbai</a>
+                        <a>Gynaecologist in Mumbai</a>
+                        <a>Psychiatrist in Mumbai</a>
+                        <a>Dermatologist in Mumbai</a>
+                        <a>Cardiologist in Mumbai</a>
+                        <a>Neurologist in Mumbai</a>
+                        <a>Urologist in Mumbai</a>
+                        <a>Ophthalmologist in Mumbai</a>
+                        <a>Sexologist in Mumbai</a>
+                    </div>
+                    <div>
+                        <h4>CHENNAI</h4>
+                        <a>Dentist in Chennai</a>
+                        <a>General Physicians in Chennai</a>
+                        <a>Cardiologist in Chennai</a>
+                        <a>Gynaecologist in Chennai</a>
+                        <a>Psychiatrist in Chennai</a>
+                        <a>Dermatologist in Chennai</a>
+                        <a>Cardiologist in Chennai</a>
+                        <a>Neurologist in Chennai</a>
+                        <a>Urologist in Chennai</a>
+                        <a>Ophthalmologist in Chennai</a>
+                        <a>Sexologist in Chennai</a>
+                    </div>
+                    <div>
+                        <h4>BANGALORE</h4>
+                        <a>Dentist in Bangalore</a>
+                        <a>General Physicians in Bangalore</a>
+                        <a>Cardiologist in Bangalore</a>
+                        <a>Gynaecologist in Bangalore</a>
+                        <a>Psychiatrist in Bangalore</a>
+                        <a>Dermatologist in Bangalore</a>
+                        <a>Cardiologist in Bangalore</a>
+                        <a>Neurologist in Bangalore</a>
+                        <a>Urologist in Bangalore</a>
+                        <a>Ophthalmologist in Bangalore</a>
+                        <a>Sexologist in Bangalore</a>
+                    </div>
+                    <div>
+                        <h4>Lybrate.com</h4>
+                        <a>About Us</a>
+                        <a>Contact Us</a>
+                        <a>Careers</a>
+                        <a>Mobile Apps</a>
+                        <a>Psychiatrist in Delhi</a>
+                        <a>Blog</a>
+                        <a>Term of Use</a>
+                        <a>Privacy Policy</a>
+                        <a>Editorial Policy</a>
+                        <a>Press</a>
+                    </div>
+                </div>
+                <div id="othersDiv">
+                    <div id="others">
+                        <a>City Index</a>
+                        <a>Locality City Index</a>
+                        <a>Specialty Index</a>
+                        <a>Specialty City Index</a>
+                        <a>Health Wiki</a>
+                        <a>Health Tips Index</a>
+                        <a>Health Questions Index</a>
+                        <a>Health Quizzes Index</a>
+                        <a>Health Topics Index</a>
+                        <a>Medicines Index</a>
+                        <a>Ailment Index</a>
+                        <a>Health Packages</a>
+                        <a>Lab Test Details Index</a>
+                        <a>Treatment Pages Index</a>
+                        <a>Patient Support Programs</a>
+                    </div>
+                    <div id="socialMedia">
+                        <img src="https://www.iconsdb.com/icons/preview/white/facebook-xl.png" />
+                        <img src="https://www.iconsdb.com/icons/preview/white/twitter-xl.png" />
+                        <img src="https://www.iconsdb.com/icons/preview/white/linkedin-xl.png" />
+                        <img src="https://www.iconsdb.com/icons/preview/white/youtube-4-xl.png" />
+                    </div>
+                </div>
+                <div id="cpr">
+                    <p>© 2020 Lybrate, Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+        var doctors = [
+            {
+                name:"Arun R",
+                email: "arunr@gmail.com",
+                password:"arunr",
+                edu: "MD - Microbiology, MBBS",
+                speciality: "General Physician",
+                city:"Bangalore",
+                address: "Shekhar Nuring Home, Malleshwaram",
+                experience: 10,
+                costClinic: 400,
+                costOnline: 300,
+                tc:7,
+                tcp:300,
+                pc:10,
+                pcp:300,
+                vc:10,
+                vcp:300,
+                image:"https://assets.lybrate.com/img/documents/doctor/dp/1f19379eea0f7980b03642d629c06b09/General-Physician-ArunR-bangalore-e867ab.png",
+            },
+            {
+                name: "Sandhya Krishnamurthy",
+                email: "sandhyakrishnamurthi@gmail.com",
+                password: "sandhyakrishnamurthy",
+                edu: "BAMS",
+                speciality: "Ayurveda",
+                city: "Bangalore",
+                address: "Shubha Clinic, Basavanagudi",
+                experience: 34,
+                costClinic: 300,
+                costOnline: 400,
+                tc: 7,
+                tcp: 400,
+                pc: 10,
+                pcp: 500,
+                vc: 10,
+                vcp: 700,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/f57082f42d642fc7b72e32259eed1add/General-Physician-KSandhya-Bangalore-038a15.JPG",
+            },
+            {
+                name: "Merlin Patrao",
+                email: "merlinpatrao@gmail.com",
+                password: "merlinpatrao",
+                edu: "BHMS, PGDCR",
+                speciality: "Homeopath",
+                city: "Bangalore",
+                address: "Dr. Merlin, Malleshwaram",
+                experience: 13,
+                costClinic: 800,
+                costOnline: 300,
+                tc: 7,
+                tcp: 300,
+                pc: 10,
+                pcp: 400,
+                vc: 10,
+                vcp: 500,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/e1983acfa3ec8d2c8eb985e81f9f2bae/Homeopathy-MerlinPatrao-Bangalore-8f15ae.jpg",
+            },
+            {
+                name: "Sandeep Nayani",
+                email: "sandeepnayani@gmail.com",
+                password: "sandeepnayani",
+                edu: "DM - Neurology, MD - General Medicine, MBBS",
+                speciality: "Neurologist",
+                city: "Mumbai",
+                address: "Astra Clinic, Shaikpet, Manikonda",
+                experience: 14,
+                costClinic: 600,
+                costOnline: 1500,
+                tc: 7,
+                tcp: 1500,
+                pc: 15,
+                pcp: 1500,
+                vc: 15,
+                vcp: 1500,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/1052e879acfc967d1d66fa15ed23ae77/Neurology-SandeepNayani-Hyderabad-414676.jpg",
+            },
+            {
+                name: "Sonali Tawde",
+                email: "sonalitawde@gmail.com",
+                password: "sonalitawde",
+                edu: "MBBS, MS - Obstetrics & Gynaecology ",
+                speciality: "Gynaecologist",
+                city: "Mumbai",
+                address: "Mulund West",
+                experience: 18,
+                costClinic: 600,
+                costOnline: 300,
+                tc: 7,
+                tcp: 300,
+                pc: 10,
+                pcp: 500,
+                vc: 10,
+                vcp: 750,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/2bcc667c824d89c5a18c8f3078045396/Gynaecology-SonaliTawde-Mumbai-cfb2d3.jpg",
+            },
+            {
+                name: "Jeetendra Khatuja",
+                email: "jeetendrakhatuja@gmail.com",
+                password: "jeetendrakhatuja",
+                edu: "DNB (Dermatology), MBBS",
+                speciality: "Dermatologist",
+                city: "Mumbai",
+                address: "JK Clinic, Andheri West",
+                experience: 13,
+                costClinic: 1000,
+                costOnline: 700,
+                tc: 7,
+                tcp: 700,
+                pc: 10,
+                pcp: 1000,
+                vc: 10,
+                vcp: 1000,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/c8d32c69ca2f4501d7525a9cf7d3ac80/Dermatology-JeetendraKhatuja-Andheri-West-Mumbai-5f2f8c",
+            },
+            {
+                name: "Vidisha Tayade",
+                email: "vidishatayade@gmail.com",
+                password: "vidishatayade",
+                edu: "MDS Prosthodontics, BDS",
+                speciality: "Dentist",
+                city: "Mumbai",
+                address: "Vist Dental Care, Mulund, Mumbai",
+                experience: 11,
+                costClinic: 300,
+                costOnline: 150,
+                tc: 7,
+                tcp: 150,
+                pc: 15,
+                pcp: 150,
+                vc: 15,
+                vcp: 200,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/5a244340f7223dfa11c0efb6cd62ea96/Dentistry-VidishaTayade-Mumbai-8e211a",
+            },
+            {
+                name: "Manika Khanna",
+                email: "manikakhanna@gmail.com",
+                password: "manikakhanna",
+                edu: "MD - Obstetrics & Gynaecology, MBBS",
+                speciality: "Gynaecoligist",
+                city: "Delhi",
+                address: "Gaudium IVF & Gynac Solution Janakpuri",
+                experience: 25,
+                costClinic: 700,
+                costOnline: 250,
+                tc: 7,
+                tcp: 250,
+                pc: 10,
+                pcp: 350,
+                vc: 10,
+                vcp: 450,
+                image: "https://assets.lybrate.com/q_auto,f_auto,w_150,h_150,c_fill,g_auto/img/documents/doctor/dp/e2e9f560419d3faa8e99f86f2970e4cb/Gynaecology-ManikaKhanna-Delhi-b15ee7.jpg",
+            },
+            {
+                name: "Ravi Thadani",
+                email: "ravithadani@gmail.com",
+                password: "ravithadani",
+                edu: "MS - Ophthalmology, MBBS",
+                speciality: "Opthalmologist",
+                city: "Delhi",
+                address: "Ravi Eye Foundation, Najafgarh",
+                experience: 40,
+                costClinic: 500,
+                costOnline: 199,
+                tc: 7,
+                tcp: 199,
+                pc: 7,
+                pcp: 250,
+                vc: 7,
+                vcp: 300,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/d0ab0e3a9800270f9fa3a79feb4914c7/Ophthalmology-RaviThadani-New-Delhi-9ea4fa.png",
+            },
+            {
+                name: "Devender Gaba",
+                email: "devendergaba@gmail.com",
+                password: "devendergaba",
+                edu: "MD - Paediatrics, MBBS",
+                speciality: "Pediatrician",
+                city: "Delhi",
+                address: "Genesis Hospital, Janakpuri",
+                experience: 42,
+                costClinic: 800,
+                costOnline: 500,
+                tc: 7,
+                tcp: 500,
+                pc: 7,
+                pcp: 500,
+                vc: 7,
+                vcp: 500,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/9a60a899e7a6e2644aec990b2b1552ad/Pediatrics-DevenderGabaGaba-Delhi-a4e4a5.jpg",
+            },
+            {
+                name: "Ankur Singhal",
+                email: "ankursinghal@gmail.com",
+                password: "ankursinghal",
+                edu: "MD - Ayurveda, BAMS",
+                speciality: "Ayurveda",
+                city: "Delhi",
+                address: "AS Hospital, JVO Nagar",
+                experience: 17,
+                costClinic: 300,
+                costOnline: 800,
+                tc: 7,
+                tcp: 800,
+                pc: 10,
+                pcp: 500,
+                vc: 10,
+                vcp: 800,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/61c8a48a024a9c403b6a5c338a613fe8/Ayurveda-AnkurSinghal-Hapur-c17837.jpg",
+            },
+            {
+                name: "Souptik Majumder",
+                email: "souptikmajumder@gmail.com",
+                password: "souptikmajumder",
+                edu: "MBBS",
+                speciality: "General Physician",
+                city: "Kolkata",
+                address: "Dr. Majumder's telemedicine, Uttar Para",
+                experience: 35,
+                costClinic: 200,
+                costOnline: 200,
+                tc: 7,
+                tcp: 200,
+                pc: 15,
+                pcp: 300,
+                vc: 15,
+                vcp: 400,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/e61b6ea87c141af90bf541188586871c/General-Physician-SouptikMajumder-Kolkata-bc063b.jpg",
+            },
+            {
+                name: "Usha Subrahmanyam",
+                email: "ushasubrahmanyam@gmail.com",
+                password: "ushasubrahmanyam",
+                edu: "MBBS",
+                speciality: "Gynaecologist",
+                city: "Pune",
+                address: "US Center, Bopodi",
+                experience: 31,
+                costClinic: 500,
+                costOnline: 350,
+                tc: 7,
+                tcp: 350,
+                pc: 15,
+                pcp: 450,
+                vc: 35,
+                vcp: 850,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/c1d0f2e1f438fb26a7435ec8d28478bf/Gynaecology-UshaSubrahmanyam-6c8aa5",
+            },
+            {
+                name: "Atul Taneja",
+                email: "atultaneja@gmail.com",
+                password: "atultaneja",
+                edu: "MD(AIIMS), MBBS",
+                speciality: "Dermatologist",
+                city: "Kolkata",
+                address: "Appolo Hospitals, Phool Bagan",
+                experience: 27,
+                costClinic: 1100,
+                costOnline: 500,
+                tc: 7,
+                tcp: 500,
+                pc: 15,
+                pcp: 700,
+                vc: 15,
+                vcp: 500,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/cf7b3bd4b0ef5431a4a57628fc1e3b3e/Dermatology-AtulTaneja-KOLKATA-44e3e1.JPG",
+            },
+            {
+                name: "Suchita B Mukherjee",
+                email: "suchitabmukhetjee@gmail.com",
+                password: "suchitabmukherjee",
+                edu: "BAMS",
+                speciality: "Ayurveda",
+                city: "Kolkata",
+                address: "near Balaka Club, Badamtala stoppage, Belghoria",
+                experience: 13,
+                costClinic: 200,
+                costOnline: 300,
+                tc: 7,
+                tcp: 300,
+                pc: 15,
+                pcp: 300,
+                vc: 15,
+                vcp: 500,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/0b5d7bb92118e18f836bddf7947850a6/Ayurveda-SuchitaBMukherjee-Kolkata-d544c6.jpg",
+            },
+            {
+                name: "Nishantadeb Ghatak",
+                email: "nishantadebghatak@gmail.com",
+                password: "nishantadebghatak",
+                edu: "MD(PGI,Chandigarh), MBBS",
+                speciality: "Pediatrician",
+                city: "Kolkata",
+                address: "NG Clinic, SW Nagar",
+                experience: 7,
+                costClinic: 400,
+                costOnline: 500,
+                tc: 7,
+                tcp: 500,
+                pc: 10,
+                pcp: 500,
+                vc: 10,
+                vcp: 750,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/bd99a11bda48f00d387aa226cb1a8651/Pediatrics-NishantadebGhatak-95e3fe.png",
+            },
+            {
+                name: "Thilak S",
+                email: "thilaks@gmail.com",
+                password: "thilaks",
+                edu: "MD-Dermatology, Venereology and Leprosy, MBBS",
+                speciality: "Dermatologist",
+                city: "Chennai",
+                address: "Dermacure Skin & Hair Clinic, Anna Nagar",
+                experience: 18,
+                costClinic: 300,
+                costOnline: 500,
+                tc: 7,
+                tcp: 500,
+                pc: 10,
+                pcp: 500,
+                vc: 10,
+                vcp: 500,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/9f3f52fe3bf3f8bde65bdea830f9bb22/Dermatology-SThilak-Chennai-2ed0d0.jpg",
+            },
+            {
+                name: "Archana Madu",
+                email: "archanamadu@gmail.com",
+                password: "archanamadu",
+                edu: "DNB - Paediatrics, MBBS",
+                speciality: "Pediatrician",
+                city: "Chennai",
+                address: "Kedar Hospital, ANE salai, Thundalam, Iyyapanthangal",
+                experience: 9,
+                costClinic: 250,
+                costOnline: 300,
+                tc: 7,
+                tcp: 300,
+                pc: 10,
+                pcp: 300,
+                vc: 10,
+                vcp: 300,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/1d2ec4463fb61df6e2a0afe1bd347ab5/Pediatrics-ArchanaMadu-chennai-e0dec2",
+            },
+            {
+                name: "Vasanth Karthikeyan",
+                email: "vasanthkartikeyan@gmail.com",
+                password: "vasanthkartikeyan",
+                edu: "MD - Geriatrics, MBBS",
+                speciality: "Geriatrician",
+                city: "Chennai",
+                address: "Geri Care, Adyar",
+                experience: 15,
+                costClinic: 500,
+                costOnline: 300,
+                tc: 7,
+                tcp: 300,
+                pc: 10,
+                pcp: 300,
+                vc: 10,
+                vcp: 300,
+                image: "https://assets.lybrate.com/q_auto,f_auto,w_150,h_150,c_fill,g_auto/img/documents/doctor/dp/db48fab7bd0d1843598e1e58e097efa2/Geriatrics-VasanthK-Chennai-5fe5d4",
+            },
+            {
+                name: "A.Mohan Krishna",
+                email: "amohankrishna@gmail.com",
+                password: "amohankrishna",
+                edu: "M Ch. Ortho, M.S Orthopedics, M.B.B.S",
+                speciality: "Orthopedic Doctor",
+                city: "Hyderabad",
+                address: "Appolo Hospitals, Film Nagar",
+                experience: 18,
+                costClinic: 700,
+                costOnline: 100,
+                tc: 7,
+                tcp: 100,
+                pc: 15,
+                pcp: 200,
+                vc: 15,
+                vcp: 300,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/a31f8420f8ff0e6187cf1cf55b10d28d/AMohanKrishna-14512a-IMG_4161.JPG",
+            },
+            {
+                name: "Poornachandra K.S",
+                email: "poornachandraks@gmail.com",
+                password: "poornachandraks",
+                edu: "DM, MD, MBBS",
+                speciality: "Gastroenterologist",
+                city: "Bangalore",
+                address: "Prerana Polyclinic, J.P. Nagar",
+                experience: 20,
+                costClinic: 650,
+                costOnline: 600,
+                tc: 7,
+                tcp: 600,
+                pc: 15,
+                pcp: 600,
+                vc: 10,
+                vcp: 600,
+                image: "https://assets.lybrate.com/img/documents/doctor/dp/774595e69a3354c6216c16d4e0b1942e/Gastroenterology-PoornachandraKS-Bangalore-4ccfb7.jpg",
+            }
+        ];
+        let docStatus = localStorage.getItem('LID');
+        let userStatus = localStorage.getItem('LIU');
+        if(userStatus == null) {
+            var isLoggedIn = false;
+            let p = document.createElement('p');
+            p.textContent = "Login/Signup";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', goToSignup);
+            document.getElementById("status").appendChild(p);
+        } else {
+            var isLoggedIn = true;
+            let p = document.createElement('p');
+            p.textContent = "Logout";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', logout);
+            document.getElementById("status").appendChild(p);
+        }
+
+        function bookAppointment() {
+            window.location.href = "lybrate_doctors.html";
+        }
+        function consultOnline() {
+            window.location.href="consultOnline.html";
+        }
+        function goToSignup() {
+            window.location.href = "../Users/userSignup.html"
+        }
+
+        let allDocs = localStorage.getItem('doctors');
+        if(allDocs == null) {
+            allDocs = [];
+        } else {
+            allDocs = JSON.parse(allDocs);
+        }
+        let l = allDocs.length;
+        for(let i = 0; i < doctors.length; i++) {
+            let present = false;
+            for(let j = 0; j < l; j++) {
+                if(doctors[i].email == allDocs[i].email) {
+                    present = true;
+                    break;
+                }
+            }
+            if(!present) {
+                allDocs.push(doctors[i]);
+            }
+        }
+        
+        localStorage.setItem('doctors', JSON.stringify(allDocs));
+        var allDoctors = JSON.parse(localStorage.getItem('doctors'));
+        allDoctors.forEach(function(element) {
+            let div1 = document.createElement('div');
+            let div2 = document.createElement('div');
+
+            let div11 = document.createElement('div');
+            let img = document.createElement('img');
+            img.src = element.image;
+            div11.append(img);
+
+            let div12 = document.createElement('div');
+            let p1 = document.createElement('p');
+            p1.textContent = `Dr. ${element.name}`;
+            p1.setAttribute('class', 'p_name');
+            let p2 = document.createElement('p');
+            p2.textContent = element.edu;
+            p2.setAttribute('class', 'p_edu');
+            let p_spl = document.createElement('p');
+            p_spl.textContent = element.speciality;
+            let p3 = document.createElement('p');
+            p3.textContent = `${element.address}, ${element.city}`;
+            div12.append(p1, p2, p_spl, p3);
+            
+            let div13 = document.createElement('div');
+            let p4 = document.createElement('p');
+            p4.innerHTML = `<i class="fas fa-briefcase-medical"></i>${element.experience} Years Experience`;
+            let p5 = document.createElement('p');
+            p5.innerHTML = `<i class="fas fa-money-bill"></i>Rs. ${element.costClinic} at clinic`;
+            div13.append(p4, p5);
+
+            div1.append(div11, div12, div13);
+
+            let det1 = document.createElement('p');
+            det1.innerHTML = "<i class='fas fa-phone-alt'></i>  Call Doctor";
+                       
+            let det2 = document.createElement('p');
+            det2.innerHTML = "<i class='fas fa-comment-alt'></i>  Consult Online";
+
+            det2.onclick = function () {
+                goToProfile(element);
+            }
+            det2.setAttribute('class', 'consultOnline');
+
+        
+            let det3 = document.createElement('p');
+            det3.innerHTML = "<i id='ba_icon' class='far fa-calendar-check'></i>  Book Appointment";
+            det3.onclick = function() {
+                goToClinicAppointment(element);
+            }
+            det3.style.backgroundColor = "rgba(37, 155, 36, 255)";
+            det3.style.color = "white";
+            div2.style.backgroundColor = "rgba(246, 247, 249, 255)";
+
+            div2.append(det1, det2, det3);
+            
+            let div = document.createElement('div');
+            div.append(div1, div2);
+            document.getElementById("docDiv").append(div);  
+        })
+
+        function goToHome() {
+            window.location.href = "../Home/home2.html";
+        }
+        function goToProfile(a) {
+            localStorage.removeItem('currentDoc');
+            localStorage.setItem('currentDoc', JSON.stringify(a));
+            window.location.href = "../Doctor_Appointment/onlineProfile.html";
+        }
+        function goToClinicAppointment(a) {
+            localStorage.removeItem('currentDoc');
+            localStorage.setItem('currentDoc', JSON.stringify(a));
+            window.location.href = "../Doctor_Appointment/clinicAppointment.html";
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+        }
+        function goToHealthFeed() {
+            window.location.href = "../Health_Feed/hf.html";
+        }
+        function goToDoctorPage() {
+            window.location.href = "../Doctors/doctorPage.html";
+        }
+        function goToBookLabTest() {
+            window.location.href = "../Lab_Test/blt.html";
+        }
+        function goToAskQuestions() {
+            localStorage.removeItem('tabQue');
+            window.location.href = "../Ask_Questions/askQuestions.html";
+        }
+        </script>
+    </body>
+</html>

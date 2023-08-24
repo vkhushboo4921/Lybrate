@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="userSignup.css">
+    </head>
+    <body>
+        <div id="status">
+            <p>Get the App</p>
+            <p onclick="goToDoctorPage()">For Doctors</p>
+            <p onclick="goToHealthFeed()">Health Feed</p>
+        </div>
+        <div id="lyb">
+            <img onclick="goToHome()" src="https://doctor.lybrate.com/img/lybrate-logo.png" />
+            <div onclick="goToAskQuestions()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png"/>
+                <p>Ask a Question</p>
+            </div>
+            <div onclick="bookAppointment()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Appointment.png" />
+                <p>Book Appointment</p>
+            </div>
+            <div onclick="consultOnline()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Consult-Online.png" />
+                <p>Consult Online</p>
+            </div>
+            <div>
+                <img onclick="goToBookLabTest()" src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Lab-test.png" />
+                <p onclick="goToBookLabTest()">Book Lab Test</p>
+            </div>
+        </div>
+        <h4>Welcome to Lybrate</h4>
+        <div id="signupDiv">
+            <form id="userSignupForm">
+                <input type="text" id="name" placeholder="Name*"/>
+                <input type="number" id="phone" placeholder="Phone Number*" />
+                <input type="email" id="email" placeholder="Email*" />
+                <input type="password" id="password" placeholder="Choose Password*"/>
+            </form>
+            <button onclick="userSignup()">LET'S GET STARTED</button>
+            <p>Already have an account? Go to <span onclick="goToLogin()">Login!</span></p>
+        </div>
+        <div id="bottom">
+            <div>
+                <h3>Search Health Products</h3>
+                <a>Goodcart</a>
+                <a>Vitamin and Suppliment</a>
+                <a>Protein and Fitness</a>
+                <a>Skin and Healthcare</a>
+                <a>Sexual Wellness</a>
+                <a>Weight Management</a>
+                <a>Food and Drink</a>
+                <a>Personal Care</a>
+                <a>Child Care</a>
+                <a>GoodBox</a>
+            </div>
+            <div>
+                <h3>Search Doctors</h3>
+                <a>Search Doctors by City</a>
+                <a>Search Doctors by City Locality</a>
+                <a>Search Doctors by Speciality</a>
+                <a>Search Doctors by City Speciality</a>
+            </div>
+            <div>
+                <h3>Read Health Articles</h3>
+                <a>Health Wiki</a>
+                <a>Health Tips Index</a>
+                <a>Health Questions Index</a>
+                <a>Health Quizzes Index</a>
+                <a>Health Topics Index</a>
+                <a>Medicines Index</a>
+                <a>Ailment Index</a>
+                <a>Lab Test Details Index</a>
+            </div>
+            <div>
+                <h3>Read about Lybrate</h3>
+                <a>About Us</a>
+                <a>Contact Us</a>
+                <a>Careers</a>
+                <a>Mobile Apps</a>
+                <a>Blog</a>
+                <a>Terms of Use</a>
+                <a>Privacy Poilicy</a>
+                <a>Editorial Policy</a>
+                <a>Press</a>
+            </div>
+            <div>
+                <h3>Social</h3>
+                <div id="socialMedia">
+                    <img src="https://www.iconsdb.com/icons/preview/white/facebook-xl.png" />
+                    <img src="https://www.iconsdb.com/icons/preview/white/twitter-xl.png" />
+                    <img src="https://www.iconsdb.com/icons/preview/white/linkedin-xl.png" />
+                    <img src="https://www.iconsdb.com/icons/preview/white/youtube-4-xl.png" />
+                </div>
+                <h3>Download App</h3>
+                <div id="mobileApps">
+                    <img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/logos/GooglePlay.png"/>
+                    <img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/logos/AppStore.png" />
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        let userStatus = localStorage.getItem('LIU');
+        if(userStatus != null) {
+            window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+        }
+        let check = localStorage.getItem('LIU');
+        if (check == null) {
+            var isLoggedIn = true;
+            let p = document.createElement('p');
+            p.textContent = "Login/Signup";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', goToSignup);
+            document.getElementById("status").appendChild(p);
+        } else {
+            var isLoggedIn = false;
+            let p = document.createElement('p');
+            p.textContent = "Logout";
+            document.getElementById("status").appendChild(p);
+        }
+        function userSignup() {
+            let form = document.getElementById("userSignupForm");
+            let name = form.name.value;
+            let phone = form.phone.value;
+            let email = form.email.value;
+            let password = form.password.value;
+            let userObj = {
+                name,
+                phone,
+                email,
+                password,
+            }
+            if(name == "" || phone == "" || email == "" || password == "") {
+                alert('Please fill in all the details');
+            } else {
+                let users = localStorage.getItem('users');
+                if (users == null) {
+                    users = [];
+                } else {
+                    users = JSON.parse(users);
+                    var found = false;
+                    for (let i = 0; i < users.length; i++) {
+                        if (email == users[i].email) {
+                            found = true;
+                            alert('This Email Id is already registered.');
+                            break;
+                        }
+                    }
+                }
+                if(!found) {
+                    users.push(userObj);
+                    localStorage.setItem('users', JSON.stringify(users));
+                    localStorage.removeItem('LID');
+                    window.location.href = "userLogin.html";
+                }
+            }
+        }
+        function goToAskQuestions() {
+            localStorage.removeItem('tabQue');
+            window.location.href="../Ask_Questions/askQuestions.html";
+        }
+        function bookAppointment() {
+            window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+        }
+        function consultOnline() {
+            window.location.href="../Doctor_Appointment/lybrate_doctors.html";
+        }
+        function goToHealthFeed() {
+            window.location.href = "../Health_Feed/hf.html";
+        }
+        function goToHome() {
+            window.location.href = "../Home/home2.html";
+        }
+        function goToBookLabTest() {
+            window.location.href = "../Lab_Test/blt.html";
+        }
+        function goToDoctorPage() {
+            window.location.href = "../Doctors/doctorPage.html";
+        }
+        function goToLogin() {
+            window.location.href = "../Users/userLogin.html";
+        }
+        function goToSignup() {
+            window.location.href = "../Users/userSignup.html";
+        }
+        </script>
+    </body>
+</html>

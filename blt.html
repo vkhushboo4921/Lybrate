@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="blt.css">
+</head>
+<body>
+    <div id="status">
+        <p>Get the App</p>
+        <p onclick="goToDoctorPage()">For Doctors</p>
+        <p onclick="goToHealthFeed()">Health Feed</p>
+    </div>
+    <div id="lyb">
+        <img onclick="goToHome()" src="https://doctor.lybrate.com/img/lybrate-logo.png" />
+        <div onclick="goToAskQuestions()">
+            <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png" />
+            <p>Ask a Question</p>
+        </div>
+        <div onclick="bookAppointment()">
+            <img
+                src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Appointment.png" />
+            <p>Book Appointment</p>
+        </div>
+        <div onclick="consultOnline()">
+            <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Consult-Online.png" />
+            <p>Consult Online</p>
+        </div>
+        <div>
+            <img onclick="goTobookLabTest()"
+                src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Lab-test.png" />
+            <p onclick="goTobookLabTest()">Book Lab Test</p>
+        </div>
+    </div>
+    <div id="homeContTop">
+        <!-- <div class="homeContDivOne">
+            <a href="#">
+                <img src="https://assets.lybrate.com/q_auto,f_auto//imgs/product/logos/Lybrate-Logo.png" alt="Lybrate">
+            </a>
+            <a class="items" target="_self" ga-event="Ask_A_Free_Question">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png" alt="ask question">
+                        <p>Ask a Question</p>
+            </a>
+            <a class="items" target="_self" ga-event="Ask_A_Free_Question">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Appointment.png" alt="ask question">
+                        <p>Book Appointment</p>
+            </a>
+            <a class="items" target="_self" ga-event="Ask_A_Free_Question">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Consult-Online.png" alt="ask question">
+                        <p>Consult Online</p>
+            </a>
+            <a href="#" class="item2" target="_self" ga-event="Good_Kart">
+                <div class="goodKart">
+                    <p>Lybrate</p>
+                    <p>Goodkart</p>
+                </div>
+
+            </a>
+            <a ng-href="/viewcart" target="_self" aria-label="cart-logo" ga-event="Header-Homepage" >
+						
+						<ly-svg-icon p="cart-icon" class="ly-svg--red ly-svg--xl ng-isolate-scope"><svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M8,17.816a2.3,2.3,0,0,1-2.178-1.728L3.411,5.261a2.087,2.087,0,0,0-.695-1.006L0.475,2.771a0.815,0.815,0,0,1-.227-1.14L0.364,1.46a0.839,0.839,0,0,1,1.155-.224L3.76,2.721A3.89,3.89,0,0,1,5.24,4.864L7.654,15.691A0.434,0.434,0,0,0,8,15.968H19.965a0.488,0.488,0,0,0,.386-0.3l1.728-6.789a0.833,0.833,0,0,1,1.01-.6l0.2,0.05a0.82,0.82,0,0,1,.6,1l-1.728,6.789a2.32,2.32,0,0,1-2.2,1.694H8Zm11.754,2.695A1.534,1.534,0,1,1,18.223,19,1.525,1.525,0,0,1,19.757,20.511Zm-8.842,0A1.535,1.535,0,1,1,9.381,19,1.525,1.525,0,0,1,10.916,20.511Z"></path>
+                        </svg></ly-svg-icon>
+						</a>
+        </div> -->
+        
+        <div id="testContTwo">
+            <div>
+                <h1>Diagnostic Tests at your Doorstep</h1>
+                <p>Book tests with top labs, get sample pick up, share reports with doctors online</p>
+                <form id="bookLab">
+                    <input type="text" id="testName" placeholder="Type test names and select from option to search">
+                    <input type="text" id="city" placeholder="Enter City">
+                    <button type="submit" id="srch">Search</button>
+                </form>
+                <div class="logoCont">
+                    <div>
+                        <img src="https://www.lybrate.com/img/labs/LabBanner_Icon1.png" alt="">
+                        <p>Certified Diagnostic Labs</p>
+                    </div>
+                    <div>
+                        <img src="https://www.lybrate.com/img/labs/LabBanner_Icon2.png" alt="">
+                        <p>Trained Pickup Staff</p>
+                    </div>
+                    <div>
+                        <img src="https://www.lybrate.com/img/labs/LabBanner_Icon3.png" alt="">
+                        <p>Online Reports</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="testContThreeWid">
+            <h1>Recommended Test Packages</h1>
+        <div id="testContThree">
+            <div>
+                <h2>Aarogyam 1.2 Advanced (70 Tests)</h2>
+                <p></p>
+                <div class="boxP">
+                    <p>You save 43%</p>
+                    <p>₹2100</p>
+                    <p>₹1199</p>
+                </div>
+                <hr class="clear">
+                <div class="bottomThreeBox">
+                    <div>
+                        <img src="https://assets.lybrate.com/imgs/product/labs/80x80/thyrocare_80x80.png" alt="">
+                    </div>
+                    <div>
+                        <h2>Thyrocare</h2>
+                        <div class="smallLogo">
+                            <div>
+                                <ly-svg-icon p="tag-outline" class="ng-isolate-scope"><svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M5.5,7A1.5,1.5 0 0,0 7,5.5A1.5,1.5 0 0,0 5.5,4A1.5,1.5 0 0,0 4,5.5A1.5,1.5 0 0,0 5.5,7M21.41,11.58C21.77,11.94 22,12.44 22,13C22,13.55 21.78,14.05 21.41,14.41L14.41,21.41C14.05,21.77 13.55,22 13,22C12.45,22 11.95,21.77 11.58,21.41L2.59,12.41C2.22,12.05 2,11.55 2,11V4C2,2.89 2.89,2 4,2H11C11.55,2 12.05,2.22 12.41,2.58L21.41,11.58M13,20L20,13L11.5,4.5L4.5,11.5L13,20Z"></path></svg></ly-svg-icon>
+                            
+                            </div>
+                            <div>
+                                <p>CAP NABL ISO 9001 AC ...</p>
+                            </div>
+                        </div>
+                        <div class="smallLogo">
+                            <div>
+                                 <ly-svg-icon p="home" class="ng-isolate-scope"> <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path></svg> </ly-svg-icon>
+                            </div>
+                            <div>
+                                <p>FREE Home Sample Pickup</p>
+                            </div>
+                        </div>
+                        <button>Schedule Pickup</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h2>Aarogyam 1.2 (60 Tests)</h2>
+                <p style="color: white;">f</p>
+                <div class="boxP">
+                    <p>You save 50%</p>
+                    <p>₹3000</p>
+                    <p>₹1500</p>
+                </div>
+                <hr class="clear">
+                <div class="bottomThreeBox">
+                    <div>
+                        <img src="https://assets.lybrate.com/imgs/product/labs/80x80/thyrocare_80x80.png" alt="">
+                    </div>
+                    <div>
+                        <h2>Thyrocare</h2>
+                        <div class="smallLogo">
+                            <div>
+                                <ly-svg-icon p="tag-outline" class="ng-isolate-scope"><svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M5.5,7A1.5,1.5 0 0,0 7,5.5A1.5,1.5 0 0,0 5.5,4A1.5,1.5 0 0,0 4,5.5A1.5,1.5 0 0,0 5.5,7M21.41,11.58C21.77,11.94 22,12.44 22,13C22,13.55 21.78,14.05 21.41,14.41L14.41,21.41C14.05,21.77 13.55,22 13,22C12.45,22 11.95,21.77 11.58,21.41L2.59,12.41C2.22,12.05 2,11.55 2,11V4C2,2.89 2.89,2 4,2H11C11.55,2 12.05,2.22 12.41,2.58L21.41,11.58M13,20L20,13L11.5,4.5L4.5,11.5L13,20Z"></path></svg></ly-svg-icon>
+                            
+                            </div>
+                            <div>
+                                <p>CAP NABL ISO 9001 AC ...</p>
+                            </div>
+                        </div>
+                        <div class="smallLogo">
+                            <div>
+                                 <ly-svg-icon p="home" class="ng-isolate-scope"> <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path></svg> </ly-svg-icon>
+                            </div>
+                            <div>
+                                <p>FREE Home Sample Pickup</p>
+                            </div>
+                        </div>
+                        <button>Schedule Pickup</button>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2>Aarogyam 1.3 (63 Tests)</h2>
+                <p style="color: white;">  d </p>
+                <div class="boxP">
+                    <p>You save 50%</p>
+                    <p>₹4000</p>
+                    <p>₹2000</p>
+                </div>
+                <hr class="clear">
+                <div class="bottomThreeBox">
+                    <div>
+                        <img src="https://assets.lybrate.com/imgs/product/labs/80x80/thyrocare_80x80.png" alt="">
+                    </div>
+                    <div>
+                        <h2>Thyrocare</h2>
+                        <div class="smallLogo">
+                            <div>
+                                <ly-svg-icon p="tag-outline" class="ng-isolate-scope"><svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M5.5,7A1.5,1.5 0 0,0 7,5.5A1.5,1.5 0 0,0 5.5,4A1.5,1.5 0 0,0 4,5.5A1.5,1.5 0 0,0 5.5,7M21.41,11.58C21.77,11.94 22,12.44 22,13C22,13.55 21.78,14.05 21.41,14.41L14.41,21.41C14.05,21.77 13.55,22 13,22C12.45,22 11.95,21.77 11.58,21.41L2.59,12.41C2.22,12.05 2,11.55 2,11V4C2,2.89 2.89,2 4,2H11C11.55,2 12.05,2.22 12.41,2.58L21.41,11.58M13,20L20,13L11.5,4.5L4.5,11.5L13,20Z"></path></svg></ly-svg-icon>
+                            
+                            </div>
+                            <div>
+                                <p>CAP NABL ISO 9001 AC ...</p>
+                            </div>
+                        </div>
+                        <div class="smallLogo">
+                            <div>
+                                 <ly-svg-icon p="home" class="ng-isolate-scope"> <svg xmlns="http://www.w3.org/2000/svg" height="100%" width="100%" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path ng-attr-d="{{$root.icons[ctrl.p]}}" d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path></svg> </ly-svg-icon>
+                            </div>
+                            <div>
+                                <p>FREE Home Sample Pickup</p>
+                            </div>
+                        </div>
+                        <button>Schedule Pickup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+
+        <!-- 4th box -->
+
+        <div id="testContFour">
+            <h1>Labs Available On Lybrate</h1>
+            <div>
+                <div>
+                    <img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/labs/slp/TC-100X100.png" alt="">
+                    <p>Thyrocare Laboratories Ltd.</p>
+                </div>
+                <div>
+                    <img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/labs/slp/Lal-100x100.png" alt="">
+                    <p>Dr. Lal Pathlab</p>
+                </div>
+                <div>
+                    <img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/labs/slp/Path-100x100.png" alt="">
+                    <p>Pathcare Laboratories Ltd.</p>
+                </div>
+                <div>
+                    <img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/labs/slp/Metropolis-100x100.png" alt="">
+                    <p>Metropolis Labs</p>
+                </div>
+                <div>
+                    <img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/labs/slp/Med-100x100.png" alt="">
+                    <p>Medcis Labs</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- fivth box -->
+
+        <div id="testContFivth">
+            <div>
+                <p>Not sure which lab test is right for you? Consult a doctor and find out on 
+                </p>
+                <img src="https://www.lybrate.com/img/lab-plus/labPlusLogo2.png" alt="">
+                <div class="clear">
+                    <button>Know More</button>
+                </div>
+            </div>
+            <div>
+                <h2>Frequently Asked Questions</h2>
+                <p onclick="p1()" id="0" class="faqs">Why Should I book lab tests through Lybrate?</p>
+                <div id="giveText1"></div>
+                <p onclick="p2()" id="0" class="faqs">Do I get option of pathology labs to choose from?</p>
+                <div id="giveText2"></div>
+                <p onclick="p3()" id="0" class="faqs">Are labs on Lybrate certified?</p>
+                <div id="giveText3"></div>
+                <p onclick="p4()" id="0" class="faqs">Is it necessary to register before making the lab test booking?</p>
+                <div id="giveText4"></div>
+                <p onclick="p5()" id="0" class="faqs">How does home sample collection work?</p>
+                <div id="giveText5"></div>
+                <p onclick="p6()" id="0" class="faqs">Can I get the sample collection done from my office?</p>
+                <div id="giveText6"></div>
+                <p onclick="p7()" id="0" class="faqs">What are timing for sample collection?</p>
+                <div id="giveText7"></div>
+                <p onclick="p8()" id="0" class="faqs">Can I reschedule or cancel the appointment, are there any change?</p>
+                <div id="giveText8"></div>
+                <p onclick="p9()" id="0" class="faqs">What are different payment option?</p>
+                <div id="giveText9"></div>
+                <p onclick="p10()" id="0" class="faqs">Can I pay for test at the time of sample collection?</p>
+                <div id="giveText10"></div>
+                <p onclick="p11()" id="0" class="faqs">Do you deliver test reoprts over email?</p>
+                <div id="giveText11"></div>
+                <p onclick="p12()" id="0" class="faqs">When will I getr the test reoprts?</p>
+                <div id="giveText12"></div>
+                <p onclick="p13()" id="0" class="faqs">How will I receive the reports, for my tests?</p>
+                <div id="giveText13"></div>
+            </div>
+        </div>
+
+
+        <div id="bottom_part">
+            <div id="aboutLybrate">
+                <h3>About Lybrate</h3>
+                <p>Are you looking for a simple way to get the best medical care available? Lybrate.com innovative online doctor
+                    database
+                    gives you access to over 150,000 highly trained medical experts. So you can ask a doctor anything you want,
+                    simple with
+                    a touch of a finger. You can save as much as 70% of your time and money at your next visit to the doctor and
+                    with the
+                    assurance that the medical professional you are seeing is highly trained and experienced. We use a stringent
+                    verification process to ensure you are 100% satisfied every time. Subscribe to the Lybrate Online Doctor
+                    network
+                    today
+                    to get the very best access to free questions, consultations and easy appointments. Join today!<br />
+        
+                    <br />Looking to ask a doctor questions about your health online? Lybrate offers a fast, easy and friendly
+                    way
+                    to gain access
+                    to general practitioners, dieticians, nutritionists, gynaecologists, psychologist, dermatologist,
+                    sexologist,
+                    ayurveda,
+                    homeopathy and more. You can get in touch with online doctors 24 hours a day, 7 days a week with this simple
+                    application. No matter what your condition, Lybrate can get you in touch with a doctor online straight away.
+                    To
+                    find out
+                    more, subscribe to our ask a doctor service online or download the app and get access to doctors on the
+                    go!<br />
+        
+                    <br />Not only does Lybrate give you access to online medical professionals, we also have regular blogs from
+                    respected experts
+                    that give you tips and advice on health and well being. Our doctors discuss a range of topics from everyday
+                    living,
+                    parenting, pregnancy and how to manage your conditions, all online and accessible from your computer, phone
+                    or
+                    tablet.
+                    Simply download the app and get access to free questions, consultations and easy appointments. Get your
+                    health
+                    feed now
+                    with Lybrate and ask a doctor what you've always wanted to know!
+                </p>
+            </div>
+            <div id="extras">
+                <div id="citiesExtra">
+                    <div>
+                        <h4>DELHI</h4>
+                        <a>Dentist in Delhi</a>
+                        <a>General Physicians in Delhi</a>
+                        <a>Cardiologist in Delhi</a>
+                        <a>Gynaecologist in Delhi</a>
+                        <a>Psychiatrist in Delhi</a>
+                        <a>Dermatologist in Delhi</a>
+                        <a>Cardiologist in Delhi</a>
+                        <a>Neurologist in Delhi</a>
+                        <a>Urologist in Delhi</a>
+                        <a>Ophthalmologist in Delhi</a>
+                        <a>Sexologist in Delhi</a>
+                    </div>
+                    <div>
+                        <h4>MUMBAI</h4>
+                        <a>Dentist in Mumbai</a>
+                        <a>General Physicians in Mumbai</a>
+                        <a>Cardiologist in Mumbai</a>
+                        <a>Gynaecologist in Mumbai</a>
+                        <a>Psychiatrist in Mumbai</a>
+                        <a>Dermatologist in Mumbai</a>
+                        <a>Cardiologist in Mumbai</a>
+                        <a>Neurologist in Mumbai</a>
+                        <a>Urologist in Mumbai</a>
+                        <a>Ophthalmologist in Mumbai</a>
+                        <a>Sexologist in Mumbai</a>
+                    </div>
+                    <div>
+                        <h4>CHENNAI</h4>
+                        <a>Dentist in Chennai</a>
+                        <a>General Physicians in Chennai</a>
+                        <a>Cardiologist in Chennai</a>
+                        <a>Gynaecologist in Chennai</a>
+                        <a>Psychiatrist in Chennai</a>
+                        <a>Dermatologist in Chennai</a>
+                        <a>Cardiologist in Chennai</a>
+                        <a>Neurologist in Chennai</a>
+                        <a>Urologist in Chennai</a>
+                        <a>Ophthalmologist in Chennai</a>
+                        <a>Sexologist in Chennai</a>
+                    </div>
+                    <div>
+                        <h4>BANGALORE</h4>
+                        <a>Dentist in Bangalore</a>
+                        <a>General Physicians in Bangalore</a>
+                        <a>Cardiologist in Bangalore</a>
+                        <a>Gynaecologist in Bangalore</a>
+                        <a>Psychiatrist in Bangalore</a>
+                        <a>Dermatologist in Bangalore</a>
+                        <a>Cardiologist in Bangalore</a>
+                        <a>Neurologist in Bangalore</a>
+                        <a>Urologist in Bangalore</a>
+                        <a>Ophthalmologist in Bangalore</a>
+                        <a>Sexologist in Bangalore</a>
+                    </div>
+                    <div>
+                        <h4>Lybrate.com</h4>
+                        <a>About Us</a>
+                        <a>Contact Us</a>
+                        <a>Careers</a>
+                        <a>Mobile Apps</a>
+                        <a>Psychiatrist in Delhi</a>
+                        <a>Blog</a>
+                        <a>Term of Use</a>
+                        <a>Privacy Policy</a>
+                        <a>Editorial Policy</a>
+                        <a>Press</a>
+                    </div>
+                </div>
+                <div id="othersDiv">
+                    <div id="others">
+                        <a>City Index</a>
+                        <a>Locality City Index</a>
+                        <a>Specialty Index</a>
+                        <a>Specialty City Index</a>
+                        <a>Health Wiki</a>
+                        <a>Health Tips Index</a>
+                        <a>Health Questions Index</a>
+                        <a>Health Quizzes Index</a>
+                        <a>Health Topics Index</a>
+                        <a>Medicines Index</a>
+                        <a>Ailment Index</a>
+                        <a>Health Packages</a>
+                        <a>Lab Test Details Index</a>
+                        <a>Treatment Pages Index</a>
+                        <a>Patient Support Programs</a>
+                    </div>
+                    <div id="socialMedia">
+                        <img src="https://www.iconsdb.com/icons/preview/white/facebook-xl.png" />
+                        <img src="https://www.iconsdb.com/icons/preview/white/twitter-xl.png" />
+                        <img src="https://www.iconsdb.com/icons/preview/white/linkedin-xl.png" />
+                        <img src="https://www.iconsdb.com/icons/preview/white/youtube-4-xl.png" />
+                    </div>
+                </div>
+                <div id="cpr">
+                    <p>© 2020 Lybrate, Inc. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+            <script src="bookLabTest.js"></script>
+            <script>
+                    let userStatus = localStorage.getItem('LIU');
+                    if (userStatus == null) {
+                        var isLoggedIn = false;
+                        let p = document.createElement('p');
+                        p.textContent = "Login/Signup";
+                        p.style.cursor = "pointer";
+                        p.addEventListener('click', goToSignup);
+                        document.getElementById("status").appendChild(p);
+                    } else {
+                        var isLoggedIn = true;
+                        let p = document.createElement('p');
+                        p.textContent = "Logout";
+                        p.style.cursor = "pointer";
+                        p.addEventListener('click', logout);
+                        document.getElementById("status").appendChild(p);
+                    }
+                    function goToSignup() {
+                        window.location.href = "../Users/userSignup.html"
+                    }
+                    function logout() {
+                        localStorage.removeItem('LIU');
+                        localStorage.removeItem('LID');
+                        window.location.href = "../Lab_Test/blt.html";
+                    }
+                    function goToDoctorPage() {
+                        window.location.href = "../Doctors/doctorPage.html";
+                    }
+                    function goToHome() {
+                            window.location.href = "../Home/home2.html";
+                        }
+                        function goToProfile(a) {
+                            localStorage.removeItem('currentDoc');
+                            localStorage.setItem('currentDoc', JSON.stringify(a));
+                            window.location.href = "../Doctor_Appointment/onlineProfile.html";
+                        }
+                        function goToClinicAppointment(a) {
+                            localStorage.removeItem('currentDoc');
+                            localStorage.setItem('currentDoc', JSON.stringify(a));
+                            window.location.href = "../Doctor_Appointment/clinicAppointment.html";
+                        }
+                        function goToHealthFeed() {
+                            window.location.href = "../Health_Feed/hf.html";
+                        }
+                        function goToBookLabTest() {
+                            window.location.href = "../Lab_Test/blt.html";
+                        }
+                        function goToDoctorSignup() {
+                            window.location.href = "../Doctors/doctorSignup.html";
+                        }
+                        function goToAskQuestions() {
+                            localStorage.removeItem('tabQue');
+                            window.location.href = "../Ask_Questions/askQuestions.html";
+                        }
+                        function bookAppointment() {
+                                window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+                            }
+                            function consultOnline() {
+                                window.location.href = "../Doctor_Appointment/consultOnline.html";
+                            }
+                            function goToSignup() {
+                                window.location.href = "../Users/userSignup.html"
+                            }
+            </script>
+    </div>
+</body>
+</html>

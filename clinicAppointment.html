@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="clinicAppointment.css">
+    </head>
+    <body>
+        <script src="https://kit.fontawesome.com/afe9d36b7f.js" crossorigin="anonymous"></script>
+        <div id="status">
+            <p>Get the App</p>
+            <p onclick="goToDoctorPage()">For Doctors</p>
+            <p onclick="goToHealthFeed()">Health Feed</p>
+        </div>
+        <div id="lyb">
+            <img onclick="goToHome()" src="https://doctor.lybrate.com/img/lybrate-logo.png" />
+            <div>
+                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png" />
+                <p onclick="goToAskQuestions()">Ask a Question</p>
+            </div>
+            <div onclick="goToBookAppointment()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Appointment.png" />
+                <p>Book Appointment</p>
+            </div>
+            <div onclick="consultOnline()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Consult-Online.png" />
+                <p>Consult Online</p>
+            </div>
+            <div onclick="goToBookLabTest()">
+                <img onclick="goToBookLabTest()" src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Lab-test.png" />
+                <p>Book Lab Test</p>
+            </div>
+        </div>
+        <div id="clinicDiv">
+            <div id="docInfo">
+                <img id="image"/>
+                <div id="docNameDiv"></div>
+            </div>
+            <div id="dt">
+                <div id="date">
+                    
+                </div>
+                <div id="time">
+
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+        let docStatus = localStorage.getItem('LID');
+        let userStatus = localStorage.getItem('LIU');
+        if(userStatus == null) {
+            var isLoggedIn = false;
+            let p = document.createElement('p');
+            p.textContent = "Login/Signup";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', goToSignup);
+            document.getElementById("status").appendChild(p);
+        } else {
+            var isLoggedIn = true;
+            let p = document.createElement('p');
+            p.textContent = "Logout";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', logout);
+            document.getElementById("status").appendChild(p);
+        }
+        let currentDoc = JSON.parse(localStorage.getItem('currentDoc'));
+        document.getElementById("image").src = currentDoc.image;
+        let docNameDiv = document.getElementById("docNameDiv");
+        let h4_name = document.createElement('h4');
+        h4_name.textContent = `Dr. ${currentDoc.name}`;
+        let p_edu = document.createElement('p');
+        p_edu.textContent = currentDoc.edu;
+        let p_speciality = document.createElement('p');
+        p_speciality.textContent = currentDoc.speciality;
+        let p_address = document.createElement('p');
+        p_address.textContent = currentDoc.address;
+        let p_costClinic = document.createElement('p');
+        p_costClinic.textContent = `Consultation Fee: Rs.${currentDoc.costClinic}`;
+        docNameDiv.append(h4_name, p_edu, p_speciality, p_address, p_costClinic);
+
+
+        var currentDate = new Date()
+        console.log(currentDate);
+        var day = currentDate.getDay();
+        var date = currentDate.getDate();
+        var month = currentDate.getMonth() + 1;
+        var year = currentDate.getFullYear();
+
+        //The below ifs and els ifs were written only for experimenting.
+        if(day == 1) {
+            day = "Monday";
+        } else if (day == 2) {
+            day = "Tuesday";
+        } else if (day == 3) {
+            day = "Wednesday";
+        } else if (day == 4) {
+            day = "Thursday";
+        } else if (day == 5) {
+            day = "Friday";
+        } else if (day == 6) {
+            day = "Saturday";
+        } else {
+            day = "Sunday";
+        }
+
+        if(month == 1) {
+            month = "January";
+        } else if (month == 2) {
+            month = "February";
+        } else if (month == 3) {
+            month = "March";
+        } else if (month == 4) {
+            month = "April";
+        } else if (month == 5) {
+            month = "May";
+        } else if (month == 6) {
+            month = "June";
+        } else if (month == 7) {
+            month = "July";
+        } else if (month == 8) {
+            month = "August";
+        } else if (month == 9) {
+            month = "September";
+        } else if (month == 10) {
+            month = "October";
+        } else if (month == 11) {
+            month = "November";
+        } else {
+            month = "December";
+        }
+
+        if(month == "January" || month == "March" || month == "May" || month == "July" || month == "August" || month == "October" || month == "December") {
+            var limit = 31;
+        } else if(month == "February") {
+            var limit = 28;
+        } else {
+            var limit = 30;
+        }
+
+        if((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0) && month == "February") {
+            var limit = 29;
+        }
+        month = currentDate.getMonth() + 1;
+        var bookingDate = date;
+        var bookingMonth = month;
+        var bookingYear = year;
+        var arr = [];
+        var obj = {};
+        for(var i = 1; i <= 23; i++) {
+            bookingDate++;
+            if(bookingDate > limit) {
+                bookingDate = 1;
+                bookingMonth++;
+                if(bookingMonth == 13) {
+                    bookingMonth = 1;
+                    bookingYear++;
+                }
+            }
+            obj = {
+                bd: bookingDate,
+                bm: bookingMonth,
+                by: bookingYear,
+            }
+            arr.push(obj);
+        }
+        arr.forEach(function(element) {
+            let div = document.createElement('div');
+            div.textContent = `${element.bd}/${element.bm}/${element.by}`;
+            div.onclick = function() {
+                changeColor();
+                div.style.color = "rgba(200,37,6,255)";
+                div.style.borderBottomColor = "rgba(200,37,6,255)";
+                bookTime(element.bd, element.bm, element.by);
+            }
+            document.getElementById("date").append(div);
+
+        })
+        function changeColor() {
+            let divs = document.querySelectorAll("#date > div");
+            for(let i = 0; i < divs.length; i++) {
+                divs[i].style.color = "black";
+                divs[i].style.borderBottomColor = "rgb(243, 241, 241)";
+            }
+        }
+        
+        function bookTime(a, b, c) {
+            console.log(a, b, c);
+            let div = document.getElementById("time");
+            div.innerHTML = null;
+            let div1 = document.createElement('div');
+            let div2 = document.createElement('div');
+            let div3 = document.createElement('div');
+
+            let p11 = document.createElement('p');
+            p11.textContent = "9:00 AM";
+            p11.onclick = function() {
+                let liu = localStorage.getItem('LIU');
+                if(liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 9, 'am');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 9, 'am');
+                }
+            }
+    
+            let p12 = document.createElement('p');
+            p12.textContent = "10:00 AM";
+            p12.onclick = function() {
+                let liu = localStorage.getItem('LIU');
+                if (liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 10, 'am');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 10, 'am');
+                }
+            }
+
+            let p13 = document.createElement('p');
+            p13.textContent = "11:00 AM";
+            p13.onclick = function() {
+                let liu = localStorage.getItem('LIU');
+                if (liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 11, 'am');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 11, 'am');
+                }
+            }
+
+            let p21 = document.createElement('p');
+            p21.textContent = "1:00 PM";
+            p21.onclick = function () {
+                let liu = localStorage.getItem('LIU');
+                if (liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 1, 'pm');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 1, 'pm');
+                }
+            }
+
+            let p22 = document.createElement('p');
+            p22.textContent = "2:00 PM";
+            p22.onclick = function() {
+                let liu = localStorage.getItem('LIU');
+                if (liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 2, 'pm');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 2, 'pm');
+                }
+            }
+
+            let p23 = document.createElement('p');
+            p23.textContent = "3:00 PM";
+            p23.onclick = function() {
+                let liu = localStorage.getItem('LIU');
+                if (liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 3, 'pm');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 3, 'pm');
+                }
+            }
+
+            let p31 = document.createElement('p');
+            p31.textContent = "5:00 PM";
+            p31.onclick = function() {
+                let liu = localStorage.getItem('LIU');
+                if (liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 5, 'pm');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 5, 'pm');
+                }
+            }
+
+            let p32 = document.createElement('p');
+            p32.textContent = "6:00 PM";
+            p32.onclick = function() {
+                let liu = localStorage.getItem('LIU');
+                if (liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 6, 'pm');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 6, 'pm');
+                }
+            }
+
+            let p33 = document.createElement('p');
+            p33.textContent = "7:00 PM";
+            p33.onclick = function() {
+                let liu = localStorage.getItem('LIU');
+                if (liu == null) {
+                    bookAppointment(`${a}/${b}/${c}`, 7, 'pm');
+                } else {
+                    appointment(`${a}/${b}/${c}`, 7, 'pm');
+                }
+            }
+
+            let h41 = document.createElement('h4');
+            h41.innerHTML = "<i class='fas fa-coffee'></i>Morning";
+            h41.setAttribute('class', 'grey');
+            let h42 = document.createElement('h4');
+            h42.innerHTML = "<i class='fas fa-sun'></i>Afternoon";
+            h42.setAttribute('class', 'grey');
+            let h43 = document.createElement('h4');
+            h43.innerHTML = "<i class='fas fa-cloud-moon-rain'></i>Evening";
+            h43.setAttribute('class', 'grey');
+
+            div1.append(p11, p12, p13);
+            div2.append(p21, p22, p23);
+            div3.append(p31, p32, p33);
+            div1.setAttribute('class', 'flexRow');
+            div2.setAttribute('class', 'flexRow');
+            div3.setAttribute('class', 'flexRow');
+
+            div.append(h41, div1, h42, div2, h43, div3);
+            div.setAttribute('class', 'flexColumn');
+        }
+        function bookAppointment(date, time, phase) {
+            document.getElementById("dt").innerHTML = null;
+            document.getElementById("dt").style.marginTop = "0px";
+            document.getElementById("docInfo").style.marginBottom = "10px";
+            let div = document.createElement('div');
+            let p1 = document.createElement('p');
+            let p2 = document.createElement('p');
+            p1.textContent = "Appointment Date/Time";
+            p2.textContent = `${date} at ${time} ${phase}`;
+            let inputDiv = document.createElement('div');
+            let name = document.createElement('input');
+            name.id = "newUserName"
+            name.setAttribute('placeholder', 'Name*');
+            let email = document.createElement('input');
+            email.setAttribute('placeholder', 'Email*');
+            let phone = document.createElement('input');
+            phone.id = "newUserPhone";
+            phone.setAttribute('placeholder', 'Phone*');
+            inputDiv.append(name, email, phone);
+            let btn = document.createElement('button');
+            btn.textContent = "Continue";
+            btn.onclick = function() {
+                if(name.value == "" || email.value == "" || phone.value == "") {
+                    alert('Please Fill in all the details.');
+                } else {
+                    appointment(date, time, phase);
+                }
+            }
+            div.append(p1, p2, inputDiv, btn);
+            div.setAttribute('class', 'bookAppointment');
+            document.getElementById("dt").append(div);
+            document.getElementById("dt").setAttribute('class', 'flexColumn')
+        }
+        function appointment(a, b, c) {
+            let liu = localStorage.getItem('LIU');
+            if(liu == null) {
+                var name = document.getElementById("newUserName").value;
+                var phone = document.getElementById("newUserPhone").value;
+            } else {
+                liu = JSON.parse(liu);
+                var name = liu.name;
+                var phone = liu.phone;
+            }
+            let currentDoc = JSON.parse(localStorage.getItem('currentDoc'));
+            let dt = a;
+            let d, m, y;
+            let nums = dt.split('/');
+            d = Number(nums[0]);
+            m = Number(nums[1]);
+            y = Number(nums[2]);
+            let v = (y * 10000 + m * 100 + d * 1);
+            let clinicObj = {
+                from: name,
+                to: currentDoc.email,
+                phone: phone,
+                date: a,
+                time: b,
+                phase: c,
+                val: v,
+            }
+            let clinicAppointment = localStorage.getItem('clinicAppointment');
+            if(clinicAppointment == null) {
+                clinicAppointment = [];
+            } else {
+                clinicAppointment = JSON.parse(clinicAppointment);
+            }
+            let alreadyBooked = false;
+            for (let i = 0; i < clinicAppointment.length; i++) {
+                if (clinicObj.phone == clinicAppointment[i].phone && clinicObj.to == clinicAppointment[i].to) {
+                    alert(`You have already booked an appointment with Dr. ${currentDoc.name}`);
+                    alreadyBooked = true;
+                    break;
+                }
+            }
+            if (!alreadyBooked) {
+                clinicAppointment.push(clinicObj);
+                localStorage.setItem('clinicAppointment', JSON.stringify(clinicAppointment));
+                document.getElementById("clinicDiv").innerHTML = null;
+                let div = document.createElement('div');
+                let image = document.createElement('img');
+                image.src = currentDoc.image;
+                let p_det = document.createElement('p');
+                p_det.setAttribute('id', 'p_det');
+                p_det.innerHTML = `Appointment Booked with <span>Dr. ${currentDoc.name}</span> on <span>${a}</span> at <span>${b}${c}</span>.
+                <br/><span id="address">Address: ${currentDoc.address}, ${currentDoc.city}.</span>`;
+                div.append(image, p_det);
+                div.setAttribute('id', 'bookingConfirmed');
+                div.setAttribute('class', 'flexRow');
+                div.style.flexWrap = "wrap";
+                document.getElementById("clinicDiv").append(div);
+            }
+        }
+        function goToDoctorLogin() {
+            window.location.href = "../Doctors/doctorLogin.html";
+        }
+        function goToHealthFeed() {
+            window.location.href = "../Health_Feed/hf.html";
+        }
+        function goToDoctorPage() {
+            window.location.href = "../Doctors/doctorPage.html";
+        }
+        function goToAskQuestions() {
+            localStorage.removeItem('tabQue');
+            window.location.href = "../Ask_Questions/askQuestions.html";
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+        }
+        function goToBookLabTest() {
+                window.location.href = "../Lab_Test/blt.html";
+            }
+        function consultOnline() {
+            window.location.href = "../Doctor_Appointment/consultOnline.html";
+        }
+        function goToBookAppointment() {
+            window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+        }
+        function goToHome() {
+            window.location.href = "../Home/home2.html";
+        }
+        function goToSignup() {
+            window.location.href = "../Users/userSignup.html"
+        }
+        </script>
+    </body>
+</html>

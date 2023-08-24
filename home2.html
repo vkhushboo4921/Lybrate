@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home2.css">
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/afe9d36b7f.js" crossorigin="anonymous"></script>
+    
+    <div id="topPart">
+        <div id="headerStrip">
+            <div id="lisu" onclick="goToUserLogin()">Login/Sign-up</div>
+            <div onclick="goToHealthFeed()">Health Feed</div>
+            <div onclick="goToDoctorPage()">For Doctors</div>
+            <div >Get the App</div>
+        </div>
+        <div id="homeContTop">
+            <div class="homeContDivOne">
+                <a>
+                    <img id="lybLogo" src="https://assets.lybrate.com/q_auto,f_auto//imgs/product/logos/Lybrate-Logo.png" alt="Lybrate">
+                </a>
+                
+                <a class="items" target="_self" ga-event="Ask_A_Free_Question">
+                    <img class="indexImages" onclick="goToAskQuestions()" src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png"
+                        alt="ask question">
+                    <p onclick="goToAskQuestions()">Ask a Question</p>
+                </a>
+                <a class="items" target="_self" ga-event="Ask_A_Free_Question">
+                    <img class="indexImages" src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Appointment.png"
+                        alt="ask question">
+                    <p onclick="goToBookAppointment()" class="dropbtn">Book Appointment</p>
+    
+                    <!--  -->
+                    <div id="myDropdown" class="dropdown-content">
+    
+                        <div id="showBook">
+                            <input type="text" placeholder="Speciality/Symptom/Treatment/Doctor/Clinic">
+                            <div class="search">
+                                <ly-svg-icon p="magnify" ng-click="ctrl.submitSearch()" ga-category="Mobile Home Page"
+                                    ga-event="Search" class="icon__search--cta ng-isolate-scope" hide-gt-sm=""><svg
+                                        xmlns="http://www.w3.org/2000/svg" height="100%" width="100%"
+                                        preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                        <path ng-attr-d="{{$root.icons[ctrl.p]}}"
+                                            d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z">
+                                        </path>
+                                    </svg></ly-svg-icon>
+                            </div>
+                            <input type="text" name="city" id="city" placeholder="Enter City*" required />
+                            <input type="text" name="locality" id="locality" placeholder="Enter Locality">
+                            <div id="getRight">
+                                <p>Common Specialities</p>
+                                <div class="list">
+                                    <div>
+                                        <p>Dermatologiest</p>
+                                    </div>
+                                    <div>
+                                        <p>General Physician</p>
+                                    </div>
+                                    <div>
+                                        <p>Gynaecologist</p>
+                                    </div>
+                                    <div>
+                                        <p>pediatrician</p>
+                                    </div>
+                                    <div>
+                                        <p>Psycologist</p>
+                                    </div>
+                                    <div>
+                                        <p>Sexologist</p>
+                                    </div>
+                                    <div>
+                                        <p>Homeopath</p>
+                                    </div>
+                                </div>
+    
+                                <p>Common Issues</p>
+                                <div class="list">
+                                    <div>
+                                        <p>Acne/Pimples</p>
+                                    </div>
+                                    <div>
+                                        <p>Depression</p>
+                                    </div>
+                                    <div>
+                                        <p>Diabetes</p>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a class="items" target="_self" ga-event="Ask_A_Free_Question">
+                    <img onclick="goToConsultOnline()" class="indexImages" src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Consult-Online.png"
+                        alt="ask question">
+                    <p onclick="goToConsultOnline()">Consult Online</p>
+                </a>
+                <a class="items" target="_self" ga-event="Ask_A_Free_Question">
+                    <img class="indexImages" src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Lab-test.png"
+                        alt="ask question">
+                    <p onclick="goToBookLabTest()">Book Test Lab</p>
+                </a>
+                <a href="#" class="item2" target="_self" ga-event="Good_Kart">
+                    <div class="goodKart">
+                        <button id="gkButton">Lybrate <br> <span>Goodkart</span></button>
+                    </div>
+    
+                </a>
+                <a ng-href="/viewcart" target="_self" aria-label="cart-logo" ga-event="Header-Homepage">
+    
+                    <ly-svg-icon p="cart-icon" style="color: rgb(177, 3, 3);" class="ly-svg--red ly-svg--xl ng-isolate-scope"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="100%" width="100%"
+                            preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                            <path ng-attr-d="{{$root.icons[ctrl.p]}}"
+                                d="M8,17.816a2.3,2.3,0,0,1-2.178-1.728L3.411,5.261a2.087,2.087,0,0,0-.695-1.006L0.475,2.771a0.815,0.815,0,0,1-.227-1.14L0.364,1.46a0.839,0.839,0,0,1,1.155-.224L3.76,2.721A3.89,3.89,0,0,1,5.24,4.864L7.654,15.691A0.434,0.434,0,0,0,8,15.968H19.965a0.488,0.488,0,0,0,.386-0.3l1.728-6.789a0.833,0.833,0,0,1,1.01-.6l0.2,0.05a0.82,0.82,0,0,1,.6,1l-1.728,6.789a2.32,2.32,0,0,1-2.2,1.694H8Zm11.754,2.695A1.534,1.534,0,1,1,18.223,19,1.525,1.525,0,0,1,19.757,20.511Zm-8.842,0A1.535,1.535,0,1,1,9.381,19,1.525,1.525,0,0,1,10.916,20.511Z">
+                            </path>
+                        </svg></ly-svg-icon>
+                </a>
+    
+            </div>
+            <hr style="margin-top: 0%;">
+    
+            <!-- 2nd box flex -->
+            <div id="contTwo">
+                <a> Home</a>
+                <a onclick="goToHealthFeed()">Health Feed</a>
+                <a> Goodkart</a>
+                <a onclick="goToAskQuestions()"> Ask a Question</a>
+                <a onclick="goToConsultOnline()">Consult Online</a>
+                <a onclick="goToBookLabTest()"> Book Lab Test</a>
+                <a onclick="goToGoldMembership()">Gold Membership</a>
+    
+            </div>
+            <div id="contThree">
+                <h2>Stay at Home. Consult Doctors Online. #<span>IndiaFightsCorona.</span></h2>
+                <center>
+                    <div id="searchBoxx"><input type="text" id="searchBar"  placeholder="Search for Doctors by Name/Specialty/City"><button onclick="search()">Search</button></div>
+                </center>
+                <div class="trendingTopic">
+                    <a>Trending Topics:</a>
+                    <a>COVID-19</a>
+                    <a>Black Fungus</a>
+                    <a>Dengue Fever</a>
+                    <a>Asthma</a>
+                    <a>Infertility</a>
+                    <a>Diabetes</a>
+                    <a>Dehydration</a>
+                </div>
+                <div id="setTimeShow">
+                    <div id="headline" class="headline1">
+    
+                    </div>
+    
+                </div>
+            </div>
+            <div id="contFour">
+                <h3>Coronavirus - Know all about it, watch doctor videos and track numbers across world
+                    <button>Know More</button>
+                </h3>
+            </div>
+    
+            <!-- cont Five DropDown -->
+            <div id="contFive">
+    
+                <div class="homeContDivFive">
+                    <div id="flexCont">
+                        <div>
+                            <span id="span1">
+                                Diet Food & Fitness
+                            </span>
+                            <div class="addDropDown" id="dropdownSpan1"></div>
+                        </div>
+    
+                        <div>
+                            <span id="span2" >
+                                Skin & Hair Care
+                            </span>
+                            <div class="addDropDown" id="dropdownSpan2"></div>
+                        </div>
+    
+                        <div>
+                            <span id="span3" >
+                                Health Condition
+                            </span>
+                            <div class="addDropDown" id="dropdownSpan3"></div>
+                        </div>
+    
+                        <div>
+                            <span id="span4" >
+                                Pregnancy, Kids & Parenting
+                            </span>
+                            <div class="addDropDown" id="dropdownSpan4"></div>
+                        </div>
+    
+                        <div>
+                            <span id="span5" >
+                                Women's Health
+                            </span>
+                            <div class="addDropDown" id="dropdownSpan5"></div>
+                        </div>
+    
+                        <div>
+                            <span id="span6" >
+                                Sexual Wellness
+                            </span>
+                            <div class="addDropDown" id="dropdownSpan6"></div>
+                        </div>
+    
+                        <div>
+                            <span id="span7" >
+                                More
+                            </span>
+                            <div class="addDropDown" id="dropdownSpan7"></div>
+                        </div>
+    
+                    </div>
+    
+                </div>
+            </div>
+    
+        </div>
+    
+        <!-- cont Five End -->
+    <section class=midSection>
+        <div >
+            <div>
+                <h2>QUESTIONS & ANSWERS</h2>
+                <h6>
+                    <i class="far fa-comment-alt"></i>
+                    <strong>10 million+</strong> questions answered by doctors
+                </h6>
+            </div>
+            <div id="midBoxesQnA">
+                <div class="midMainBox midMainBox05">
+                    <div card class="midSecBox">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_80,w_120,c_fill,g_auto/imgs/tic/treating-a-cold/Male/treating-a-cold-101.jpg"" alt="">
+                        <div card-header class="midCardHeader">
+                            <a>Sir mujhe halka sa cold tha maine zymox 250 and okacet medicine kha li cold ...</a>
+                        </div>
+                        <div card-content class="profileContent">
+                            <div>
+                                <div class="profileImg">
+                                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBYVFRgVFRUYGBgYGBoaGBwYGBgYGhoaGhgaGhoYGhgcIS4lHCErHxgYJjgmKy8xNTU1GiQ7QDs0Py40NTEBDAwMEA8QHhISHjQkJCE0NDQ0NDQ0NDE0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQxNDQ0NP/AABEIAPIA0AMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAABAAIDBAUGB//EAD4QAAIBAgQCCAQEBAMJAAAAAAECAAMRBBIhMQVBBiJRYXGBkfATMrHBQlKh0RRicuEHI4IVMzRDU5KywvH/xAAaAQADAQEBAQAAAAAAAAAAAAAAAQIDBAUG/8QAKhEBAQACAgEDAQcFAAAAAAAAAAECEQMhMQQSQVEFIjJCYYGRE0NScbH/2gAMAwEAAhEDEQA/APPBFEIZxPqSiitFaI4ERhigZphEEIgCERhgJge+itA0WcdsY9UDnKmNvwxy5sMZ3RMIkIrg7R61B2x/08mM9XxW62kjTpCDA0Vmm2OeOXggYoBDJXAIhERMQgIURjo0wAhIVEdAIz0lSoREzZpHCpgRohghgNlEYooDZQGGKI9mwiAxM4Gpj1srlJN0mYDUyjXrFttoMRWzHu97yNCN7Tow49d143qvV3O+3Hx/0EuJZWoBuIEW+whqJe/2mjim0LVQDtGmuIf4Vm2Bi/2c/wCUw3C1l9ATEHtlqnU7ZUbCuupGkh+IRJyxmTbi58+O9tdY4ynhq195ZzgzHLD2vT4PUzkIRwjAY8TOuzGlDaGNiWkEUQivAFFFATGRCKCGCNleImCEQPZCGARGBgZRxJZvAS620pg3BtNeHH5ed9oclkmM+VEyzRosxAUEk8hrNLo9w7PVJYXVB6k7Tv8AAYFB+EDyE0z5NXTz+Lh903XJcP6OVHAL3A7J0OG6NoN1vOno0e6WUw858s8q7ceHGMChwNE2Aja3CVt8onRtQkL0ZO609kcnieFqRbLOK47wc0+uvyk6jsnqlSnMXiuDDKykaMLefKXhnZWPLxTKaeYYcG8tZ+cTYco7IdwT9YQliJ0ZascfFvHOSJ1jxGiOE5a+gx8HRsdGxLSQCKC8ZbOgigvAtlFGwkykWhDeCCA9x8UaDHAyTlBhcHwmdSfKxHfNK8zKy9c+M24b5jzvtDHqZfs7PotSGS/5mnX4dZznRqn1BOnpd0zzvaeKaxjRwwl9FlLDUzL6qZMamlBIaqi0sFSeUjqU4GyaiTPxlHSaWIsOco1nvvAnnXSWjlqZhpceszKVcGw56zpOmFIZQe/Scfhm6wHfOnG7wcOX3eWf7aMcI0RwnNXu4nQGGAwO3QmK8beG8E+4bxRsdATs2CGKUgIoooAQIooRJXAlTGJqG8jLcv0+EfFou4brLc2tpprLwuq5/U4+7js/h0XCWCUlOwy3MnTjDk9SmSvbzPeAZRwDipRVb2IUXBBNwOy2nLmRLScYFOyKgZjoL5te4KpF45O3FvUWE6WOmjUmHiDN7hXSQPa6285yw4o1Spkaipa+QLnK6nS+UNfz1ElwyZHN0ZSOVxoRyIPLvvHljdFjl35d3i8dkTMBynG8S41iSQqMNTbYfWb2KxJNIEqQttT1SR3hb6+onOrnzAK4QHYkhNDsWI1PhJx7XnTKOEqv/valjzUXv57W9I9+GVqeqF3X8ts3pbUTL/znqFXKra92ZBl0vbKwNzfSTYB6jsVbMADzNx5XlWaZ43fhD0gUPROuu4B0NxytOTwXDXbM4Q2Te+njodZ3vFMBnF3JYhTZmNz5SLhlAvhkBGmVr9rMCQSfOKZaxsi5hLnMr8OJUx8hSTCRXp4XcKKG8EIeRXigBhMaShvGwwKEYbwEwQPYwGKIQIRFEBDaSqCJ0HASGpVE/EMxHgyW+onPiavRytlrrfZgVI7bj+0cRyT3Y2Oi4Th1ZEvocgHZygxPDCrhwpBHPnLmFWzkdhP9pvYehmlbcMxl6c2mFctny9c/isoPqJM2FyjXW+/Lnf7TqFwSjck+ZmVj7Fwq7A6xe6quEiVkvR8pnUcIHGx8rzo0w/U5bTH+MabHK3PaLuKslVP9nZeZ/wC259bSWjgLDNY68zvNnDY1H3AuN47ElbaQ2PbHO41LCZ9FPhYZz+UMw81JmljmuDMvixLYV8guQhzeupt4RlPLgkkwkKyYRV24eCghgMS6MUEV5TMbRRRCBlFFFABCIoRAQhDFFaSqQZe4MmasgvbrX9AT9pRklFyrBhoQbjxgLNyx3dFznby+k28JiJxXCuJM79ewNha2m067DnYyq8+43HLVW8ZxC3VG5/QdswMepa2R2U7kixv6zUx+HIN1/EBaZTYpkbK1IDzvf6R46TlbbqHpjq+XLluPzX/W28jp0Otmtdu03MuriDYdQeQb99ZDia72/L2AafSVo/bl81Kztow0YDTvHYZf+ISobtEocNwLCzO5Zm5HZRNLFW+UcgJnfIlsZmNWyzlMVx9RTemAc5DJtpY3F7zo+N4nKp15Tzes1yT2m8cVj3TVkwkSSURV14eCgMMETQ4wQkQWlJsKGKIQGjrRscRGwMooopIOEMAhgqDCIAIRBUT4aoVYMOU7fhWNDrvOFWa/CqxQBuVyD3Rxy+rxmpl+zvvj3UA8pVxFEPyvKtDFBgJcovr2ynFjkrrnXQAW7yZKlNm1IEuCxizWvbaPfR+635RB7adkhr1LAmKswGsxuJY6/VXcydFcmJ0hxuYG3bb1/tOYadNxDhzuhKLmyddxzyD5iO217+EwcZRytpsdpWl8WU8fKBZMJEslEiu3DwBEUJgiaCYoooEUUUdAExiAijYDRRRQ2gJBEIgAlmhhGblYd8BlnjjN2oBJlpHs9ZoJhlUbefORsLxyOXP1d/LEAo6ambHC6YKEd/v6TNtOm4Bgs+HqOouyMrHvQgg+lr+suT6ObPmyy/FWetRqZ/l+k2cFjwRuJWxFC4mXUwR3Q2jZWWOrONG1x6yI49RfWcocPV7T6mSU+Hudyf1h0e60sdxLNosr4XDn5juZJRwgE0KSRU8cVro9hi2IQDazlu9cpBB9ROK4vhQrsltFYgeAJE9V6M4LIj12/EMqeF9T66eU844sweo7drsfVjHZrGJmX3rr4cw9ErCJrGiDoRK9bAc19JnXdxc+PjJQMEe6EaEWjInVuWDFFFAFaOURGIShookQnQC8t0cGT82ndL9OiBsLCLTn5PUY49Y9s+lgidzb9ZaTCIORY98trT7ZYSnG5cubPL5VqeFA5AeEsBbCPIiOwgzV2EhCXOksuQNfOKimnjrAlIpYmdp/h9XyuynZl9bH9iZyFRReb3ROvkrITsWyn/Vp95eN7TlNyun6QcD+F/mIL0m7PwHsPd2ek5t6RBnrdKj1SLBlYdYHUGcd0j6PGnepTBamdxrdP7d8rLHXcLj5N9VzFKx0I1j3Ucv0jXo32MloUe0zPbfRiU5t8C4Ma7a6IvzN2/yjv+km4JwRq7X+WmD1j2/yr39/Kd7h8KlNQqqAo0AEvHG3tjnyTHqeWB0hrClh2KjKqLZBtqdFnkNVetPSP8RcXolIHnmPlt+p/Sed5Ys72njnW0K09Y5E018JKtPWMU2JHf8AUCQ1V6+GB5TNr4H8uncZvW2vIXpwXjnlj4rnnosu6kSKdA1MjwlaphlbcD6RadGPqv8AKMqKWa2DI21+srEROnHPHKbldAiSREkmX349kkAlPKAJHkaQGOIgEdo1o+0Yw7YBDUF9O3sli2khpC5J7NBy8ZPfvgapUSWcASDpuDeR1FklAW8T9IE9n4FjRUpI/aov485Bxvj6Ub01KGsRorMAFB0DP3dg5905HovxZ0pOiC7L8gO122v3Am857iuCxK1cytnzi7ucoJb8QPMjbQctJ0b6255jvLTb4lUw6ANUWqjHd6aK1Mk/y5hbysJDwJKWIrin8YBd7/KzAW6qg7E3+so8PrUUGSpiK9RtslnRP6bNy9PCMxyUQpenh3sp+dHNlNrg7n1tM9fOnT4nt3XstCiqKFUABRYAchDWfKCZwXQnpTUqBlqBmpLYCo3zA66aDrLYDXcd/LoOlvE/hUCQdWFl777Wm2+nH7bvVeedKMb8Su7cgco8t/1vMVVk1U33kapOa3ddWM1NEJEw6xt2A/b7SYRtut4gfoTEod41o5T9oB79IAxhInpyxDb6QhVSZOcq18KG/eaTJIykDmVxu4eH0Hvnb6yZDKj3kmHe/vugScbwwRtQaHwgCYxjmwvEpuIKyMF6oB15m1+6ASUUsoHvxjifAyumI5OuQ877ev7yY68/PygDGFz2ARyA3v7t4RyJ6Db94SNYB0HRXVypNrka950t6gTpOkHDmag4QHOozpltfMNcvfcXHnOX6MrmqMv8lx3ETuFxAKB2NioOYk2tl1JPlrOjD8Lny6ycNwvBPikD4gJTQDqsqt8QjuJawHiD4c5TqUaKVVpYWtVNR2VRYoV1/OAoBFrmxlbiDqKjPTc2ZywQhwoDsSBfYeBnTf4d4R6ru9XLem3VOhcswOYkjcfcyJi3yysx3vp1/BOBilSRL5ioNzYC5JJ2HjOU6cnKUTWwNwOVtb+++ehV8WiDU7Ty/pbjDUrAnkL27LnT6SsusWGHeTnnPPWG2n/yA9nIwn372mDoIDsvGMbEeceIyodQfKBnHSI+/wBIGbuivAFfaIQCExQEZHbeOqNIC1/P39IyNI3EgovlexO8mUZh3yridwef3hA1V2ELHSRYd7qPCSH36QCKkdJMJBTGpEsA6QAG3ONVANhYHcX09OUdaIQA3vAwhvBANTgFbJXQ9oI9ZtdJ6r/w5RN6rog82sw8xp4XnL4Z8ro3Y638zabPSHFaU0BsxIyn8pZrZh3gK3rNsLrGsbN5xkcXRnqfw9Es4pKajkaFiLAZR/Kp0t3zc6M4rLkqB8rVH+HbYXsbDvv1e/TczMTFJQxl1PVVKaOTtc6AFuWhv5R3S3DgPTNK4zsXsv8A1MyjMOw/L5xe6/y21LPbp6S2E6vWNyZ5vx2qGxFQjYNlHgoy/YztcBx3Phy76PTDLUGmjpofXQ+c86d79YnUkk+JN/vDkvTLjndAjlG69m3lExjXN/7aTJqLkDew9JFUe9gATY7nQfrHKoB0H7+vOOVoAtxGO1vG4kkiXUnu0gZ4EdAIHNgT3QCtiamoESC32lVGzuSdpaU92g9/aBIVup7o3EDMptyho1QdDFWpaEiMh4dV6vnNBjMXCPlPn+01Ue8L5EEfP4iTCV63Juwye8RkwiEJ2ggBvBvF3wFoAKjWUnssfQ3k3SWpd0axsGtm5dXew05358pDUQlWA5gj1E2OEYZcSlSi+6AKG7HFyWH+ot4iaY5ami196Vi16RKOLMXqOGAvdmCg/wDqCbeE0ujD/FZM93NPPa97LdTZjpvoLeG/KZOGrs1dXNgKdrDuFwde3ebfEqf8IXqUzpXWyjTqMDdj4WNxDdnf1Xr8u+zHxTI2IH4a2VlI2JDZKlvC30lBjHrU/wAqnTNiUzMCNdHPb439JG+knL6X4RqbugvAYgYmEkyVf1gvaOH0gYQAM2l4KI6vvtkdcaADnJxAEJBjXspkt/tM3iVS4t3+/pCC0MItx4yzWcDQe95BSawAHdJMnMxg2vhuayL4zLoffu8vZu/3aNdAd/eogGUGGfSaWHeZ+JQK0sUH31jpRefVT4R9I9UGQ0zpH4c6Ed8k1gGNzRLATAFeK8ERgEgb6SPg+LelVYKw6y2a+xNr5j5kx6mW8XgFehSrIRmQKr20uoOpPeNfKVj+pyzxfkMRgUpYN20Z3t1rWIGcCw52tz53ho1GxiUUYhbOQ7XHZyH5iF2+0kwOKXE4nIdKOV1UDqgnLYEcgdTaR4Zf4N6wqalAPhn82cPqvjz7LGVv6n8fqHFKSJWcUxZBlHb8qgHXxvKV4xKpYZ2+ZtT4mAGZ1KTNHKZHBe0AmZo0NFmvI3NvfZAENW8PvaSKZFQbS5O5v+sTPb33QAO9pmVmzNaW6tSUASW0lQq0VIQe+6QPVLmw2ip4cnVpcpIBt6xGbT2HvnH/ANoIogysf8w8o+hz8IopXwn5XKW4k1D5m8BBFFTizzPvtiG5giiMjuI39v3iigdOp7eU0+Gf8NW/oqf+Jiil4+Km+YzeAnSr3Mtu7Vdpo9O/+T/S/wBViilXyv8Au1kj5V8oxeXvnFFMqmpDvG1IYoH8DT9+kZU5+A+sUUCJdvSV6sMUDVn2jcJ80UUpNaLb++0xy7e+6GKSK//Z" width='50px' height="50px" style="border-radius: 50%;" alt="">
+                                </div>
+                                <div class="profileDetail">
+                                    <div>
+                                       <a>Dr. Lokesh Bhama</a>
+                                    </div>
+                    
+                                    <div>
+                                        <span>ENT Specialist, Thane</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="midContent">Try taking steam inhalation for 3 times a day. To know how to take steam, please read instructions below to know - how to take steam inhalation for best..<span>Continue reading</span>
+                            </p>
+                        </div>
+                        <div class="footer">
+                            <div>                              
+                                <i class="far fa-bookmark"></i>
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="midMainBox midMainBox05">
+                    <div card class="midSecBox">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_80,w_120,c_fill,g_auto/imgs/tic/treating-skin-allergies/male/treating-skin-allergies-male-09091.jpg"" alt="">
+                        <div card-header class=" midCardHeader">
+                            <a>Hi, Mujhe 4 mahine se continue ek hi problem hai fangal infection Maine kuch...</a>
+                        </div>
+                        <div card-content class="profileContent">
+                            <div>
+                                <div class="profileImg">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/418fd0875b98e604669aa561225a8a34/Dermatology-NarasimhaluCrv-Chennai-b7b784.JPG" style="border-radius: 50%;"
+                                        alt="">
+                                </div>
+                                <div class="profileDetail">
+                                    <div>
+                                        <a>Dr. Narasimhalu C.R.V.(Professor)</a>
+                                    </div>
+                    
+                                    <div>
+                                        <span>Dermatologist, Chennai</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="midContent">Fungal infection or Ring worm. When occurs in groin, called as jock itch. Usually fungal infection is common in moist areas of body like skin folds. It's mos...<span>Continue reading</span>
+                            </p>
+                        </div>
+                        <div class="footer">
+                            <div>
+                                <i class="far fa-bookmark"></i>
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="midMainBox midMainBox05">
+                    <div card class="midSecBox">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_80,w_120,c_fill,g_auto/imgs/tic/having-a-healthy-pregnancy/female/having-a-healthy-pregnancy-10.jpg" alt="">
+                                        <div card-header class=" midCardHeader">
+                        <a>Hi Mam, How will control vomiting during 12 weeks of pregnancy. It continues...</a>
+                    </div>
+                    <div card-content class="profileContent">
+                        <div>
+                            <div class="profileImg">
+                                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/0c8db15a2e7d929078ce1c7d1483c9e0/IVF-Speciality-Ashwini-aurangabad-a99eb1.jpg" style="border-radius: 50%;"
+                                    alt="">
+                            </div>
+                            <div class="profileDetail">
+                                <div>
+                                    <a>Dr. Ashwini Talpe</a>
+                                </div>
+                
+                                <div>
+                                    <span>Gynaecologist, Aurangabad</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="midContent">hi she will need to take medicines for vomiting. she should have coconut water, dry fruits, lots of vegetables and fruits in order to prevent leg cr...<span>Continue reading</span>
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <i class="far fa-bookmark"></i>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="midMainBox midMainBox05">
+                    <div card class="midSecBox">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_80,w_120,c_fill,g_auto/imgs/tic/managing-back-pain/male/managing-back-pain-male-09095.jpg" alt="">
+                                                        <div card-header class=" midCardHeader">
+                        <a>Hi, I am from Kolkata westbengal, India. I am suffering back pain from last 5 year...</a>
+                    </div>
+                    <div card-content class="profileContent">
+                        <div>
+                            <div class="profileImg">
+                                <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/756f4c7da297e3f9261650b8a0766877/Rheumatology-SandeepUtreja-Chandigarh-87b95f.jpg" style="border-radius: 50%;"
+                                    alt="">
+                            </div>
+                            <div class="profileDetail">
+                                <div>
+                                    <a>Sandeep Utreja</a>
+                                </div>
+                
+                                <div>
+                                    <span>Rheumatologist, Chandigarh</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="midContent">If your pain increases after rest and improves with activity. It could be arthritis otherwise mechanical if on rest. Get your blood tests. ESR CRP ..<span>Continue reading</span>
+                        </p>
+                    </div>
+                    <div class="footer">
+                        <div>
+                            <i class="far fa-bookmark"></i>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
+                <div class="midMainBox midMainBox05" id="lastBox" >
+                    <div card class="midSecBox">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_80,w_120,c_fill,g_auto/imgs/tic/living-with-major-depression/male/Living-with-Major-Depression-male-02.jpg" alt="">
+                      <div card-header class=" midCardHeader">
+                        <a>I am suffered recurring depressive disorder hospital diagnosed this may b..</a>
+                      </div>
+                        <div card-content class="profileContent">
+                            <div>
+                                <div class="profileImg">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/dabd6accd9e6295ab4f713eaf87fa8e2/Psychiatry-SaranyaDevanathan-Bangalore-2fdb2b.jpg" style="border-radius: 50%;"
+                                        alt="">
+                                </div>
+                                <div class="profileDetail">
+                                    <div>
+                                        <a>Dr. Saranya Devanathan</a>
+                                    </div>
+                    
+                                    <div>
+                                        <span>Psychiatrist, Bangalore</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="midContent">Dear Harish, You can take revital capsules along with venlafaxine and quetiapine. Revital is an add on supplement to other drugs. It is a vitamin...<span>Continue reading</span>
+                            </p>
+                        </div>
+                        <div class="footer">
+                            <div>
+                                <i class="far fa-bookmark"></i>
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                <div id="QnA">
+                <a >View More Questions & Answers</a>
+                </div>
+            </div>
+            <div class="midMainBox" id="ask-questionBox">
+                <form>
+                    <div card header class="ask-question-header">
+                        <i class="fas fa-comment-alt"></i>
+                        <div>Ask a Question</div>
+                        <div>Get FREE multiple opinions from Doctors</div>
+                    </div>
+                    <div card content class="ask-question-input">
+                        <textarea type="text" name="message" style="text-align:left;" placeholder="Enter question for you or someone else. E.g. my left eye is red and swollen" required></textarea>
+                    </div>
+                    <div card footer class="ask-question-footer">
+                        <span>Submit Anonymously</span>
+                        <button type="submit">Submit</button>
+                    </div>
+
+                </form>
+            </div>
+
+            </div>
+        </div>
+        <div></div>
+    </section>
+    <section class="midSection02">
+        <div>
+            <div>
+                <h2>Health Tips</h2>
+                <h6 >
+                    <i class="fas fa-hand-holding-heart"></i>Prevent and manage health issues better
+                </h6>
+            </div>
+            <div>
+                <div id="mid2Cont">
+                    <div  class="mid2Left">
+                        <img src="https://assets.lybrate.com/q_auto,f_auto,h_400,w_700,g_auto,c_fill/eagle/uploads/2205d15fe15d38f26e2fd5a86aae7697/81cc68.jpg" alt="">
+                        <div>
+                            <h3>Spondylolisthesis - A Condition Which Affects Your Spinal Bones!</h3>
+                            <p>Spondylolisthesis refers to the condition which affects your spinal bones or lower vertebrae. Due to this condition of the lower vertebrae overlaps the bone</p>
+                            <div>
+                                <button>READ MORE</button>
+                                
+                                <i class="far fa-bookmark"></i>
+                                <i class="far fa-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="mid2BigRight">
+                        <div  class="mid2Right">
+                            <div class="mid2RightProfile">
+                                <div class="mid2ProfilePic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/d4ffdbede54f6421ae90b569aa8efb7e/Orthopaedics-HarpreetSingh-Kanpur-a6c2d9" style="border-radius:50%;">
+                                </div>
+                                <div class="mid2ProfileInfo">
+                                    <h3>Spondylolisthesis - A Condition Which Affects Your Spinal Bones!</h3>
+                                    <a>Dr.Harpreet Singh, Spine Surgeon</a>
+                                </div>
+                            </div>
+                            <div class="mid2RightProfile">
+                                <div class="mid2ProfilePic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/bb12b191d1329486966e9b11118d0e1e/Gynaecology-KDNayar-Delhi-154a87.jpg"
+                                        style="border-radius:50%;">
+                                </div>
+                                <div class="mid2ProfileInfo">
+                                    <h3>Ways to Treat Sores and Lumps on Genitals</h3>
+                                    <a>Dr.K.D Nayar, IVF Specialist</a>
+                                </div>
+                            </div>
+                            <div class="mid2RightProfile">
+                                <div class="mid2ProfilePic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/23d859f831621bb80df27084c76e08af/Gynaecology-MeenuGoyal-New-Delhi-4e6863.jpg"
+                                        style="border-radius:50%;">
+                                </div>
+                                <div class="mid2ProfileInfo">
+                                    <h3>Prevention and Treatment For Bacterial Vaginosis</h3>
+                                    <a>Dr.Meenu Goyal, Gynaecologist</a>
+                                </div>
+                            </div>
+                            <div class="mid2RightProfile">
+                                <div class="mid2ProfilePic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/a4b946261577b0be32fd6cc8c1276101/Cosmetic-Plastic-Surgery-Yvrao-Hyderabad-83e4bd.jpg"
+                                        style="border-radius:50%;">
+                                </div>
+                                <div class="mid2ProfileInfo">
+                                    <h3>Craniofacial Surgery - Types of Deformities it Can Treat</h3>
+                                    <a>Dr.Y.V. Rao, Cosmetic/Plastic Surgeon</a>
+                                </div>
+                            </div>
+                            <div class="mid2RightProfile">
+                                <div class="mid2ProfilePic">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/d00c9528ffa289bef67899def731cee3/Urology-KSShivaKumar-bangalore-e669ec.jpg"
+                                        style="border-radius:50%;">
+                                </div>
+                                <div class="mid2ProfileInfo">
+                                    <h3>Causes and Symptoms of Kidney Stones</h3>
+                                    <a>Dr.K.S Shiva Kumar, Urologist</a>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="mid2Right02">
+                            <h3>View More Health Tips</h3>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="midSection03" >
+       <div>
+            <div>
+                <h2>Videos</h2>
+                <h6>
+                    <i class="fas fa-play"></i>
+                    Top doctors explain complex health issues
+                </h6>
+            </div>
+            <div class="slider-wrapper">
+                <div class="wrapper"> 
+                   
+                    <div class="slider" id="sliderVideos">
+                       
+                        <div>
+                            <div style="background: rgba(0,0,0,0.5)url('https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/b0bd7ee92bd699324916ff8041c8ef95/461408.png');  background-blend-mode:darken; width:100%; height:300px; background-size:cover; background-position: center center;" >
+                                <div class="midvideoSymbol" ><a href="https://www.youtube.com/watch?v=dyc2IHgNC_E&t=17s"><i  class="fas fa-play"></i></a></div>
+                                
+                                <div class="sliderBookmarknHeart">
+                                    <div >
+                                        <i class="far fa-bookmark" ></i>
+                                    </div>
+                                    <div >
+                                        <i class="far fa-heart" ></i>
+                                    </div>
+                                </div>
+                                <div class="videosTextPart">
+                                    <div ><h3>Acne And Pimple</h3></div>
+                                    <div class="contentGap"></div>
+                                    <div class="videosFullProfile">
+                                        <div>
+                                            <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/1b1b404b79e00f5c2ebb70212365a3b9/Dermatology-SandeshGupta-Delhi-81fe25.jpg" style="border-radius:50%" >
+                                        </div>
+                                        <div class="videosProfile" >
+                                            <div>
+                                                <a>Dr.Sandesh Gupta</a>
+                                            </div>
+                                            <div>
+                                                <span>Dermatologist, Delhi</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                style="background: rgba(0,0,0,0.5)url('https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/af6adc78786f5296fd61a27d094c3ede/37a99e.png'); background-blend-mode:darken; width:100%; height:300px; background-size:cover; background-position: center center;">
+                                <div class="midvideoSymbol" ><a href="https://www.youtube.com/watch?v=PPWz_Cvl1jg"><i class="fas fa-play"></i></a></div>
+                        
+                                <div class="sliderBookmarknHeart">
+                                    <div>
+                                        <i class="far fa-bookmark"></i>
+                                    </div>
+                                    <div>
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="videosTextPart">
+                                    <div>
+                                        <h3>Lifestyle Disorders</h3>
+                                    </div>
+                                    <div class="contentGap"></div>
+                                    <div class="videosFullProfile">
+                                        <div>
+                                            <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/332854b54be9b955e5a651e4170cb3d6/Trichology-SurjeetKaurBava-Mumbai-a2a7dd"
+                                                style="border-radius:50%">
+                                        </div>
+                                        <div class="videosProfile" >
+                                            <div>
+                                                <a>Dr.Surjeet Kaur</a>
+                                            </div>
+                                            <div>
+                                                <span>Trichologist, Mumbai</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                      
+                        </div>
+                        <div>
+                            <div
+                                style="background: rgba(0,0,0,0.5)url('https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/b0bd7ee92bd699324916ff8041c8ef95/9d7a9b.png'); background-blend-mode:darken; width:100%; height:300px; background-size:cover; background-position: center center;">
+                                <div class="midvideoSymbol"><a href="https://www.youtube.com/watch?v=dIcOvatf_Yg"><i class="fas fa-play"></i></a></div>
+                        
+                                <div class="sliderBookmarknHeart">
+                                    <div>
+                                        <i class="far fa-bookmark"></i>
+                                    </div>
+                                    <div>
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="videosTextPart">
+                                    <div >
+                                        <h3>Chronic Abdomen Pain</h3>
+                                    </div>
+                                    <div class="contentGap"></div>
+                                    <div class="videosFullProfile">
+                                        <div>
+                                            <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/75275d82ae0a6c187c75b9ed7c1c010f/Others-AjayKumarGupta-Faridabad-127409"
+                                                style="border-radius:50%">
+                                        </div>
+                                        <div class="videosProfile" >
+                                            <div>
+                                                <a>Dr.Ajay K Gupta</a>
+                                            </div>
+                                            <div>
+                                                <span>Surgeon, Faridabad</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div
+                                style="background: rgba(0,0,0,0.5)url('https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/7cdb8a7f506aa650955e2c9bac9dcd5a/221e18.png'); background-blend-mode:darken; width:100%; height:300px; background-size:cover; background-position: center center;">
+                                <div class="midvideoSymbol" ><a href="https://www.youtube.com/watch?v=Glaly2Tsqos"><i class="fas fa-play"></i></a></div>
+                        
+                                <div class="sliderBookmarknHeart">
+                                    <div>
+                                        <i class="far fa-bookmark"></i>
+                                    </div>
+                                    <div>
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="videosTextPart">
+                                    <div>
+                                        <h3>Know About Tuberculosis</h3>
+                                    </div>
+                                    <div class="contentGap"></div>
+                                    <div class="videosFullProfile">
+                                        <div >
+                                            <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/1dae26207c2ab588eba62fb234076816/Pulmonology-NikhilModi-new-delhi-66bf26.jpg"
+                                                style="border-radius:50%">
+                                        </div>
+                                        <div class="videosProfile" >
+                                            <div>
+                                                <a>Dr.Nikhil Modi</a>
+                                            </div>
+                                            <div>
+                                                <span>Pulmonologist, Delhi</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="background: rgba(0,0,0,0.5)url('https://assets.lybrate.com/q_auto:eco,f_auto,w_300,h_300,c_fill,g_auto/eagle/uploads/034a083a85c17ea6cd14d23ff6fe9d72/789e3f.png'); background-blend-mode:darken; width:100%; height:300px; background-size:cover; background-position: center center;">
+                                <div class="midvideoSymbol"><a href="https://www.youtube.com/watch?v=MztST5UgxPw"><i class="fas fa-play"></i></a></div>
+                        
+                                <div class="sliderBookmarknHeart">
+                                    <div>
+                                        <i class="far fa-bookmark"></i>
+                                    </div>
+                                    <div>
+                                        <i class="far fa-heart"></i>
+                                    </div>
+                                </div>
+                                <div class="videosTextPart">
+                                    <div>
+                                        <h3>Conflicts In Marriage</h3>
+                                    </div>
+                                    <div class="contentGap"></div>
+                                    <div class="videosFullProfile">
+                                        <div style="margin-right:10px;">
+                                            <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/732ee58d918ec901555350755445bba2/Psychology-AmanBhonsle-Mumbai-edb257"
+                                                style="border-radius:50%">
+                                        </div>
+                                        <div class="videosProfile" >
+                                            <div>
+                                                <a>Dr.Aman Bhonsle</a>
+                                            </div>
+                                            <div>
+                                                <span>Psychologist, Mumbai</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="playMoreQuizzes">
+                            <i class="fas fa-play"></i><br>
+                            <a>VIEW<br> MORE <br>Videos</a>
+                        </div> 
+                    </div>
+                </div>
+                <nav>
+                    <div class="left" id="leftbtn"><i class="fas fa-chevron-left"></i></div>
+                    <div class="right" id="rightbtn"><i class="fas fa-chevron-right"></i></div>
+                </nav>
+            </div>
+        </div>  
+        <div>
+            <div>
+                <h2>QUIZZES</h2>
+                <h6>
+                    <i class="far fa-lightbulb"></i>
+                    <strong> 18 million+ </strong> times people busted their healthcare myths
+                </h6>
+            </div>
+            <div class="slider-wrapper">
+                <div class="wrapper">
+                    <div class="slider" id="sliderImages">
+                    <div>
+                        
+                        <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_400,h_240,c_fill,g_auto/img/documents/quiz/cb6ea52363ec691b161c265d6d1855b2/e2e7c8.jpg" alt="">
+                        <div class="sliderContent">
+                            <div>
+                                <h3>Diet, Exercise and Your Metabolism</h3>
+                            </div>
+                            <div>
+                                <div class="sliderProfileImg">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/9472ecdfd2f7150446d4f93963fa74fd/Dietitian-Nutritionist-SarikaNair-Mumbai-6d8c83.JPG" style="border-radius:50%" alt="">
+                                </div>
+                                <div class="sliderProfileDetail">
+                                    <div>
+                                        <a>Dr.Sarika Nair</a>
+                                    </div>
+                                    <div>
+                                        <span>Dietitian/Nutritionist, Mumbai</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_400,h_240,c_fill,g_auto/img/documents/quiz/42e08e572a1c51ca9cbc21eec866471c/c152ca.jpg"
+                            alt="">
+                        <div class="sliderContent">
+                            <div>
+                                <h3>Infertility and Self-management!!</h3>
+                            </div>
+                            <div>
+                                <div class="sliderProfileImg">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/f54f992520c161b72d28423ea05ce056/Gynaecology-Motherhood-Bangalore-3aefdc"
+                                        style="border-radius:50%" alt="">
+                                </div>
+                                <div class="sliderProfileDetail">
+                                    <div>
+                                        <a>Motherhood hospital</a>
+                                    </div>
+                                    <div>
+                                        <span>Gynaecologist, Bangalore</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_400,h_240,c_fill,g_auto/img/documents/quiz/d615954c0ef61a584bbe095ad2428c97/5c194d.jpg"
+                            alt="">
+                        <div class="sliderContent">
+                            <div>
+                                <h3>Question Must Ask Before Surgery</h3>
+                            </div>
+                            <div>
+                                <div class="sliderProfileImg">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/3f4dc139380ff0cfb07ba51825af0590/Cosmetic-Plastic-Surgery-BhushanPatil-Pune-39fbae"
+                                        style="border-radius:50%" alt="">
+                                </div>
+                                <div class="sliderProfileDetail">
+                                    <div>
+                                        <a>Dr.Bhushan Patil</a>
+                                    </div>
+                                    <div>
+                                        <span>Plastic_Surgeon, Pune</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_400,h_240,c_fill,g_auto/img/documents/quiz/f413cf378bf6b5dae69032ff8c7e5944/7bf4f5.jpg"
+                            alt="">
+                        <div class="sliderContent">
+                            <div>
+                                <h3>Summer Rashes - How To Prevent</h3>
+                            </div>
+                            <div>
+                                <div class="sliderProfileImg">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/e912e87f950b0aba4813cdd874890564/Dermatology-VenuKumari-Hyderabad-b4bb0b.jpg"
+                                        style="border-radius:50%" alt="">
+                                </div>
+                                <div class="sliderProfileDetail">
+                                    <div>
+                                        <a>Dr.Venu Kumari</a>
+                                    </div>
+                                    <div>
+                                        <span>Dermatologist, Hyderabad</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.lybrate.com/q_auto:eco,f_auto,w_400,h_240,c_fill,g_auto/img/documents/quiz/cb6ea52363ec691b161c265d6d1855b2/0e72c4.jpg"
+                            alt="">
+                        <div class="sliderContent">
+                            <div>
+                                <h3>Laziness and the Ways To Overcome It!</h3>
+                            </div>
+                            <div>
+                                <div class="sliderProfileImg">
+                                    <img src="https://assets.lybrate.com/q_auto:eco,f_auto,h_50,w_50,c_fill,g_auto/img/documents/doctor/dp/57dad8a4f86d443f69c93e2d7ced80bd/Psychology-AarathiSelvan-Hyderabad-d8d803.jpg"
+                                        style="border-radius:50%" alt="">
+                                </div>
+                                <div class="sliderProfileDetail">
+                                    <div>
+                                        <a>Ms.Arati Selvan</a>
+                                    </div>
+                                    <div>
+                                        <span>Psychologist, Hyderabad</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="playMoreQuizzes">
+                        <i class="far fa-lightbulb"></i><br>
+                        <a>PLAY<br> MORE <br>QUIZZES</a>
+                    </div>
+                    </div>
+                </div>
+                <nav>
+                    <div class="left" id="leftbtn1"><i class="fas fa-chevron-left"></i></div>
+                    <div class="right" id="rightbtn1"><i class="fas fa-chevron-right"></i></div>
+                </nav>
+            </div>
+        </div> 
+    </section>
+    <div id="bottom_part">
+        <div id="knowmore">
+            <h3>Are you a Doctor?</h3>
+            <p>Be a part of the next big thing in healthcare. Join us in our journey of revolutionizing healthcare
+                delivery by
+                harnessing technology to help millions lead healthier lives.</p>
+            <button onclick="goToDoctorSignup()">Know More</button>
+        </div>
+        <div id="slides">
+            <h3>TOP CATEGORIES</h3><br />
+            <div id="categoriesTop" class="slider-wrapper">
+                <div class="wrapper">
+                    <div class="slider" id="sliderCategories">
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/dietitian-nutritionist.jpg" />
+                            <div class="textDesc">Dietician/Nutritionist</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/gynaecologist.jpg" />
+                            <div class="textDesc">Gynaecologist</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/psychologist.jpg" />
+                            <div class="textDesc">Psychologist</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/dermatologist.jpg" />
+                            <div class="textDesc">Dermatologist</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/sexologist.jpg" />
+                            <div class="textDesc">Sexologist</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/ayurveda.jpg" />
+                            <div class="textDesc">Ayurveda</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/homeopath.jpg" />
+                            <div class="textDesc">Homeopath</div>
+                        </div>
+                        <nav>
+                            <div class="left" id="leftbtn3"><i class="fas fa-chevron-left"></i></div>
+                            <div class="right" id="rightbtn3"><i class="fas fa-chevron-right"></i></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <h3 id="h32">TOP CITIES</h3><br />
+            <div id="citiesTop" class="slider-wrapper">
+                <div class="wrapper">
+                    <div class="slider" id="slideCities">
+    
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/delhi_city.jpg" />
+                            <div class="textDesc">Delhi</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/bangalore_city.jpg" />
+                            <div class="textDesc">Bangalore</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/mumbai_city.jpg" />
+                            <div class="textDesc">Mumbai</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/kolkata_city.jpg" />
+                            <div class="textDesc">Kolkata</div>
+                        </div>
+                        <div>
+                            <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/cities/chennai_city.jpg" />
+                            <div class="textDesc">Chennai</div>
+                        </div>
+                        <nav>
+                            <div class="left" id="leftbtn4"><i class="fas fa-chevron-left"></i></div>
+                            <div class="right" id="rightbtn4"><i class="fas fa-chevron-right"></i></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="aboutLybrate">
+            <h3>About Lybrate</h3>
+            <p>Are you looking for a simple way to get the best medical care available? Lybrate.com innovative online
+                doctor database
+                gives you access to over 150,000 highly trained medical experts. So you can ask a doctor anything you
+                want, simple with
+                a touch of a finger. You can save as much as 70% of your time and money at your next visit to the doctor
+                and with the
+                assurance that the medical professional you are seeing is highly trained and experienced. We use a
+                stringent
+                verification process to ensure you are 100% satisfied every time. Subscribe to the Lybrate Online Doctor
+                network today
+                to get the very best access to free questions, consultations and easy appointments. Join today!<br />
+    
+                <br />Looking to ask a doctor questions about your health online? Lybrate offers a fast, easy and
+                friendly way to gain access
+                to general practitioners, dieticians, nutritionists, gynaecologists, psychologist, dermatologist,
+                sexologist, ayurveda,
+                homeopathy and more. You can get in touch with online doctors 24 hours a day, 7 days a week with this
+                simple
+                application. No matter what your condition, Lybrate can get you in touch with a doctor online straight
+                away. To find out
+                more, subscribe to our ask a doctor service online or download the app and get access to doctors on the
+                go!<br />
+    
+                <br />Not only does Lybrate give you access to online medical professionals, we also have regular blogs
+                from respected experts
+                that give you tips and advice on health and well being. Our doctors discuss a range of topics from
+                everyday living,
+                parenting, pregnancy and how to manage your conditions, all online and accessible from your computer,
+                phone or tablet.
+                Simply download the app and get access to free questions, consultations and easy appointments. Get your
+                health feed now
+                with Lybrate and ask a doctor what you've always wanted to know!
+            </p>
+        </div>
+        <div id="extras">
+            <div id="citiesExtra">
+                <div>
+                    <p>DELHI</p>
+                    <p>Dentist in Delhi</p>
+                    <p>General Physicians in Delhi</p>
+                    <p>Cardiologist in Delhi</p>
+                    <p>Gynaecologist in Delhi</p>
+                    <p>Psychiatrist in Delhi</p>
+                    <p>Dermatologist in Delhi</p>
+                    <p>Cardiologist in Delhi</p>
+                    <p>Neurologist in Delhi</p>
+                    <p>Urologist in Delhi</p>
+                    <p>Ophthalmologist in Delhi</p>
+                    <p>Sexologist in Delhi</p>
+                </div>
+                <div>
+                    <p>MUMBAI</p>
+                    <p>Dentist in Mumbai</p>
+                    <p>General Physicians in Mumbai</p>
+                    <p>Cardiologist in Mumbai</p>
+                    <p>Gynaecologist in Mumbai</p>
+                    <p>Psychiatrist in Mumbai</p>
+                    <p>Dermatologist in Mumbai</p>
+                    <p>Cardiologist in Mumbai</p>
+                    <p>Neurologist in Mumbai</p>
+                    <p>Urologist in Mumbai</p>
+                    <p>Ophthalmologist in Mumbai</p>
+                    <p>Sexologist in Mumbai</p>
+                </div>
+                <div>
+                    <p>CHENNAI</p>
+                    <p>Dentist in Chennai</p>
+                    <p>General Physicians in Chennai</p>
+                    <p>Cardiologist in Chennai</p>
+                    <p>Gynaecologist in Chennai</p>
+                    <p>Psychiatrist in Chennai</p>
+                    <p>Dermatologist in Chennai</p>
+                    <p>Cardiologist in Chennai</p>
+                    <p>Neurologist in Chennai</p>
+                    <p>Urologist in Chennai</p>
+                    <p>Ophthalmologist in Chennai</p>
+                    <p>Sexologist in Chennai</p>
+                </div>
+                <div>
+                    <p>BANGALORE</p>
+                    <p>Dentist in Bangalore</p>
+                    <p>General Physicians in Bangalore</p>
+                    <p>Cardiologist in Bangalore</p>
+                    <p>Gynaecologist in Bangalore</p>
+                    <p>Psychiatrist in Bangalore</p>
+                    <p>Dermatologist in Bangalore</p>
+                    <p>Cardiologist in Bangalore</p>
+                    <p>Neurologist in Bangalore</p>
+                    <p>Urologist in Bangalore</p>
+                    <p>Ophthalmologist in Bangalore</p>
+                    <p>Sexologist in Bangalore</p>
+                </div>
+                <div>
+                    <p>Lybrate.com</p>
+                    <p>About Us</p>
+                    <p>Contact Us</p>
+                    <p>Careers</p>
+                    <p>Mobile Apps</p>
+                    <p>Psychiatrist in Delhi</p>
+                    <p>Blog</p>
+                    <p>Term of Use</p>
+                    <p>Privacy Policy</p>
+                    <p>Editorial Policy</p>
+                    <p>Press</p>
+                </div>
+            </div>
+            <div id="othersDiv">
+                <div id="others">
+                    <p>City Index</p>
+                    <p>Locality City Index</p>
+                    <p>Specialty Index</p>
+                    <p>Specialty City Index</p>
+                    <p>Health Wiki</p>
+                    <p>Health Tips Index</p>
+                    <p>Health Questions Index</p>
+                    <p>Health Quizzes Index</p>
+                    <p>Health Topics Index</p>
+                    <p>Medicines Index</p>
+                    <p>Ailment Index</p>
+                    <p>Health Packages</p>
+                    <p>Lab Test Details Index</p>
+                    <p>Treatment Pages Index</p>
+                    <p>Patient Support Programs</p>
+                </div>
+                <div id="socialMedia">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
+            </div>
+            <div id="cpr">
+                <p>© 2020 Lybrate, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    let docStatus = localStorage.getItem('LID');
+        let userStatus = localStorage.getItem('LIU');
+        if (userStatus != null)   {
+            var isLoggedIn = true;
+            document.getElementById("lisu").remove();
+            let div = document.createElement('div');
+            div.textContent = "Logout";
+            div.style.cursor = "pointer";
+            div.addEventListener('click', logout);
+            document.getElementById("headerStrip").append(div);
+        }
+
+        function goToClinicAppointment(a) {
+            localStorage.removeItem('currentDoc');
+            localStorage.setItem('currentDoc', JSON.stringify(a));
+            window.location.href = "../Doctor_Appointment/clinicAppointment.html";
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+        }
+        function goToBookAppointment() {
+            window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+        }
+        function goToGoldMembership() {
+            window.location.href = "../Gold_Membership/goldMembership.html";
+        }
+        function goToBookLabTest() {
+            window.location.href = "../Lab_Test/blt.html";
+        }
+        function goToHealthFeed() {
+            window.location.href = "../Health_Feed/hf.html";
+        }
+        function goToDoctorSignup() {
+            window.location.href = "../Doctors/doctorSignup.html";
+        }
+        function goToAskQuestions() {
+            localStorage.removeItem('tabQue');
+            window.location.href = "../Ask_Questions/askQuestions.html";
+        }
+        function goToConsultOnline() {
+            window.location.href="../Doctor_Appointment/consultOnline.html";
+        }
+        function goToDoctorPage() {
+            window.location.href = "../Doctors/doctorPage.html";
+        }
+        function goToUserLogin() {
+            window.location.href = "../Users/userLogin.html"
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Home/home2.html";
+        }
+        function search() {
+                let key = document.getElementById("searchBar").value.trim();
+                let doctors = JSON.parse(localStorage.getItem('doctors'));
+                let searchResults = [];
+                console.log(key.toLowerCase());
+                for (let i = 0; i < doctors.length; i++) {
+                    if (key.toLowerCase() == doctors[i].name.toLowerCase()) {
+                        searchResults.push(doctors[i]);
+                    } else {
+                        let fullName = doctors[i].name.split(" ");
+                        for (let j = 0; j < fullName.length; j++) {
+                            if (key.toLowerCase() == fullName[j].toLowerCase()) {
+                                searchResults.push(doctors[i]);
+                            }
+                        }
+                    }
+                    if (key.toLowerCase() == doctors[i].city.toLowerCase()) {
+                        searchResults.push(doctors[i]);
+                    }
+                    if (key.toLowerCase() == doctors[i].speciality.toLowerCase()) {
+                        searchResults.push(doctors[i]);
+                    }
+                }
+                localStorage.setItem('searchResults', JSON.stringify(searchResults));
+                window.location.href = "../Doctor_Appointment/searchResultsDoctors.html";
+            }
+    </script>
+  
+   
+</body>
+</html>
+
+<script src="home2.js"></script>

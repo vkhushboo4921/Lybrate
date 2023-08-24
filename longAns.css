@@ -1,0 +1,140 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#newAnswers {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 15px auto;
+}
+#newAnswers > div {
+  padding: 10px;
+  border-radius: 4px;
+  padding: 0px 8px 10px;
+  margin: 15px 0px 15px;
+}
+.docDiv,
+.contactDiv {
+  display: flex;
+}
+.docDiv {
+  height: 90px;
+  margin-bottom: 0px;
+  background-color: white;
+  padding: 15px 14px 0px;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+.docDiv img {
+  height: 80%;
+  margin: 3px 23px 3px 10px;
+  border-radius: 50px;
+}
+.docDiv h3,
+.docDiv p {
+  margin: 1px;
+}
+.docDiv h3 {
+  font-size: 18px;
+  font-weight: 650;
+  color: rgb(173, 33, 5);
+}
+.docDiv p {
+  font-size: 14px;
+  color: grey;
+}
+.queDiv {
+  font-weight: 700;
+  margin: 5px 0px 15px;
+  font-size: 18px;
+  display: flex;
+  margin-bottom: 15px;
+  background-color: white;
+  padding: 21px;
+}
+.ansDiv {
+  height: 51%;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 16px;
+  background-color: white;
+  padding: 15px;
+  line-height: 21px;
+}
+.ansDiv p {
+  width: 100%;
+}
+.contactDiv {
+  height: 70px;
+  padding: 15px;
+  background-color: white;
+}
+.contactDiv i {
+  color: rgba(200, 37, 6, 255);
+}
+.contactDiv i:hover {
+  color: white;
+}
+.contactDiv button {
+  flex-grow: 1;
+  background-color: white;
+  border: 1px solid rgba(200, 37, 6, 255);
+  border-radius: 3px;
+  font-weight: 670;
+  cursor: pointer;
+  color: rgba(200, 37, 6, 255);
+}
+.contactDiv button:hover {
+  background-color: rgba(200, 37, 6, 255);
+  color: white;
+}
+#lyb {
+  width: 100%;
+  height: 60px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: white;
+  display: flex;
+}
+#lyb > div {
+  width: 17%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+#lyb > img {
+  cursor: pointer;
+  margin-right: 300px;
+}
+#status {
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(235, 238, 243, 255);
+  margin: 0px;
+}
+#status > p {
+  margin-left: 21px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.infoDiv {
+  color: rgb(156, 154, 154);
+  font-size: 13px;
+  margin: 0px !important;
+}
+@media (max-width: 800px) {
+  #lyb > img {
+    cursor: pointer;
+    margin-right: 15px;
+    width: 15%;
+    height: 80%;
+    padding: 5px;
+  }
+  #lyb p {
+    font-size: 10px;
+  }
+  #lyb > div {
+    margin: 5px;
+  }
+}

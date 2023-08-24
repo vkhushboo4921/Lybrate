@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="consultOnline.css">
+    </head>
+    <body>
+        <script src="https://kit.fontawesome.com/afe9d36b7f.js" crossorigin="anonymous"></script>
+        <div id="indexOnline">
+            <img onclick="goToHome()" src="https://nu.lybcdn.com/img/lybrate-logo-pure-white-small.png" />
+            <div id="stDiv">
+                <p>Download App</p>
+                <p onclick="goToUserLogin()">Login</p>
+                <p id="p_login" onclick="goToUserSignup()">Signup</p>
+                <p id="p_signup" onclick="goToDoctorPage()">For Doctors</p>
+                <p onclick="goToHealthFeed()">Health Feed</p>
+            </div>
+        </div>
+        <div id="search">
+            <h2>BEAT TRAFFIC JAM AND CLINIC QUEUES.</h2>
+            <h1>Consult Best Doctors From Anywhere, Anytime.</h1>
+            <div>
+                <input id="searchBar" type="text" placeholder="Search by Speciality/City/Doctor" />
+                <button id="searchBtn" onclick="search()">Search</button>
+            </div>
+            <div id="sub">
+                <div>
+                    <img src="https://www.lybrate.com/img/ic_doctor.png" />
+                    <br />Choose your Doctor
+                </div>
+                <div><i class="fas fa-chevron-right"></i></div>
+                <div>
+                    <img src="https://www.lybrate.com/img/Rupee-private-icon.png" />
+                    <br />Pay Consultation Fee
+                </div>
+                <div><i class="fas fa-chevron-right"></i></div>
+                <div>
+                    <img src="https://www.lybrate.com/img/Video-private-icon.png" />
+                    <br />Talk to the Doctor
+                </div>
+            </div>
+        </div>
+        <div id="info">
+            <h4>Why Use Lybrate</h4>
+            <div>
+                <div>
+                    <img src="https://nu.lybcdn.com/img/ic_doctor_106X106.png" />
+                    <h5>100,000+ verified doctors</h5>
+                    <p>All doctors on Lybrate go
+                        through a stringent
+                        verification process</p>
+                </div>
+                <div>
+                    <img src="https://nu.lybcdn.com/img/ic_heart_106X106.png" />
+                    <h5>24*7 access to healthcare</h5>
+                    <p>Easy access to the best
+                        doctors anytime,
+                        anywhere</p>
+                </div>
+                <div>
+                    <img src="https://nu.lybcdn.com/img/ic_save_money_106X106.png" />
+                    <h5>Save time & money</h5>
+                    <p>Save upto 70% in time
+                        and money spent for
+                        consultation</p>
+                </div>
+                <div>
+                    <img src="https://nu.lybcdn.com/img/ic_time_106X106.png" />
+                    <h5>100% care guaranteed</h5>
+                    <p>We'll refund your money if
+                        you're not satisfied with
+                        our service</p>
+                </div>
+            </div>
+        </div>
+        <div id="docDiv">
+        
+        </div>
+
+        <div id="bottom_part">
+        <div id="aboutLybrate">
+            <h3>About Lybrate</h3>
+            <p>Are you looking for a simple way to get the best medical care available? Lybrate.com innovative online doctor
+                database
+                gives you access to over 150,000 highly trained medical experts. So you can ask a doctor anything you want,
+                simple with
+                a touch of a finger. You can save as much as 70% of your time and money at your next visit to the doctor and
+                with the
+                assurance that the medical professional you are seeing is highly trained and experienced. We use a stringent
+                verification process to ensure you are 100% satisfied every time. Subscribe to the Lybrate Online Doctor network
+                today
+                to get the very best access to free questions, consultations and easy appointments. Join today!<br />
+        
+                <br />Looking to ask a doctor questions about your health online? Lybrate offers a fast, easy and friendly way
+                to gain access
+                to general practitioners, dieticians, nutritionists, gynaecologists, psychologist, dermatologist, sexologist,
+                ayurveda,
+                homeopathy and more. You can get in touch with online doctors 24 hours a day, 7 days a week with this simple
+                application. No matter what your condition, Lybrate can get you in touch with a doctor online straight away. To
+                find out
+                more, subscribe to our ask a doctor service online or download the app and get access to doctors on the
+                go!<br />
+        
+                <br />Not only does Lybrate give you access to online medical professionals, we also have regular blogs from
+                respected experts
+                that give you tips and advice on health and well being. Our doctors discuss a range of topics from everyday
+                living,
+                parenting, pregnancy and how to manage your conditions, all online and accessible from your computer, phone or
+                tablet.
+                Simply download the app and get access to free questions, consultations and easy appointments. Get your health
+                feed now
+                with Lybrate and ask a doctor what you've always wanted to know!
+            </p>
+        </div>
+        <div id="extras">
+            <div id="citiesExtra">
+                <div>
+                    <h4>DELHI</h4>
+                    <a>Dentist in Delhi</a>
+                    <a>General Physicians in Delhi</a>
+                    <a>Cardiologist in Delhi</a>
+                    <a>Gynaecologist in Delhi</a>
+                    <a>Psychiatrist in Delhi</a>
+                    <a>Dermatologist in Delhi</a>
+                    <a>Cardiologist in Delhi</a>
+                    <a>Neurologist in Delhi</a>
+                    <a>Urologist in Delhi</a>
+                    <a>Ophthalmologist in Delhi</a>
+                    <a>Sexologist in Delhi</a>
+                </div>
+                <div>
+                    <h4>MUMBAI</h4>
+                    <a>Dentist in Mumbai</a>
+                    <a >General Physicians in Mumbai</a>
+                    <a >Cardiologist in Mumbai</a>
+                    <a >Gynaecologist in Mumbai</a>
+                    <a >Psychiatrist in Mumbai</a>
+                    <a >Dermatologist in Mumbai</a>
+                    <a >Cardiologist in Mumbai</a>
+                    <a >Neurologist in Mumbai</a>
+                    <a >Urologist in Mumbai</a>
+                    <a >Ophthalmologist in Mumbai</a>
+                    <a >Sexologist in Mumbai</a>
+                </div>
+                <div>
+                    <h4>CHENNAI</h4>
+                    <a >Dentist in Chennai</a>
+                    <a >General Physicians in Chennai</a>
+                    <a >Cardiologist in Chennai</a>
+                    <a >Gynaecologist in Chennai</a>
+                    <a >Psychiatrist in Chennai</a>
+                    <a >Dermatologist in Chennai</a>
+                    <a >Cardiologist in Chennai</a>
+                    <a >Neurologist in Chennai</a>
+                    <a >Urologist in Chennai</a>
+                    <a >Ophthalmologist in Chennai</a>
+                    <a >Sexologist in Chennai</a>
+                </div>
+                <div>
+                    <h4>BANGALORE</h4>
+                    <a >Dentist in Bangalore</a>
+                    <a >General Physicians in Bangalore</a>
+                    <a >Cardiologist in Bangalore</a>
+                    <a >Gynaecologist in Bangalore</a>
+                    <a >Psychiatrist in Bangalore</a>
+                    <a >Dermatologist in Bangalore</a>
+                    <a >Cardiologist in Bangalore</a>
+                    <a >Neurologist in Bangalore</a>
+                    <a >Urologist in Bangalore</a>
+                    <a >Ophthalmologist in Bangalore</a>
+                    <a >Sexologist in Bangalore</a>
+                </div>
+                <div>
+                    <h4>Lybrate.com</h4>
+                    <a >About Us</a>
+                    <a >Contact Us</a>
+                    <a >Careers</a>
+                    <a >Mobile Apps</a>
+                    <a >Psychiatrist in Delhi</a>
+                    <a >Blog</a>
+                    <a >Term of Use</a>
+                    <a >Privacy Policy</a>
+                    <a >Editorial Policy</a>
+                    <a >Press</a>
+                </div>
+            </div>
+            <div id="othersDiv">
+                <div id="others">
+                    <a >City Index</a>
+                    <a >Locality City Index</a>
+                    <a >Specialty Index</a>
+                    <a >Specialty City Index</a>
+                    <a >Health Wiki</a>
+                    <a >Health Tips Index</a>
+                    <a >Health Questions Index</a>
+                    <a >Health Quizzes Index</a>
+                    <a >Health Topics Index</a>
+                    <a >Medicines Index</a>
+                    <a >Ailment Index</a>
+                    <a >Health Packages</a>
+                    <a >Lab Test Details Index</a>
+                    <a >Treatment Pages Index</a>
+                    <a >Patient Support Programs</a>
+                </div>
+                <div id="socialMedia">
+                    <img src="https://www.iconsdb.com/icons/preview/white/facebook-xl.png" />
+                    <img src="https://www.iconsdb.com/icons/preview/white/twitter-xl.png" />
+                    <img src="https://www.iconsdb.com/icons/preview/white/linkedin-xl.png" />
+                    <img src="https://www.iconsdb.com/icons/preview/white/youtube-4-xl.png" />
+                </div>
+            </div>
+            <div id="cpr">
+                <p>© 2020 Lybrate, Inc. All rights reserved.</p>
+            </div>
+        </div>
+        </div>
+
+        <script type="text/javascript">
+        let docStatus = localStorage.getItem('LID');
+        let userStatus = localStorage.getItem('LIU');
+        if(userStatus != null) {
+            document.getElementById("p_login").remove();
+            document.getElementById("p_signup").remove();
+            var isLoggedIn = true;
+            let p = document.createElement('p');
+            p.textContent = "Logout";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', logout);
+            document.getElementById("stDiv").appendChild(p);
+        }
+        function goToHome() {
+            window.location.href = "../Home/home2.html";
+        }
+        function goToUserLogin() {
+            window.location.href = "../Users/userLogin.html";
+        }
+        function goToDoctorPage() {
+            window.location.href = "../Doctors/doctorPage.html";
+        }
+        function goToUserSignup() {
+            window.location.href = "../Users/userSignup.html";
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Doctor_Appointment/consultOnline.html";
+        }
+        function goToDoctorLogin() {
+            window.location.href = "../DOctors/doctorLogin.html";
+        }
+        function goToHealthFeed() {
+            window.location.href = "../Health_Feed/hf.html";
+        }
+        function goToBookLabTest() {
+            window.location.href = "../Lab_Test/blt.html";
+        }
+
+        let doctors = JSON.parse(localStorage.getItem('doctors'));
+
+        doctors.forEach(function(element) {
+            let div1 = document.createElement('div');
+            let div2 = document.createElement('div');
+            let div3 = document.createElement('div');
+
+            let img = document.createElement('img');
+            img.src = element.image;
+            div1.append(img);
+            
+            let p1 = document.createElement('p');
+            p1.textContent = `Dr. ${element.name}`;
+            p1.setAttribute('class', 'name');
+            let p2 = document.createElement('p');
+            p2.textContent = element.edu;
+            p2.setAttribute('class', 'edu');
+            let p3 = document.createElement('p');
+            p3.textContent = element.speciality;
+            p3.setAttribute('class', 'details');
+            let p4 = document.createElement('p');
+            p4.textContent = `${element.address}, ${element.city}`;
+            p4.setAttribute('class', 'details');
+            div2.append(p1, p2, p3, p4);
+                
+            let p5 = document.createElement('p');
+            p5.innerHTML = `<i class="fas fa-briefcase-medical"></i>${element.experience} Years Experience`;
+            p5.setAttribute('class', 'details');
+            let p6 = document.createElement('p');
+            p6.innerHTML = `<i class="fas fa-rupee-sign"></i> ${element.costOnline}`;
+            p6.setAttribute('class', 'details');
+            let btn = document.createElement('button');
+            btn.textContent = "Consult Online";
+            btn.setAttribute('class', 'btn');
+            div3.append(p5, p6, btn);
+
+            let div = document.createElement('div');
+            div.append(div1, div2, div3);
+
+            document.getElementById("docDiv").append(div);
+
+            btn.onclick = function () {
+                goToProfile(element);
+            }
+            
+        })
+
+        function goToProfile(a) {
+            localStorage.removeItem('currentDoc');
+            localStorage.setItem('currentDoc', JSON.stringify(a));
+            window.location.href = "../Doctor_Appointment/onlineProfile.html";
+        }
+
+
+        function search() {
+            let key = document.getElementById("searchBar").value.trim();
+            let doctors = JSON.parse(localStorage.getItem('doctors'));
+            let searchResults = [];
+            console.log(key.toLowerCase());
+            for(let i = 0; i < doctors.length; i++) {
+                if(key.toLowerCase() == doctors[i].name.toLowerCase()) {
+                    searchResults.push(doctors[i]);
+                } else {
+                    let fullName = doctors[i].name.split(" ");
+                    for(let j = 0; j < fullName.length; j++) {
+                        if(key.toLowerCase() == fullName[j].toLowerCase()) {
+                            searchResults.push(doctors[i]);
+                        }
+                    }
+                }
+                if(key.toLowerCase() == doctors[i].city.toLowerCase()) {
+                    searchResults.push(doctors[i]);
+                }
+                if(key.toLowerCase() == doctors[i].speciality.toLowerCase()) {
+                    searchResults.push(doctors[i]);
+                }
+            }
+            localStorage.setItem('searchResults', JSON.stringify(searchResults));
+            window.location.href = "searchResultsDoctors.html";
+        }
+        
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="doctorSignup.css">
+    </head>
+    <body>
+        <div id="lyb">
+            <img onclick="goToHome()" src="https://doctor.lybrate.com/img/lybrate-logo.png" />
+            <p id="pricing" onclick="goToPricing()">PRICING</p>
+        </div>
+        <h1>Upgrade to a smarter clinic in less than 60 seconds</h1>
+        <h2>Try it Free for 10 Days. And keep it Free for Life on the Starter Plan</h2>
+        <div id="container">
+        <div id="formDiv">
+            <form id="docSignupForm">
+                <input type="text" id="name" placeholder="Enter your full name*"/>
+                <input type="email" id="email" placeholder="Enter you Email id*"/>
+                <input type="password" id="password" placeholder="Enter you Password*" />
+                <input type="text" id="edu" placeholder="Enter your Education Details*"/>
+                <input type="text" id="speciality" placeholder="Specialty*"/>
+                <input type="text" id="city" placeholder="City*"/>
+                <input type="text" id="address" placeholder="Enter you address*"/>
+                <input type="text" id="costClinic" placeholder="Clinic Cost(in INR)*" />
+                <input type="text" id="costOnline" placeholder="Online Cost(in INR)*" />
+                <input type="text" id="experience" placeholder="Experience*" /> 
+                <input type="text" id="tc" placeholder="Text Consult Duration(number of days)*"/>
+                <input type="text" id="tcp" placeholder="Text Consult Price(in INR)*" />
+                <input type="text" id="pc" placeholder="Phone Consult Duration(in minutes)*" />
+                <input type="text" id="pcp" placeholder="Phone Consult Price(in INR)*" />
+                <input type="text" id="vc" placeholder="Video Consult Duration(in minutes)*" />
+                <input type="text" id="vcp" placeholder="Video Consult Price(in INR)*" />
+                <input type="text" id="img" placeholder="Image url*"/>
+            </form>
+            <p onclick="goToDoctorLogin()">EXISTING USER? LOGIN</p>
+            <button onclick="docSignup()">Signup</button>
+            <p><span>By registering, you agree to our</span> Terms of Use <span>&</span> Privacy Policy</p>
+        </div>
+        <div id="info">
+            <div>
+                <h4><img src="https://doctor.lybrate.com/img/signup/Lybrate_icon.png" /><p>Why you'll love Lybrate</p></h4>
+                <p>Simple, beautiful design - you will pick it up in minutes</p>
+                <p>Online Private Consultation for Personalized care</p>
+                <p>Answer Open Questions by Patients and build your online reputation</p>
+                <p>Reduce no shows and increase patient connect with comprehensive set of Reminders</p>
+                <p>Record treatments and schedule visits in 1/4th the time compared to your diary or any other software</p>
+                <p>Magical apps that help you do everything else easily on the go</p>
+            </div>
+            <div id="sub">
+                <h4><img src="https://doctor.lybrate.com/img/signup/No_string_attached_icon.png" /><p>No Strings Attached</p></h4>
+                <p>Experience Lybrate Grande plan FREE for 10 days without any obligations. Lybrate is free for life for Starter plan.</p>
+            </div>
+        </div>
+        </div>
+        <p id="ques">Questions? Contact us @ +91.9015559900</p>
+
+
+        <script type="text/javascript">
+        let docStatus = localStorage.getItem('LID');
+        if(docStatus != null) {
+            window.location.href = "./Doctors/LID_Profile.html";
+        }
+        function docSignup() {
+            let form = document.getElementById("docSignupForm");
+            let name = form.name.value;
+            let email = form.email.value;
+            let password = form.password.value;
+            let edu = form.edu.value;
+            let speciality = form.speciality.value;
+            let city = form.city.value;
+            let address = form.address.value;
+            let costClinic = form.costClinic.value;
+            let costOnline = form.costOnline.value;
+            let experience = form.experience.value;
+            let tc = form.tc.value;
+            let tcp = form.tcp.value;
+            let pc = form.pc.value;
+            let pcp = form.pcp.value;
+            let vc = form.vc.value;
+            let vcp = form.vcp.value;
+            let image = form.img.value;
+
+            if(name == "" ||
+                email == "" ||
+                password == "" ||
+                edu == "" ||
+                speciality == "" ||
+                city == "" ||
+                address == "" ||
+                costClinic == "" ||
+                costOnline == "" ||
+                experience == "" ||
+                tc == "" ||
+                tcp == "" ||
+                pc == "" ||
+                pcp == "" ||
+                vc == "" ||
+                vcp == "" ||
+                image == "") {
+                    alert('Please fill in all the details.');
+                } else {
+                        let docObj = {
+                            name,
+                            email,
+                            password,
+                            edu,
+                            speciality,
+                            city,
+                            address,
+                            costClinic,
+                            costOnline,
+                            experience,
+                            tc,
+                            tcp,
+                            pc,
+                            pcp,
+                            vc,
+                            vcp,
+                            image,
+                        }
+                        let docs = localStorage.getItem('doctors');
+                        if (docs == null) {
+                            docs = [];
+                        } else {
+                            docs = JSON.parse(docs);
+                            var found = false;
+                            for (let i = 0; i < docs.length; i++) {
+                                if (email == docs[i].email) {
+                                    found = true;
+                                    alert('This Email Id is already registered.');
+                                    break;
+                                }
+                            }
+                        }
+                        if(!found) {
+                            docs.push(docObj);
+                            localStorage.setItem('doctors', JSON.stringify(docs));
+                            localStorage.removeItem('LIU');
+                            window.location.href = "../Doctors/doctorLogin.html";
+                        }
+                    }
+        }
+        function goToPricing() {
+            window.location.href = "../Pricing/pricing.html";
+        }
+        function goToHome() {
+            window.location.href = "../Home/home2.html";
+        }
+        function goToDoctorLogin() {
+            window.location.href = "../Doctors/doctorLogin.html";
+        }
+        </script>
+    </body>
+</html>
+
+

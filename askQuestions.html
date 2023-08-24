@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="askQuestions.css">
+    </head>
+    <body>
+        <div id="index">
+            <div onclick="goToHome()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/lybrate-logo-new.png"/>
+            </div>
+            <div id="dets">
+                <p>Download App</p>
+                <p id="lgisu" onclick="goToUserLogin()">Login/Sign-up</p>
+                <p onclick="goToDoctorPage()">For Doctors</p>
+            </div>
+        </div>
+        <div id="askQueDiv">
+            <h1>Get brief answers for your health queries from top Doctors. It's FREE!</h1>
+            <div id="queDiv">
+                <form id="queForm">
+                    <h3>What is your question?</h3>
+                    <textarea id="question" name="question" cols="70" rows="10" placeholder="Type in your question"></textarea>
+                    <h3>I'm just looking for</h3>
+                    <input type="radio" id="ji" name="info" value="ji">
+                    <label for="ji">Just Information</label>
+                    <input type="radio" id="td" name="info" value="td">
+                    <label for="td">Treatment Details</label>
+                    <h3>Where should we send secure notifications?</h3>
+                    <input type="email" id="anonEmail" placeholder="Your email address" />
+                    <input type="number" id="anonPhone" placeholder="Your mobile number" />
+                </form>
+                <button onclick="freshQue()">Ask FREE Question Securely</button>
+                <p>Complete privacy and anonymity guaranteed • Quick responses</p>
+            </div>
+        </div>
+        <div id="assurance">
+            <p id="ap" class="subHeading">LYBRATE ASSURANCE</p>
+            <div>
+                <div>
+                    <img src="https://nu.lybcdn.com/img/askQ/ic-ly-doctor.png" />Verified Doctors
+                    <p>All Doctors go through a stringent verification process on Lybrate</p>
+                </div>
+                <div>
+                    <img src="https://nu.lybcdn.com/img/askQ/ic-ly-privacy.png" />100% Privacy Protection
+                    <p>Your consultation details and personal data will remain confidential</p>
+                </div>
+                <div>
+                    <img src="https://nu.lybcdn.com/img/askQ/ic-ly-quick.png" />Satisfaction Guaranteed
+                    <p>If you are not satisfied with your experience, we will refund your money</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="data">
+            <div>
+                <p>Currently Seeking Help</p>
+                <h2>3,000+</h2>
+            </div>
+            <div>
+                <p>People Helped</p>
+                <h2>80,00,000+</h2>
+            </div>
+            <div>
+                <p>Available Doctors</p>
+                <h2>100,000+</h2>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+        let docStatus = localStorage.getItem('LID');
+        let userStatus = localStorage.getItem('LIU');
+        if(userStatus != null) {
+            var isLoggedIn = true;
+            document.getElementById("lgisu").remove();
+            let p = document.createElement('p');
+            p.textContent = "Logout";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', logout);
+            document.getElementById("dets").appendChild(p);
+        }
+        let tabQue = localStorage.getItem('tabQue');
+        if(tabQue != null) {
+            let preVal = JSON.parse(tabQue);
+            document.getElementById('question').value = preVal;
+        }
+        function goToHome() {
+            window.location.href = "../Home/home2.html";
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Ask_Questions/askQuestions.html";
+        }
+        function goToDoctorPage() {
+            window.location.href = "../Doctors/doctorPage.html";
+        }
+        function goToUserLogin() {
+            window.location.href = "../Users/userLogin.html";
+        }
+        function goToDoctorLogin() {
+            window.location.href = "../Doctors/doctorLogin.html";
+        }
+        function freshQue() {
+            let form = document.getElementById("queForm");
+            let que = form.question.value;
+            let info = form.info.value;
+            let email = form.anonEmail.value;
+            let phone = form.anonPhone.value;
+            if(email == "" || phone == "" || que == "" || info == "") {
+                alert('Please fill in all the details.');
+            } else {
+                let newQuestion = {
+                    que,
+                    info,
+                    email,
+                    phone,
+                }
+                let newQuestions = localStorage.getItem('newQuestions');
+                if (newQuestions == null) {
+                    newQuestions = [];
+                } else {
+                    newQuestions = JSON.parse(newQuestions);
+                }
+                newQuestions.push(newQuestion);
+                localStorage.setItem('newQuestions', JSON.stringify(newQuestions));
+                alert('Question Submitted.');
+            }
+        }
+        </script>
+    </body>
+</html>

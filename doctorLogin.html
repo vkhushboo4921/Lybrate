@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="doctorLogin.css">
+    </head>
+    <body>
+        <div id="lyb">
+            <img onclick="goToHome()" src="https://doctor.lybrate.com/img/lybrate-logo.png"/>
+        </div>
+        <div id="loginDiv">
+            <form id="loginForm">
+                <h5>Please enter your Registered Email Id and Pasword to Login.</h5>
+                <input id="email" type="email" placeholder="Enter your Emaill Id*"/>
+                <input id="password" type="password" placeholder="Enter your Password*"/>
+            </form>
+            <button onclick="docLogin()">VERIFY NOW</button>
+            <p onclick="goToDoctorSignup()">NEW USER? REGISTER NOW</p>
+        </div>
+        <script type="text/javascript">
+        function goToDoctorSignup() {
+            window.location.href = "../Doctors/doctorSignup.html";
+        }
+        let docStatus = localStorage.getItem('LID');
+        if(docStatus != null) {
+            window.location.href = "../Doctors/LID_Profile.html";
+        }
+        function docLogin() {
+            let form = document.getElementById('loginForm');
+            let email = form.email.value;
+            let password = form.password.value;
+            let isDocLoggedIn = false;
+            localStorage.setItem('isDocLoggedIn', JSON.stringify(isDocLoggedIn));
+            let docs = JSON.parse(localStorage.getItem('doctors'));
+            for (let i = 0; i < docs.length; i++) {
+                if (email == docs[i].email && password == docs[i].password) {
+                    localStorage.removeItem('LID');
+                    isDocLoggedIn = true;
+                    localStorage.setItem('isDocLoggedIn', JSON.stringify(isDocLoggedIn));
+                    let loggedInDoc = docs[i];
+                    localStorage.setItem('LID', JSON.stringify(loggedInDoc));
+                    localStorage.removeItem('LIU');
+                    window.location.href = "../Doctors/LID_Profile.html";
+                }
+            }
+            if(!isDocLoggedIn) {
+                alert('Invalid Credentials');
+            }
+        }
+        function goToHome() {
+            window.location.href = "../Home/home2.html";
+        }
+        </script>
+        
+    </body>
+</html>

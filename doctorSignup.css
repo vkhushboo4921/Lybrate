@@ -1,0 +1,130 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#formDiv {
+  width: 40%;
+  height: 1300px;
+  background-color: white;
+  padding: 14px;
+  border-right: 1px solid rgb(180, 177, 177);
+}
+input {
+  width: 90%;
+  margin: 15px;
+  background-color: white;
+  height: 35px;
+  border: 1px solid white;
+  border-bottom: 1px solid rgb(145, 141, 141);
+}
+button {
+  width: 95%;
+  height: 40px;
+  margin-top: 0px;
+  margin-left: 17px;
+  background-color: rgba(200, 37, 6, 255);
+  border: 1px solid rgba(200, 37, 6, 255);
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: rgb(146, 27, 3);
+}
+body {
+  margin: 0px;
+  background-color: rgba(238, 238, 238, 255);
+}
+#lyb {
+  display: flex;
+  justify-content: space-between;
+  width: 98%;
+  height: 23px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 0px 3px black;
+}
+#lyb img {
+  margin-left: 100px;
+  width: 8%;
+  height: 100%;
+}
+#ques {
+  font-size: 14px;
+  color: rgba(200, 37, 6, 255);
+  text-align: center;
+}
+#formDiv > p {
+  cursor: pointer;
+  color: rgba(200, 37, 6, 255);
+  margin-left: 17px;
+  font-size: 14px;
+}
+h1,
+h2 {
+  text-align: center;
+  font-weight: 500;
+  color: rgba(204, 62, 34, 255);
+}
+span {
+  color: grey;
+  cursor: auto;
+}
+#container {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding: 15px 0px;
+  background-color: white;
+}
+#info {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+#container > div {
+  width: 50%;
+  background-color: white;
+}
+#info > div > p {
+  margin: 0px 25px 15px 108px;
+  font-size: 14px;
+}
+#info > div > h4 {
+  margin-left: 45px;
+  display: flex;
+  margin-bottom: 0px;
+}
+#info > div > h4 > p {
+  width: 50%;
+  margin-left: 12px;
+}
+#pricing {
+  margin: 15px;
+  color: grey;
+  cursor: pointer;
+}
+@media (max-width: 800px) {
+  #lyb img {
+    width: 80px !important;
+  }
+  img {
+    width: 40px;
+    height: 30px;
+    margin: 4px !important;
+  }
+  #container {
+    margin: 5px;
+    flex-direction: column;
+  }
+  #container > div {
+    width: 90%;
+    border: 1px solid white;
+  }
+  #info p,
+  #info h4 {
+    margin: 10px !important;
+  }
+  #container p {
+    font-size: 10px !important;
+  }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="LID_Profile.css">
+    </head>
+    <body>
+        <div id="index">
+            <div onclick="goToHome()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/lybrate-logo-new.png" />
+            </div>
+            <div id="sub">
+                <p>Download App</p>
+                <p onclick="goToHealthFeed()">Health Feed</p>
+            </div>
+        </div>
+        <div id="tabs">
+            <div onclick="clinicAppointments()" id="cA">Clinic Appointments</div>
+            <div onclick="onlineConsultations()" id="oC">Online Consultations</div>
+        </div>
+        <div id="consultationsDiv">
+            <p id="info"></p>
+            <div id="consultations"></div>
+        </div>
+
+        <script type="text/javascript">
+        let docStatus = localStorage.getItem('LID');        
+        if(docStatus == null) {
+            var isLoggedIn = false;
+            window.location.href = "doctorLogin.html";
+        } else {
+            var isLoggedIn = true;
+            let p = document.createElement('p');
+            p.textContent = "Logout";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', logout);
+            document.getElementById("sub").appendChild(p);
+        }
+        function onlineConsultations() {
+            document.getElementById("oC").style.backgroundColor = "rgba(200,37,6,255)";
+            document.getElementById("oC").style.color = "white";
+            document.getElementById("cA").style.backgroundColor = "white";
+            document.getElementById("cA").style.color = "rgba(200,37,6,255)";
+            document.getElementById("info").innerHTML = null;
+            document.getElementById("consultations").innerHTML = null;
+            let reqs = JSON.parse(localStorage.getItem('requests'));
+            let lid = JSON.parse(localStorage.getItem('LID'));
+            let pendingCounsultations = false;
+            for(let i = 0; i < reqs.length; i++) {
+                if(reqs[i].to == lid.email) {
+                    pendingCounsultations = true;
+                    document.getElementById("info").textContent = "You have the following Online Consultations:";
+                    let div = document.createElement('div');
+                    let p1 = document.createElement('p');
+                    p1.textContent = `Name: ${reqs[i].name}`;
+                    let p2 = document.createElement('p');
+                    p2.textContent = `Phone: ${reqs[i].phone}`;
+                    let p3 = document.createElement('p');
+                    if (reqs[i].type == "text") {
+                        p3.textContent = "Medium: Text Conversation";
+                    } else if (reqs[i].type == "phone") {
+                        p3.textContent = "Medium: Phone Conversation";
+                    } else {
+                        p3.textContent = "Medium: Video Conversation";
+                    }
+                    let btn = document.createElement('button');
+                    if(reqs[i].type == "text") {
+                        btn.textContent = "Initiate Text Conversation";
+                    } else if (reqs[i].type == "phone") {
+                        btn.textContent = "Initiate Phone Conversation";
+                    } else {
+                        btn.textContent = "Initiate Video Conversation";
+                    }
+                    let btnCompleted = document.createElement('button');
+                    btnCompleted.textContent = "Mark Completed";
+                    btnCompleted.onclick = function () {
+                        reqs.splice(i, 1);
+                        localStorage.setItem('requests', JSON.stringify(reqs));
+                        onlineConsultations();
+                    }
+                    let btnDiv = document.createElement('div');
+                    btnDiv.append(btn, btnCompleted);
+                    btnDiv.style.display = "flex";
+                    div.append(p1, p2, p3, btnDiv);
+                    div.style.backgroundColor = "white";
+                    div.style.margin = "15px 45px";
+                    document.getElementById("consultations").append(div);
+                }
+            }
+            if(!pendingCounsultations) {
+                document.getElementById("info").textContent = "You do not have any Online Consultations."
+            }
+        }
+
+        function clinicAppointments() {
+            document.getElementById("cA").style.backgroundColor = "rgba(200,37,6,255)";
+            document.getElementById("cA").style.color = "white";
+            document.getElementById("oC").style.backgroundColor = "white";
+            document.getElementById("oC").style.color = "rgba(200,37,6,255)";
+            document.getElementById("info").innerHTML = null;
+            document.getElementById("consultations").innerHTML = null;
+            let ca = JSON.parse(localStorage.getItem('clinicAppointment'));
+            ca = ca.sort(function (a, b) {
+                return a.val - b.val;
+            });
+            let lid = JSON.parse(localStorage.getItem('LID'));
+            let pendingAppointments = false;
+            for(let i = 0; i < ca.length; i++) {
+                if(ca[i].to == lid.email) {
+                    pendingAppointments = true;
+                    document.getElementById("info").textContent = "You have the following appointments:";
+                    let div = document.createElement('div');
+                    let p1 = document.createElement('p');
+                    p1.textContent = `Name: ${ca[i].from}`;
+                    let p2 = document.createElement('p');
+                    p2.textContent = `Phone: ${ca[i].phone}`;
+                    let p3 = document.createElement('p');
+                    p3.textContent = `Date: ${ca[i].date} at ${ca[i].time}${ca[i].phase}`;
+                    let btn = document.createElement('button');
+                    btn.textContent = "Mark Completed";
+                    btn.onclick = function() {
+                        ca.splice(i, 1);
+                        localStorage.setItem('clinicAppointment', JSON.stringify(ca));
+                        clinicAppointments();
+                    }
+                    div.append(p1, p2, p3, btn);
+                    div.style.backgroundColor = "white";
+                    div.style.margin = " 15px 45px";
+                    document.getElementById("consultations").append(div);
+                }
+            }
+            if (!pendingAppointments) {
+                document.getElementById("info").textContent = "You do not have any Appointments."
+            }
+        }
+        clinicAppointments();
+        function goToHome() {
+            window.location.href = "../Doctors/LID_Profile.html";
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Doctors/doctorLogin.html";
+        }
+        function goToHealthFeed() {
+            window.location.href = "../Doctors/newQuestions.html";
+        }
+        </script>
+    </body>
+</html>

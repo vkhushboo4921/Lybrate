@@ -1,0 +1,208 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#lyb {
+  width: 98%;
+  height: 30px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: white;
+  display: flex;
+}
+#lyb > div {
+  width: 17%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+#lyb > img {
+  cursor: pointer;
+  margin-right: 300px;
+}
+body {
+  margin: 0px;
+  background-color: rgba(238, 238, 238, 255);
+}
+#status {
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(235, 238, 243, 255);
+  margin: 0px;
+}
+#status > p {
+  margin-left: 21px;
+  cursor: pointer;
+  font-size: 13px;
+}
+#clinicDiv {
+  width: 65%;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px auto;
+}
+#docInfo {
+  height: 136px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: white;
+}
+#docInfo > img {
+  border-radius: 50%;
+  height: 50%;
+  margin: 23px;
+}
+#docNameDiv > p {
+  margin: 0px;
+  font-size: 14px;
+  color: rgb(99, 97, 97);
+}
+#docNameDiv > h4 {
+  margin: 0px;
+  font-size: 19px;
+  font-weight: 600;
+}
+#dt {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+#date {
+  display: flex;
+  overflow-x: scroll;
+  background-color: rgba(247, 247, 247, 255);
+}
+#date > div {
+  min-width: 20%;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: 3px solid rgba(247, 247, 247, 255);
+}
+#time h4 {
+  margin: 15px 23px 0px;
+}
+.flexRow {
+  display: flex;
+}
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+#time p {
+  border: 1px solid rgb(91, 150, 2);
+  color: rgb(91, 150, 2);
+  border-radius: 5px;
+  width: 80px;
+  height: 40px;
+  margin: 15px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#clinicDiv > div {
+  margin-bottom: 40px;
+}
+#time > div > p:hover {
+  background-color: rgb(243, 241, 241);
+}
+#bookingConfirmed {
+  width: 75%;
+  height: 100px;
+  background-color: white;
+  margin: 30px auto;
+  padding: 15px;
+  text-align: center;
+  border-radius: 1px;
+  border: 1px solid rgb(36, 6, 0);
+  box-shadow: 0 0 17px rgba(33, 33, 33, 0.2);
+}
+#bookingConfirmed img {
+  width: 100px;
+  height: 80px;
+  border-radius: 50px;
+  margin: 5px;
+}
+span {
+  font-weight: 800;
+  color: rgb(151, 29, 4);
+}
+#p_det {
+  width: 65%;
+  font-size: 17px;
+}
+#address {
+  font-size: 14px;
+  font-weight: 500;
+}
+.grey {
+  color: rgb(88, 86, 86);
+}
+i {
+  color: rgb(88, 86, 86);
+  font-size: 14px;
+  margin-right: 5px;
+}
+.bookAppointment {
+  width: 100%;
+  height: 300px;
+  background-color: rgb(247, 247, 247);
+  text-align: center;
+}
+.bookAppointment > div {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 25px 0px;
+  background-color: white;
+  height: 170px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.bookAppointment > div > input {
+  width: 46%;
+  height: 23px;
+  margin: 17px 10px;
+  border: 1px solid white;
+  border-bottom: 1px solid grey;
+  font-size: 12px;
+}
+.bookAppointment > p:nth-child(1) {
+  margin: 15px;
+}
+.bookAppointment > p:nth-child(2) {
+  margin: 5px;
+  font-size: 19px;
+  font-weight: 700;
+}
+.bookAppointment > button {
+  width: 100%;
+  height: 50px;
+  color: white;
+  background-color: rgba(200, 37, 6, 255);
+  border: 1px solid rgba(200, 37, 6, 255);
+}
+@media (max-width: 800px) {
+  #lyb > img {
+    cursor: pointer;
+    margin-right: 15px;
+    width: 15%;
+    height: 80%;
+    padding: 5px;
+  }
+  #clinicDiv {
+    width: 90%;
+  }
+  #lyb p {
+    font-size: 10px;
+  }
+  #lyb > div {
+    margin: 5px;
+  }
+}

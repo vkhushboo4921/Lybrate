@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="newQuestions.css">
+    </head>
+    <body>
+        <div id="index">
+            <div onclick="goToHome()">
+                <img src="https://assets.lybrate.com/q_auto,f_auto/code/img/lybrate-logo-new.png" />
+            </div>
+            <div id="sub">
+                <p>Download App</p>
+                <p onclick="goToAppointments()">Appointments</p>
+            </div>
+        </div>
+        <div id="questions">
+
+        </div>
+        <script type="text/javascript">
+        let docStatus = localStorage.getItem('LID');        
+        if(docStatus == null) {
+            var isLoggedIn = false;
+            window.location.href = "doctorLogin.html";
+        } else {
+            var isLoggedIn = true;
+            let p = document.createElement('p');
+            p.textContent = "Logout";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', logout);
+            document.getElementById("sub").appendChild(p);
+        }
+        function goToAppointments() {
+            window.location.href = "LID_Profile.html";
+        }
+        function allQuestions() {
+            document.getElementById('questions').innerHTML = null;
+            let questions = localStorage.getItem('newQuestions');
+            if (questions == null || JSON.parse(questions).length == 0) {
+                document.getElementById('questions').textContent = "No new Questions."
+            } else {
+                questions = JSON.parse(questions);
+                for (let i = 0; i < questions.length; i++) {
+                    let div = document.createElement('div');
+                    let h4 = document.createElement('h4');
+                    h4.textContent = questions[i].que;
+                    let p = document.createElement('p');
+                    if (questions[i].info == "ji") {
+                        p.textContent = "Seeking: Just Additional Information";
+                    } else {
+                        p.textContent = "Seeking: Treatment Details";
+                    }
+                    let ans = document.createElement('textarea');
+                    ans.cols = 115;
+                    ans.rows = 8;
+                    ans.placeholder = "Write your answer here";
+                    let btn = document.createElement('button');
+                    btn.textContent = "Submit";
+                    btn.onclick = function () {
+                        answered(questions[i].que, ans.value);
+                        questions.splice(i, 1);
+                        localStorage.setItem('newQuestions', JSON.stringify(questions));
+                        allQuestions();
+                    }
+                    div.append(h4, p, ans, btn);
+                    document.getElementById('questions').append(div);
+                }
+            }
+        }
+        allQuestions();
+        function answered(a, b) {
+            let LID = JSON.parse(localStorage.getItem('LID'));
+            let answer = {
+                que: a,
+                ans: b,
+                from: LID.email,
+            }
+            let answers = localStorage.getItem('answers');
+            if(answers == null) {
+                answers = [];
+            } else {
+                answers = JSON.parse(answers);
+            }
+            answers.push(answer);
+            localStorage.setItem('answers', JSON.stringify(answers));
+        }
+        function goToHome() {
+            window.location.href = "LID_Profile.html";
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Doctors/doctorLogin.html";
+        }
+        </script>
+    </body>
+</html>

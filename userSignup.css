@@ -1,0 +1,144 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#bottom {
+  display: flex;
+  background-color: rgba(103, 103, 103, 255);
+  height: 340px;
+  justify-content: space-around;
+}
+#bottom > div {
+  width: 21%;
+  height: 80%;
+  display: flex;
+  margin: 15px;
+  flex-direction: column;
+  color: white;
+}
+#socialMedia > img {
+  width: 20px;
+  margin: 0px 15px;
+}
+#mobileApps > img {
+  width: 100px;
+}
+#lyb {
+  width: 98%;
+  height: 30px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: white;
+  display: flex;
+}
+#lyb > div {
+  width: 17%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+#lyb > img {
+  cursor: pointer;
+  margin-right: 300px;
+}
+body {
+  margin: 0px;
+  background-color: rgba(238, 238, 238, 255);
+}
+#signupDiv {
+  width: 40%;
+  height: 300px;
+  margin: 40px auto 130px;
+  border: 1px solid rgb(99, 98, 98);
+}
+#status {
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(235, 238, 243, 255);
+  margin: 0px;
+}
+#status > p {
+  margin-left: 21px;
+  cursor: pointer;
+  font-size: 13px;
+}
+#userSignForm {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 90%;
+  margin: 15px;
+  background-color: rgba(238, 238, 238, 255);
+  height: 35px;
+  border: 1px solid rgba(238, 238, 238, 255);
+  border-bottom: 1px solid rgb(145, 141, 141);
+}
+h4 {
+  text-align: center;
+}
+span {
+  color: red;
+  cursor: pointer;
+}
+button {
+  width: 100%;
+  height: 40px;
+  margin-top: 25px;
+  background-color: rgba(200, 37, 6, 255);
+  border: 1px solid rgba(200, 37, 6, 255);
+  color: white;
+  cursor: pointer;
+}
+a {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+a:hover {
+  text-decoration: underline;
+}
+h3 {
+  color: rgb(209, 208, 208);
+  font-size: 14px;
+}
+h4 {
+  color: rgb(180, 179, 179);
+  font-size: 25px;
+  font-weight: 400;
+}
+@media (max-width: 800px) {
+  #lyb > img {
+    cursor: pointer;
+    margin-right: 15px;
+    width: 15%;
+    height: 80%;
+    padding: 5px;
+  }
+  #lyb p {
+    font-size: 10px;
+  }
+  #lyb > div {
+    margin: 5px;
+  }
+  #signupDiv {
+    width: 90%;
+  }
+  #bottom {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(103, 103, 103, 255);
+    height: 1180px;
+    justify-content: space-around;
+  }
+  #bottom > div {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+    color: white;
+  }
+}

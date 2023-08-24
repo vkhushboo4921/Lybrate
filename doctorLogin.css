@@ -1,0 +1,68 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#loginDiv {
+  width: 47%;
+  height: 250px;
+  margin: 50px auto;
+  background-color: white;
+  padding: 25px 10px;
+}
+#lyb {
+  width: 98%;
+  height: 23px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0px 0px 3px black;
+}
+#lyb img {
+  margin-left: 100px;
+  width: 9%;
+}
+#loginDiv p {
+  text-align: center;
+  cursor: pointer;
+  color: rgba(200, 37, 6, 255);
+  font-size: 12px;
+  margin: 5px;
+}
+body {
+  margin: 0px;
+  background-color: rgba(238, 238, 238, 255);
+}
+#loginForm {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  margin: 15px;
+  height: 30px;
+  border: 1px solid white;
+  border-bottom: 1px solid rgb(197, 195, 195);
+}
+button {
+  width: 95%;
+  height: 43px;
+  background-color: rgba(200, 37, 6, 255);
+  color: white;
+  margin: 15px 17px;
+  border: 1px solid rgba(200, 37, 6, 255);
+}
+button:hover {
+  cursor: pointer;
+  background-color: rgb(131, 25, 4);
+}
+h5 {
+  margin: 0px 0px 0px 15px;
+  font-weight: 400;
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  #loginDiv {
+    width: 90%;
+  }
+  img {
+    width: 80px !important;
+  }
+}

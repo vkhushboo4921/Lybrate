@@ -1,0 +1,315 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+  margin: 0px;
+}
+#indexOnline {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgba(200, 37, 6, 255);
+  align-items: center;
+  color: white;
+  height: 50px;
+  margin-bottom: 0px;
+}
+#indexOnline > div {
+  display: flex;
+  justify-content: flex-end;
+}
+#indexOnline > div > p {
+  margin: 5px 10px;
+  font-size: 14px;
+}
+#indexOnline img {
+  height: 60%;
+  margin: 0px 15px 0px 50px;
+}
+#indexOnline > img,
+#indexOnline p {
+  cursor: pointer;
+}
+#docDiv {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 5% auto;
+}
+#docDiv > div {
+  display: flex;
+  margin-bottom: 76px;
+  max-height: 190px;
+}
+#docDiv > div > div:nth-child(1) {
+  width: 10%;
+  height: 85%;
+  margin-right: 15px;
+}
+#docDiv > div > div:nth-child(2) {
+  width: 60%;
+  height: 85%;
+}
+#docDiv > div > div:nth-child(2) > p {
+  margin: 1px;
+}
+#docDiv > div > div:nth-child(3) {
+  width: 30%;
+}
+#docDiv img {
+  width: 80px;
+  height: 80px;
+  border-radius: 4px;
+}
+.name {
+  color: rgb(211, 3, 3);
+  font-size: 17px;
+  margin: 1px;
+  font-weight: 700;
+}
+.edu {
+  color: grey;
+  font-size: 17px;
+  margin: 1px;
+  font-weight: 700;
+}
+.details {
+  color: grey;
+  font-size: 15px;
+  margin: 1px;
+}
+.btn {
+  background-color: rgba(200, 37, 6, 255);
+  border: 1px solid rgba(200, 37, 6, 255);
+  width: 91%;
+  height: 35px;
+  color: white;
+  margin-top: 50px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(231, 45, 7);
+}
+#search {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 100px;
+  width: 100%;
+  height: 400px;
+  color: white;
+  margin: 0px;
+  background-image: url("https://www.lybrate.com/img/backgroundImage-lybrateKeyboard.jpg");
+}
+#search > div {
+  display: flex;
+  margin-bottom: 80px;
+  margin: 15px auto;
+  width: 80%;
+}
+#search > div > input {
+  width: 70%;
+  height: 40px;
+  margin: 5px 0px 5px 80px;
+}
+#search > div > button {
+  width: 135px;
+  height: 45px;
+  background-color: rgba(200, 37, 6, 255);
+  color: white;
+  margin-top: 5px;
+}
+#sub {
+  width: 40% !important;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+#sub img {
+  height: 60%;
+  width: 33%;
+}
+#sub i {
+  color: white;
+  font-size: 41px;
+  margin: 10px;
+}
+#info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 300px;
+  background-color: rgba(229, 229, 229, 255);
+}
+#info > div {
+  display: flex;
+  width: 100%;
+  height: 80%;
+  justify-content: space-around;
+}
+#info > div > div {
+  display: flex;
+  flex-direction: column;
+  width: 19%;
+}
+#info img {
+  margin: 15px auto 5px;
+  width: 30%;
+  height: 30%;
+}
+#info p {
+  margin: 0px;
+}
+#info h5 {
+  margin: 5px 0px;
+  font-size: 19px;
+}
+#info h4 {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+#bottom_part {
+  display: flex;
+  flex-direction: column;
+}
+#aboutLybrate {
+  background-color: rgba(238, 238, 238, 255);
+}
+#aboutLybrate > h3 {
+  margin: 25px 25px 15px;
+  color: rgb(73, 71, 71);
+  font-size: 23px;
+}
+#aboutLybrate > p {
+  margin: 25px 25px;
+  font-size: 15px;
+  color: rgb(112, 109, 109);
+}
+#extras {
+  width: 100%;
+  height: auto;
+  padding: 0px !important;
+  background-color: rgba(103, 103, 103, 255);
+  margin: 0%;
+}
+#extras > div {
+  background-color: rgba(103, 103, 103, 255);
+  color: white;
+  margin: 0%;
+  background-color: rgba(103, 103, 103, 255);
+}
+#extras > #citiesExtra {
+  display: flex;
+  margin: 0%;
+  height: auto;
+  background-color: rgba(103, 103, 103, 255);
+}
+#citiesExtra > div {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 23px;
+  width: 20%;
+}
+#citiesExtra a {
+  font-size: 14px;
+}
+#extras p,
+#extras a {
+  font-weight: 530;
+}
+#othersDiv {
+  display: flex;
+}
+#othersDiv > #socialMedia {
+  width: 15%;
+  margin: 0%;
+}
+i {
+  margin-right: 5px;
+  color: rgb(182, 179, 179);
+}
+#others {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 1% 0% 1% 1.5%;
+  font-size: 14px;
+}
+#others > a {
+  margin: 7px;
+}
+#cpr > p {
+  margin: 8px 21px 5px;
+  font-size: 14px;
+}
+#socialMedia {
+  display: flex;
+  margin-left: 0px;
+}
+#socialMedia > img {
+  width: 25px;
+  height: 25px;
+  margin: 40px 10px 0px;
+}
+a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+a:hover {
+  text-decoration: underline;
+}
+#search h2 {
+  font-weight: 400;
+  margin: 0px;
+}
+#search h1 {
+  font-weight: 600;
+}
+#searchBtn {
+  margin: 0px;
+  border: 1px solid red;
+}
+@media (max-width: 700px) {
+  #citiesExtra > div {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 23px;
+    width: 50%;
+  }
+  #extras > #citiesExtra {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 0%;
+    background-color: rgba(103, 103, 103, 255);
+  }
+  #docDiv {
+    width: 90%;
+  }
+  #indexOnline img {
+    width: 60px;
+    height: 25px;
+    margin: 10px;
+  }
+  #searchBar {
+    width: 90% !important;
+    margin: 10px !important;
+  }
+  #info p {
+    font-size: 12px;
+    margin: 1px;
+  }
+  #sub {
+    margin: 10% !important;
+    width: 70%;
+  }
+  #search h2,
+  #search h1 {
+    margin: 5px;
+  }
+  #search h1 {
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,221 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#docDiv {
+  margin: 25px auto;
+  width: 45%;
+}
+#docDiv > div {
+  width: 100%;
+  height: 210px;
+  display: grid;
+  grid-template-rows: 79% 21%;
+  padding-top: 8px;
+  margin-bottom: 35px;
+  background-color: white;
+}
+#docDiv > div > div:nth-child(1) {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20% 50% 30%;
+  padding-top: 5px;
+  gap: 10px;
+}
+#docDiv > div > div:nth-child(1) p {
+  margin: 1px 1px 4px;
+  font-size: 14px;
+  color: rgb(94, 91, 91);
+}
+.p_name {
+  font-size: 19px !important;
+  margin-bottom: 3px !important;
+  font-weight: 650 !important;
+  color: black !important;
+}
+.p_edu {
+  font-size: 15px !important;
+  color: black !important;
+}
+#docDiv > div > div:nth-child(2) {
+  height: 100%;
+  display: flex;
+}
+#docDiv img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  margin: 40px 7px;
+}
+#docDiv > div > div:nth-child(2) > p {
+  width: 100%;
+  text-align: center;
+  margin: 0px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid rgb(226, 220, 220);
+  cursor: pointer;
+}
+#docDiv > div > div:nth-child(2) > p:hover {
+  background-color: rgb(204, 205, 212);
+}
+.consultOnline {
+  cursor: pointer;
+}
+#lyb {
+  width: 98%;
+  height: 30px;
+  margin-bottom: 40px;
+  padding: 15px;
+  background-color: white;
+  display: flex;
+}
+#lyb > div {
+  width: 17%;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+#lyb > img {
+  cursor: pointer;
+  margin-right: 300px;
+}
+body {
+  margin: 0px;
+  background-color: rgba(238, 238, 238, 255);
+}
+#status {
+  height: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(235, 238, 243, 255);
+  margin: 0px;
+}
+#status > p {
+  margin-left: 21px;
+  cursor: pointer;
+  font-size: 13px;
+}
+#bottom_part {
+  display: flex;
+  flex-direction: column;
+}
+i {
+  color: rgb(88, 86, 86);
+  font-size: 12px;
+  margin-right: 5px;
+}
+#ba_icon {
+  color: white;
+}
+#aboutLybrate {
+  background-color: rgba(238, 238, 238, 255);
+}
+#aboutLybrate > h3 {
+  margin: 25px 25px 15px;
+  color: rgb(73, 71, 71);
+  font-size: 23px;
+}
+#aboutLybrate > p {
+  margin: 25px 25px;
+  font-size: 15px;
+  color: rgb(112, 109, 109);
+}
+#extras {
+  width: 100%;
+  height: auto;
+  padding: 0px !important;
+  background-color: rgba(103, 103, 103, 255);
+  margin: 0%;
+}
+#extras > div {
+  background-color: rgba(103, 103, 103, 255);
+  color: white;
+  margin: 0%;
+  background-color: rgba(103, 103, 103, 255);
+}
+#extras > #citiesExtra {
+  display: flex;
+  margin: 0%;
+  height: auto;
+  background-color: rgba(103, 103, 103, 255);
+}
+#citiesExtra > div {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin: 0px 23px;
+  width: 20%;
+}
+#citiesExtra a {
+  font-size: 14px;
+}
+#extras p,
+#extras a {
+  font-weight: 530;
+}
+#othersDiv {
+  display: flex;
+}
+#othersDiv > #socialMedia {
+  width: 15%;
+  margin: 0%;
+}
+#others {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 1% 0% 1% 1.5%;
+  font-size: 14px;
+}
+#others > a {
+  margin: 7px;
+}
+#cpr > p {
+  margin: 8px 21px 5px;
+  font-size: 14px;
+}
+#socialMedia {
+  display: flex;
+  margin-left: 0px;
+}
+#socialMedia > img {
+  width: 25px;
+  height: 25px;
+  margin: 40px 10px 0px;
+}
+@media (max-width: 800px) {
+  #lyb > img {
+    cursor: pointer;
+    margin-right: 15px;
+    width: 15%;
+    height: 80%;
+    padding: 5px;
+  }
+  #docDiv {
+    width: 90%;
+  }
+  #lyb p {
+    font-size: 10px;
+  }
+  #lyb > div {
+    margin: 5px;
+  }
+  #docDiv > div > div:nth-child(2) p {
+    font-size: 12px;
+  }
+  #citiesExtra > div {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 23px;
+    width: 50%;
+  }
+  #extras > #citiesExtra {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: 0%;
+    background-color: rgba(103, 103, 103, 255);
+  }
+}

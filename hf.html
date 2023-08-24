@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Feed</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hf.css">
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/afe9d36b7f.js" crossorigin="anonymous"></script>
+    <div id="status">
+        <p>Get the App</p>
+        <p onclick="goToDoctorPage()">For Doctors</p>
+        <p onclick="goToHealthFeed()">Health Feed</p>
+    </div>
+    <div id="lyb">
+        <img onclick="goToHome()" src="https://doctor.lybrate.com/img/lybrate-logo.png" />
+        <div onclick="goToAskQuestions()">
+            <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Ask-Question.png" />
+            <p>Ask a Question</p>
+        </div>
+        <div onclick="bookAppointment()">
+            <img
+                src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Appointment.png" />
+            <p>Book Appointment</p>
+        </div>
+        <div onclick="consultOnline()">
+            <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Consult-Online.png" />
+            <p>Consult Online</p>
+        </div>
+        <div onclick="goToBookLabTest()">
+            <img src="https://assets.lybrate.com/q_auto,f_auto,h_28,w_28,c_fill/imgs/product/Homepage/Book-Lab-test.png" />
+            <p>Book Lab Test</p>
+        </div>
+    </div>
+     <div>
+         <div id="hfSearchPart">
+             <div id="inputBox">
+               <input type="text" id="searchKey" placeholder="Search for any health keyword" >
+            </div>
+            <div id="hfSearchButton">
+               <button onclick="searchAns()">Search</button>
+            </div>
+         </div>
+     </div>
+     <div>
+         <div id="hfSmallHeading">
+           <a><span>Home</span> > Health Feed</a>
+        </div>
+     </div>
+     <div>
+         <div id="hfBigHeading">
+            <h4>Health Feed - Articles, Q&As, Quizzes and More</h4>
+         </div>
+     </div>
+     <div id="hfSearchResults"></div>
+     <div id="hfAllBoxes">
+     <div id="ask-questionBoxAndImg">
+        <div id="ask-questionBox">
+            <form>
+                <div card header class="ask-question-header">
+                    <i class="far fa-comment-alt"></i> 
+                    <div>Ask a Question</div>
+                    <div>Get FREE multiple opinions from Doctors</div>
+                </div>
+                <div card content class="ask-question-input">
+                    <textarea id="que" type="text" name="message" style="text-align:left;"
+                        placeholder="Enter question for you or someone else. E.g. my left eye is red and swollen"
+                        required></textarea>
+                </div>
+                <div card footer class="ask-question-footer">
+                    <span>Posted Anonymously</span>
+                    <button onclick="freshQue(event)" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div id="covidCarePlan">
+            <img src="https://assets.lybrate.com/q_auto,f_auto/rio/800x800/Lybrate_Covid-Care_Banner_320x235_18-05-2021.jpg"
+                alt="">
+        </div>
+    </div>
+    <div id="hfFlexBox">
+        <div onclick="goToGoldMembership()" id="hfLybrateGold">
+            <div>
+               <img src="https://assets.lybrate.com/swan/patmem/LybrateGold_Color.png" alt="">
+            </div>
+            <div>
+               <h4>Lybrate gold</h4>
+               <p>Become a member today and enjoy limitless health privileges, Good health made easy!</p>
+            </div>
+            <div><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div id="newAnswers">
+
+        </div>
+     </div> 
+    </div>
+    <div id="hfPageFooter">
+        <div>
+            <p><span>Search Health Products</span></p>
+            <p>Goodkart</p>
+            <p>Vitamin and Supplement</p>
+            <p>Protein and Fitness</p>
+            <p>Skin and Hair Care</p>
+            <p>Sexual Wellness</p>
+            <p>Weight Management</p>
+            <p>Food and Drink</p>
+            <p>Personal Care</p>
+            <p>Child Care</p>
+            <p>Good Box</p>
+        </div>
+        <div>
+            <p><span>Search doctors</span></p>
+            <p>Search doctors by city</p>
+            <p>Search doctors by city Locality</p>
+            <p>Search doctors by speciality</p>
+            <p>Search doctors by city speciality</p>
+        </div>
+        <div>
+            <p><span>Read Health Articles</span></p>
+            <p>Health Wiki</p>
+            <p>Health Tips Index</p>
+            <p>Health Questions Index</p>
+            <p>Health Quizzes Index</p>
+            <p>Health Topics Index</p>
+            <p>Medicines Index</p>
+            <p>Ailment Index</p>
+            <p>Lab Test Details Index</p>
+        </div>
+        <div>
+            <p><span>Read about Lybrate</span></p>
+            <p>About Us</p>
+            <p>Contact Us</p>
+            <p>Careers</p>
+            <p>Mobile Apps</p>
+            <p>Blog</p>
+            <p>Terms of use</p>
+            <p>Privacy Policy</p>
+            <p>Editorial Policy</p>
+            <p>Press</p>
+        </div>
+        <div id="hfLastFooterDiv">
+            <p><span>Social</span></p>
+            <div id="hfLastFooterIcons">
+                <div><i class="fab fa-facebook-f"></i></div>
+                <div><i class="fab fa-twitter"></i></div>
+                <div><i class="fab fa-linkedin-in"></i></div>
+                <div><i class="fab fa-youtube"></i></div>
+            </div>
+            <p><span>Download App</span></p>
+            <div><img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/logos/GooglePlay.png" alt=""></div>
+            <div><img src="https://assets.lybrate.com/q_auto,f_auto/imgs/product/logos/AppStore.png" alt=""></div>
+    </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript">
+    let docStatus = localStorage.getItem('LID');
+    let userStatus = localStorage.getItem('LIU');
+    if (userStatus == null) {
+        var isLoggedIn = false;
+        let p = document.createElement('p');
+        p.textContent = "Login/Signup";
+        p.style.cursor = "pointer";
+        p.addEventListener('click', goToSignup);
+        document.getElementById("status").appendChild(p);
+    } else {
+        var isLoggedIn = true;
+        let p = document.createElement('p');
+        p.textContent = "Logout";
+        p.style.cursor = "pointer";
+        p.addEventListener('click', logout);
+        document.getElementById("status").appendChild(p);
+    }
+    let answers = JSON.parse(localStorage.getItem('answers'));
+    for (let i = answers.length - 1; i >= 0; i--) {
+        let doctors = JSON.parse(localStorage.getItem('doctors'));
+        for (let j = 0; j < doctors.length; j++) {
+            if (answers[i].from == doctors[j].email) {
+                let queDiv = document.createElement('div');
+                queDiv.textContent = answers[i].que;
+                queDiv.setAttribute('class', 'queDiv');
+                queDiv.onclick = function () {
+                    localStorage.setItem('longAns', JSON.stringify(answers[i]));
+                    goToLongAns();
+                }
+                queDiv.style.cursor = "pointer";
+                let docDiv = document.createElement('div');
+                docDiv.setAttribute('class', 'docDiv');
+                let div1 = document.createElement('div');
+                let img = document.createElement('img');
+                img.src = doctors[j].image;
+                div1.append(img);
+                let div2 = document.createElement('div');
+                let p21 = document.createElement('h3');
+                p21.textContent = `Dr. ${doctors[j].name}`;
+                let p22 = document.createElement('p');
+                p22.textContent = doctors[j].edu;
+                let p23 = document.createElement('p');
+                p23.textContent = `${doctors[j].speciality}, ${doctors[j].city} - ${doctors[j].experience}yrs exp`;
+                div2.append(p21, p22, p23);
+                docDiv.append(div1, div2);
+                docDiv.onclick = function () {
+                    localStorage.setItem('longAns', JSON.stringify(answers[i]));
+                    goToLongAns();
+                }
+                docDiv.style.cursor = "pointer";
+                let ansDiv = document.createElement('div');
+                let p31 = document.createElement('p');
+                if(answers[i].ans.length > 450) {
+                    var shortAns = answers[i].ans.slice(0, 450) + "<span class='seeMore'>...see more</span>";
+                } else {
+                    var shortAns = answers[i].ans;
+                }
+                p31.innerHTML = shortAns;
+                ansDiv.append(p31);
+                ansDiv.setAttribute('class', 'ansDiv');
+                ansDiv.onclick = function () {
+                    localStorage.setItem('longAns', JSON.stringify(answers[i]));
+                    goToLongAns();
+                }
+                ansDiv.style.cursor = "pointer";
+                let contactDiv = document.createElement('div');
+                contactDiv.setAttribute('class', 'contactDiv');
+                let btn41 = document.createElement('button');
+                btn41.innerHTML = "Submit Feedback";
+                btn41.setAttribute('class', 'newInfo');
+                let btn42 = document.createElement('button');
+                btn42.innerHTML = "Consult Online";
+                btn42.onclick = function() {
+                    goToProfile(doctors[j]);
+                }
+                btn42.setAttribute('class', 'newInfo');
+                let btn43 = document.createElement('button');
+                btn43.innerHTML = "Book Appointment";
+                btn43.onclick = function () {
+                    goToClinicAppointment(doctors[j]);
+                }
+                btn43.setAttribute('class', 'newInfo');
+                contactDiv.append(btn41, btn42, btn43);
+                let div = document.createElement('div');
+                div.append(queDiv, docDiv, ansDiv, contactDiv);
+                document.getElementById('newAnswers').append(div);
+            }
+        }
+    }
+    function searchAns() {
+        var keyPresent = false;
+        let key = document.getElementById('searchKey').value;
+        let allAnswers = JSON.parse(localStorage.getItem('answers'));
+        let keySearchResults = [];
+        for(let i = 0; i < allAnswers.length; i++) {
+            for(let j = 0; j <= allAnswers[i].que.length - key.length; j++) {
+                if(key == allAnswers[i].que.slice(j, j + key.length)) {
+                    keyPresent = true;
+                    keySearchResults.push(allAnswers[i]);
+                    break;
+                }
+            }
+        }
+        document.getElementById('newAnswers').innerHTML = null;
+        localStorage.setItem('keySearchResults', JSON.stringify(keySearchResults));
+        let answers = JSON.parse(localStorage.getItem('keySearchResults'));
+        if(!keyPresent) {
+            document.getElementById('newAnswers').textContent = "Your search yielded No Results";
+            document.getElementById('newAnswers').style.margin = "5px";
+            
+            let showDivs = document.querySelectorAll("#newAnswers ~ div");
+            for (let g = 0; g < showDivs.length; g++) {
+                showDivs[g].remove();
+            }
+        }
+        for (let i = answers.length - 1; i >= 0; i--) {
+            let doctors = JSON.parse(localStorage.getItem('doctors'));
+            for (let j = 0; j < doctors.length; j++) {
+                if (answers[i].from == doctors[j].email) {
+                    let queDiv = document.createElement('div');
+                    queDiv.textContent = answers[i].que;
+                    queDiv.setAttribute('class', 'queDiv');
+                    queDiv.onclick = function () {
+                        localStorage.setItem('longAns', JSON.stringify(answers[i]));
+                        goToLongAns();
+                    }
+                    queDiv.style.cursor = "pointer";
+                    let docDiv = document.createElement('div');
+                    docDiv.setAttribute('class', 'docDiv');
+                    let div1 = document.createElement('div');
+                    let img = document.createElement('img');
+                    img.src = doctors[j].image;
+                    div1.append(img);
+                    let div2 = document.createElement('div');
+                    let p21 = document.createElement('h3');
+                    p21.textContent = `Dr. ${doctors[j].name}`;
+                    let p22 = document.createElement('p');
+                    p22.textContent = doctors[j].edu;
+                    let p23 = document.createElement('p');
+                    p23.textContent = `${doctors[j].speciality}, ${doctors[j].city} - ${doctors[j].experience}yrs exp`;
+                    div2.append(p21, p22, p23);
+                    docDiv.append(div1, div2);
+                    docDiv.onclick = function () {
+                        localStorage.setItem('longAns', JSON.stringify(answers[i]));
+                        goToLongAns();
+                    }
+                    docDiv.style.cursor = "pointer";
+                    let ansDiv = document.createElement('div');
+                    let p31 = document.createElement('p');
+                    if (answers[i].ans.length > 450) {
+                        var shortAns = answers[i].ans.slice(0, 450) + "<span class='seeMore'>...see more</span>";
+                    } else {
+                        var shortAns = answers[i].ans;
+                    }
+                    p31.innerHTML = shortAns;
+                    ansDiv.append(p31);
+                    ansDiv.setAttribute('class', 'ansDiv');
+                    ansDiv.onclick = function () {
+                        localStorage.setItem('longAns', JSON.stringify(answers[i]));
+                        goToLongAns();
+                    }
+                    ansDiv.style.cursor = "pointer";
+                    let contactDiv = document.createElement('div');
+                    contactDiv.setAttribute('class', 'contactDiv');
+                    let btn41 = document.createElement('button');
+                    btn41.innerHTML = "Submit Feedback";
+                    btn41.setAttribute('class', 'newInfo');
+                    let btn42 = document.createElement('button');
+                    btn42.innerHTML = "Consult Online";
+                    btn42.onclick = function () {
+                        goToProfile(doctors[j]);
+                    }
+                    btn42.setAttribute('class', 'newInfo');
+                    let btn43 = document.createElement('button');
+                    btn43.innerHTML = "Book Appointment";
+                    btn43.onclick = function () {
+                        goToClinicAppointment(doctors[j]);
+                    }
+                    btn43.setAttribute('class', 'newInfo');
+                    contactDiv.append(btn41, btn42, btn43);
+                    let div = document.createElement('div');
+                    div.append(queDiv, docDiv, ansDiv, contactDiv);
+                    document.getElementById('newAnswers').append(div);
+                    let showDivs = document.querySelectorAll("#newAnswers ~ div");
+                    for(let e = 0; e < showDivs.length; e++) {
+                        showDivs[e].remove();
+                    }
+                }
+            }
+        }
+    }
+    function goToLongAns(a) {
+        window.location.href = "longAns.html";
+    }
+    function bookAppointment() {
+        window.location.href = "../Doctor_Appointment/lybrate_doctors.html";
+    }
+    function consultOnline() {
+        window.location.href="../Doctor_Appointment/consultOnline.html";
+    }
+    function goToGoldMembership() {
+        window.location.href = "../Gold_Membership/goldMembership.html";
+    }
+    function goToDoctorPage() {
+        window.location.href = "../Doctors/doctorPage.html";
+    }
+    function goToSignup() {
+        window.location.href = "../Users/userSignup.html"
+    }
+    function goToHome() {
+        window.location.href = "../Home/home2.html";
+    }
+    function goToProfile(a) {
+        localStorage.removeItem('currentDoc');
+        localStorage.setItem('currentDoc', JSON.stringify(a));
+        window.location.href = "../Doctor_Appointment/onlineProfile.html";
+    }
+    function goToBookLabTest() {
+        window.location.href = "../Lab_Test/blt.html";
+    }
+    function goToClinicAppointment(a) {
+        localStorage.removeItem('currentDoc');
+        localStorage.setItem('currentDoc', JSON.stringify(a));
+        window.location.href = "../Doctor_Appointment/clinicAppointment.html";
+    }
+    function logout() {
+        localStorage.removeItem('LIU');
+        localStorage.removeItem('LID');
+        window.location.href = "../Health_Feed/hf.html";
+    }
+    function goToHealthFeed() {
+        window.location.href = "../Health_Feed/hf.html";
+    }
+    
+    function goToDoctorSignup() {
+        window.location.href = "../Doctors/doctorSignup.html";
+    }
+    function goToAskQuestions() {
+        window.location.href = "../Ask_Questions/askQuestions.html";
+    }
+    function freshQue(e) {
+        e.preventDefault();
+        let que = document.getElementById("que").value;
+        localStorage.setItem('tabQue', JSON.stringify(que));
+        window.location.href = "../Ask_Questions/askQuestions.html";
+    }
+</script>

@@ -1,0 +1,208 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#docProfile {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 30px auto;
+}
+#docProfile > div {
+  margin-bottom: 30px;
+  background-color: white;
+}
+#docProfile > div:nth-child(1) {
+  height: 100px;
+}
+#docProfile > div:nth-child(2) {
+  height: 300px;
+}
+#docProfile > div:nth-child(3) {
+  height: 230px;
+}
+#assurance {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+#assurance > div {
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgb(221, 218, 218);
+}
+#assurance > div > div {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  justify-content: center;
+  margin-top: 0px;
+}
+#assurance img {
+  width: 40px;
+  margin: auto;
+}
+#ap {
+  width: 100%;
+  height: 10%;
+}
+body {
+  margin: 0px;
+  background-color: rgba(238, 238, 238, 255);
+}
+#indexOnline {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  color: grey;
+  height: 50px;
+  margin-bottom: 50px;
+}
+#indexOnline > div {
+  display: flex;
+  justify-content: flex-end;
+}
+#indexOnline > div > p {
+  margin: 5px 10px;
+}
+#indexOnline img {
+  height: 50%;
+  margin: 0px 35px;
+}
+#tcp > i:nth-child(2),
+#pcp > i:nth-child(2),
+#vcp > i:nth-child(2) {
+  margin-right: 0px;
+}
+#mode {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+#mode > div {
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  height: 35%;
+  padding: 10px;
+  align-items: center;
+  border-top: 1px solid rgb(221, 218, 218);
+}
+#mode > div > div:nth-child(1) {
+  width: 45%;
+}
+#mode > div > div:nth-child(2) {
+  width: 25%;
+}
+#mode > div > div:nth-child(3) {
+  width: 30%;
+}
+#mode button {
+  background-color: rgba(200, 37, 6, 255);
+  border: 1px solid rgba(200, 37, 6, 255);
+  color: white;
+  width: 100%;
+  height: 40px;
+  cursor: pointer;
+}
+#mode button:hover {
+  background-color: rgb(126, 23, 3);
+  border: 1px solid rgb(126, 23, 3);
+}
+#mode h4,
+#mode p {
+  margin: 0px;
+}
+#mode p {
+  font-size: 15px;
+}
+.flexRow {
+  display: flex;
+}
+i {
+  color: rgb(94, 92, 92);
+  font-size: 15px;
+  margin-right: 8px;
+}
+.subHeading {
+  color: gray;
+  font-size: 19px;
+  margin: 5px 8px;
+  padding: 10px;
+}
+#docDetails1 > div > p,
+#docDetails p {
+  margin: 0px;
+  font-size: 14px;
+  color: grey;
+}
+#docDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 23px;
+}
+#indexOnline > img,
+#indexOnline p {
+  cursor: pointer;
+}
+#bookingConfirmed {
+  width: 70%;
+  height: 100px;
+  background-color: white;
+  margin: 30px auto;
+  padding: 15px;
+  text-align: center;
+  border-radius: 1px;
+  border: 1px solid rgb(22, 3, 0);
+  box-shadow: 0 0 17px rgba(33, 33, 33, 0.2);
+}
+#bookingConfirmed img {
+  width: 100px;
+  height: 80px;
+  border-radius: 50px;
+  margin: 5px;
+}
+span {
+  font-weight: 800;
+  color: rgb(151, 29, 4);
+}
+#p_det {
+  width: 65%;
+  font-size: 17px;
+}
+#docDetails1 img {
+  height: 80%;
+  width: 80px;
+  border-radius: 40px;
+  margin-right: 15px;
+}
+#docName {
+  font-size: 19px !important;
+  color: rgb(48, 47, 47) !important;
+}
+#tc,
+#pc,
+#vc {
+  font-size: 13px !important;
+  color: grey;
+}
+@media (max-width: 900px) {
+  #docProfile {
+    width: 90%;
+  }
+  #assurance > div {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-top: 1px solid rgb(221, 218, 218);
+  }
+  #docProfile > div:nth-child(3) {
+    height: 530px;
+  }
+}

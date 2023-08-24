@@ -1,0 +1,182 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#index {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  margin: 0px;
+}
+#index > div {
+  display: flex;
+  cursor: pointer;
+  margin: 0px;
+}
+#index > div > p {
+  margin: 15px 25px;
+  font-size: 17px;
+}
+#askQueDiv {
+  background-image: url("https://assets.lybrate.com/q_auto,f_auto/imgs/product/www/Banner_Ask_Question_default.jpg");
+  width: 100%;
+  height: 670px;
+  padding-top: 15px;
+  background-size: cover;
+  margin: 0px;
+}
+#queDiv {
+  width: 46%;
+  height: 500px;
+  padding: 15px;
+  background-color: white;
+  margin: 0px;
+  margin-left: 70px;
+  border-radius: 5px;
+}
+#queDiv > #que {
+  height: 270px;
+  width: 80%;
+  padding: 5px;
+}
+#askQueDiv button {
+  width: 90%;
+  height: 50px;
+  font-size: 19px;
+  font-weight: 600;
+  background-color: rgba(200, 37, 6, 255);
+  cursor: pointer;
+  border: 1px solid rgba(200, 37, 6, 255);
+  border-radius: 5px;
+  color: white;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+#askQueDiv button:hover {
+  background-color: rgb(153, 33, 8);
+}
+#assurance {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 260px;
+  width: 80%;
+  margin: 10px auto;
+  background-color: white;
+  border-radius: 5px;
+}
+#assurance > div {
+  text-align: center;
+  margin-top: 0px;
+  padding-top: 15px;
+}
+#assurance > div {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgb(221, 218, 218);
+}
+#assurance > div > div {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  justify-content: center;
+  margin-top: 0px;
+}
+#assurance img {
+  width: 40px;
+  margin: auto;
+}
+body {
+  margin: 0px;
+  background-color: rgba(238, 238, 238, 255);
+}
+#data {
+  width: 100%;
+  background-color: rgba(68, 68, 68, 255);
+  height: 150px;
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  margin: 0px 70px 15px;
+  width: 50%;
+  text-align: center;
+}
+#anonEmail,
+#anonPhone {
+  width: 40%;
+  height: 30px;
+  margin-bottom: 15px;
+}
+#queDiv p {
+  text-align: center;
+}
+#index img {
+  height: 28px;
+  margin: 12px 38px;
+}
+textarea {
+  width: 80%;
+}
+@media (max-width: 800px) {
+  #askQueDiv {
+    background-image: url("https://assets.lybrate.com/q_auto,f_auto/imgs/product/www/Banner_Ask_Question_default.jpg");
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    background-size: cover;
+    margin: 0px;
+  }
+  textarea {
+    width: 80%;
+  }
+  #index {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: white;
+    margin: 0px;
+  }
+  #index > div {
+    display: flex;
+    cursor: pointer;
+    margin: 0px;
+  }
+  #index > div > p {
+    margin: 10px;
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 15px;
+    margin: 5px auto;
+  }
+  #queDiv {
+    width: 80%;
+    height: 600px;
+    padding: 15px;
+    background-color: white;
+    margin: 0px;
+    margin-left: 30px;
+    border-radius: 5px;
+  }
+  #assurance {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    height: 300px;
+    width: 80%;
+    margin: 5px auto;
+    background-color: white;
+    border-radius: 5px;
+  }
+  #data {
+    flex-direction: column;
+    height: 400px;
+  }
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="onlineProfile.css">
+    </head>
+    <body>
+        <script src="https://kit.fontawesome.com/afe9d36b7f.js" crossorigin="anonymous"></script>
+        <div id="indexOnline">
+            <img onclick="goToHome()" src="https://nu.lybcdn.com/img/lybrate-logo-new.png" />
+            <div id="header">
+                <p>Download App</p>
+                <p onclick="goToDoctorPage()">For Doctors</p>
+            </div>
+        </div>
+        <div id="docProfile">
+            <div id="docDetails">
+                <div id="docDetails1">
+
+                </div>
+                <div id="docDetails2">
+                    <p id="exp"></p>
+                </div>
+            </div>
+            <div id="mode">
+                <p class="subHeading">CHOOSE MODE OF CONSULTATION</p>
+                <div>
+                    <div>
+                        <h4>Text Consult</h4>
+                        <p id="tc"></p>
+                    </div>
+                    <div id="mid">
+                        <p id="tcp"></p>
+                    </div>
+                    <div>
+                        <button onclick="consult('text')">Consult Now</button>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h4>Phone Consult</h4>
+                        <p id="pc"></p>
+                    </div>
+                    <div>
+                        <p id="pcp"></p>
+                    </div>
+                    <div>
+                        <button onclick="consult('phone')">Consult Now</button>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h4>Video Consult</h4>
+                        <p id="vc"></p>
+                    </div>
+                    <div>
+                        <p id="vcp"></p>
+                    </div>
+                    <div>
+                        <button onclick="consult('video')">Consult Now</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div id="assurance">
+                <p id="ap" class="subHeading">LYBRATE ASSURANCE</p>
+                <div>
+                    <div>
+                        <img src="https://nu.lybcdn.com/img/askQ/ic-ly-doctor.png" />Verified Doctors
+                        <p>All Doctors go through a stringent verification process on Lybrate</p>
+                    </div>
+                    <div>
+                        <img src="https://nu.lybcdn.com/img/askQ/ic-ly-privacy.png" />100% Privacy Protection
+                        <p>Your consultation details and personal data will remain confidential</p>
+                    </div>
+                    <div>
+                        <img src="https://nu.lybcdn.com/img/askQ/ic-ly-quick.png" />Satisfaction Guaranteed
+                        <p>If you are not satisfied with your experience, we will refund your money</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+        let docStatus = localStorage.getItem('LID');
+       
+        let userStatus = localStorage.getItem('LIU');
+        
+        if(docStatus == null && userStatus == null) {
+            var isLoggedIn = false;
+            let p = document.createElement('p');
+            p.textContent = "Login/Signup";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', goToUserLogin);
+            document.getElementById("header").appendChild(p);
+        } else {
+            var isLoggedIn = true;
+            let p = document.createElement('p');
+            p.textContent = "Logout";
+            p.style.cursor = "pointer";
+            p.addEventListener('click', logout);
+            document.getElementById("header").appendChild(p);
+        }
+        function goToHome() {
+            window.location.href = "../Home/home2.html";
+        }
+        function goToDoctorLogin() {
+            window.location.href = "../Doctors/doctorLogin.html";
+        }
+        function goToDoctorPage() {
+            window.location.href = "../Doctors/doctorPage.html";
+        }
+        function goToUserLogin() {
+            window.location.href = "../Users/userLogin.html";
+        }
+        function logout() {
+            localStorage.removeItem('LIU');
+            localStorage.removeItem('LID');
+            window.location.href = "../Doctor_Appointment/onlineProfile.html";
+        }
+        let doc = JSON.parse(localStorage.getItem('currentDoc'));
+        let docDetails1 = document.getElementById("docDetails1");
+        let img = document.createElement('img');
+        img.src = doc.image;
+        let p1 = document.createElement('p');
+        p1.textContent = `Dr. ${doc.name}`;
+        p1.id = "docName";
+        let p2 = document.createElement('p');
+        p2.textContent = doc.edu;
+        let p3 = document.createElement('p');
+        p3.textContent = doc.speciality;
+        let p4 = document.createElement('p');
+        p4.textContent = doc.city;
+        let subDiv = document.createElement('div');
+        subDiv.append(p1, p2, p3, p4);
+        docDetails1.append(img, subDiv);
+        docDetails1.style.display = "flex";
+        document.getElementById("exp").innerHTML = `<i class="fas fa-briefcase-medical"></i>${doc.experience} years of Experience`;
+        document.getElementById("tc").textContent = `${doc.tc} days validity`;
+        document.getElementById("tcp").innerHTML = `<i class="far fa-credit-card"></i><i class="fas fa-rupee-sign"></i>${doc.tcp}`;
+        document.getElementById("pc").textContent = `${doc.tc} minutes duration - 24 hours text chat`;
+        document.getElementById("pcp").innerHTML = `<i class="far fa-credit-card"></i><i class="fas fa-rupee-sign"></i>${doc.pcp}`;
+        document.getElementById("vc").textContent = `${doc.vc} minutes duration - 24 hours text chat`;
+        document.getElementById("vcp").innerHTML = `<i class="far fa-credit-card"></i><i class="fas fa-rupee-sign"></i>${doc.vcp}`;
+
+        function consult(a) {
+            let user = localStorage.getItem('LIU');
+            let currentDoc = JSON.parse(localStorage.getItem('currentDoc'));
+            if(user == null) {
+                window.location.href = "../Users/userLogin.html";
+            } else {
+                user = JSON.parse(user);
+                let requests = localStorage.getItem('requests');
+                if(requests == null) {
+                    requests = [];
+                } else {
+                    requests = JSON.parse(requests);
+                }
+                let request = { 
+                    from: user.email,
+                    to: currentDoc.email,
+                    name: user.name,
+                    phone: user.phone,
+                    type: a,
+                }
+                let alreadyBooked = false;
+                for(let i = 0; i < requests.length; i++) {
+                    if(request.from == requests[i].from && request.to == requests[i].to && request.type == requests[i].type) {
+                        alert(`You have already booked a ${a} consultation with Dr. ${currentDoc.name}`);
+                        alreadyBooked = true;
+                        break;
+                    } 
+                }
+                if(!alreadyBooked) {
+                    console.log(typeof(requests));
+                    requests.push(request);
+                    localStorage.setItem('requests', JSON.stringify(requests));
+                    document.getElementById("docProfile").innerHTML = null;
+                    let div = document.createElement('div');
+                    let image = document.createElement('img');
+                    image.src = currentDoc.image;
+                    let p_det = document.createElement('p');
+                    p_det.setAttribute('id', 'p_det');
+                    p_det.innerHTML = `Online ${a} consultation booked with <span>Dr. ${currentDoc.name}</span>`;
+                    div.append(image, p_det);
+                    div.setAttribute('id', 'bookingConfirmed');
+                    div.setAttribute('class', 'flexRow');
+                    div.style.flexWrap = "wrap";
+                    document.getElementById("docProfile").append(div);
+                }
+            }
+        }
+        </script>
+    </body>
+</html>
+
+

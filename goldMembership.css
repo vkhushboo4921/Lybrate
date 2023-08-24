@@ -1,0 +1,177 @@
+* {
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #eeeeee;
+  margin: 0px;
+}
+#header {
+  background-color: #ffffff;
+}
+#header img {
+  cursor: pointer;
+  width: 90px;
+  margin: 10px 30px;
+}
+
+#mid1 {
+  background-color: rgb(54, 36, 3);
+  padding: 50px 40px 100px 40px;
+}
+#mid1 > div > #goldM {
+  display: flex;
+  justify-content: center;
+}
+#mid1 > div > #goldM img {
+  width: 300px;
+}
+#mid1Content {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -30px;
+}
+#mid1Content > div {
+  text-align: center;
+}
+#mid1Content > .extraThings > p {
+  font-weight: 600;
+  margin: 5px;
+}
+#mid1Content > .extraThings > span {
+  font-size: 13px;
+}
+#mid1Content > #midHead > p {
+  font-size: 22px;
+}
+#mid2 {
+  background-color: #ffffff;
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: -50px;
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+#mid2 {
+  text-align: center;
+}
+#mid2 > #flexBoxes1 {
+  display: flex;
+  flex-direction: row;
+}
+#mid2 > #flexBoxes1 > div {
+  margin: 10px;
+}
+#mid2 > #flexBoxes1 > div p {
+  font-size: 13px;
+  font-weight: bold;
+}
+#mid2 > #flexBoxes1 span {
+  color: rgb(203, 37, 6);
+  cursor: pointer;
+}
+@media only screen and (max-width: 780px) {
+  #mid2 > #flexBoxes1 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+#mid3 {
+  background-color: white;
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px 0px;
+}
+#mid3 > #mid3PriceBox {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#mid3 > #mid3PriceBox > div {
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px grey;
+  margin: 28px 18px 18px 18px;
+  padding: 13px 20px;
+  cursor: pointer;
+}
+#mid3 > #mid3PriceBox > div:hover {
+  border: 1px solid #c82506;
+}
+#mid3 > #mid3PriceBox > div > p {
+  line-height: 2;
+}
+#mid3 > #mid3PriceBox > div > p:nth-child(1) {
+  font-size: 15px;
+  font-weight: 600;
+}
+#mid3 > #mid3PriceBox > div > p:nth-child(2),
+#mid3 > #mid3PriceBox > div > p:nth-child(5) {
+  font-size: 12px;
+}
+#mid3 > #mid3PriceBox > div > p:nth-child(3),
+#mid3 > #mid3PriceBox > div > p:nth-child(4) {
+  font-size: 22px;
+  font-weight: bold;
+}
+#mid3 > #mid3PriceBox > div > p:nth-child(4) {
+  text-decoration: line-through;
+}
+#mid3 > #mid3PriceBox button {
+  padding: 5px 30px;
+  margin-top: 10px;
+  background-color: #c82506;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.blank {
+  color: white;
+}
+#mid4 {
+  padding: 30px 0px;
+}
+#mid4 > h3 {
+  text-align: center;
+}
+#qnABox {
+  background-color: white;
+  max-width: 700px;
+  margin: auto;
+  margin-top: 20px;
+}
+#qnABox > div {
+  border-bottom: 2px solid #eeeeee;
+  padding: 10px;
+  font-size: 13px;
+  width: 100%;
+  cursor: pointer;
+  line-height: 1.5;
+}
+#qnABox > div > .fa-chevron-right {
+  text-align: right !important;
+}
+#qnABox > div p {
+  margin-top: 10px;
+}
+#qnABox > div span {
+  color: #c82506;
+}
+#qnABox > div p + ol {
+  padding: 20px;
+}
+#qnABox > div p + ol > li > ol {
+  padding: 5px 20px;
+}
+#footer {
+  height: 50px;
+  background-color: rgb(103, 103, 103);
+}
